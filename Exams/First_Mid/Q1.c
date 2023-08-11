@@ -7,9 +7,7 @@ void sum_dig(int num);
 void main ()
 {
 	int num =0 ;
-	printf("hello\n");
 	scanf("%d",&num);
-	printf("hello\n");
 	sum_dig(num);
 }
 
