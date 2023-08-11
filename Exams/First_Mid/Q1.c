@@ -11,7 +11,6 @@ void main ()
 	sum_dig(num);
 }
 
-
 void sum_dig(int num)
 {
 	int sum =0,dig=1;
