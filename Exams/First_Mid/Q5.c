@@ -12,7 +12,6 @@ void main ()
 	num_ones(num);
 }
 
-
 void num_ones(int num)
 {
 	int one = 0 ;
