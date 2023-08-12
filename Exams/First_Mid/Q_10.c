@@ -27,11 +27,15 @@ void unique(int *num)
 	for( ; i<SIZE;i++)
 	{
 		test[num[i]]++;
-		if(test[num[i]] ==  1)
-		{
-			flag = i;
-		}
-		
 	}
-	printf("%d",num[flag]);
+	for (i = 0; i < 100; i++)
+	{
+		if(test[i] == 1)
+		{
+			flag =i;
+			break;
+		}
+	}
+	
+	printf("%d",flag);
 }
