@@ -14,7 +14,7 @@
 #define RCC_BASE    0x40021000
 #define GPIOA_BASE  0x40010800
 
-#define RCC_APB2ENR  *(volatile uint32*)(RCC_BASE + 0x14)
+#define RCC_APB2ENR  *(volatile uint32*)(RCC_BASE   + 0x18)
 
 #define GPIOA_CRH    *(volatile uint32*)(GPIOA_BASE + 0x04)
 #define GPIOA_ODR    *(volatile uint32*)(GPIOA_BASE + 0x0c)
