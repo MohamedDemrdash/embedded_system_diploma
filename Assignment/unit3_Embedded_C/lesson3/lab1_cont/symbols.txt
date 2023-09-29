@@ -1,0 +1,24 @@
+
+app.o:
+00000000 T main
+00000000 D str
+         U uart_send_string
+00000000 R x
+
+uart.o:
+00000000 T uart_send_string
+
+startup.o:
+         U main
+00000000 T reset
+         U stack_top
+00000008 t stop
+
+Learn_in_depth.elf:
+00010010 T main
+00010000 T reset
+000110ec D stack_top
+00010008 t stop
+00010084 D str
+0001002c T uart_send_string
+000100e8 D x
