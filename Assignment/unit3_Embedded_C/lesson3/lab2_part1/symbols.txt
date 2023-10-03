@@ -1,0 +1,27 @@
+
+app.o:
+00000000 D arr0
+00000000 R arr1
+00000000 B arr2
+00000000 T main
+
+startup.o:
+         U main
+00000000 t reset
+00000004 t stop
+00000006 t vectore_handler
+
+toggel_led.elf:
+20000010 B _E_bss
+20000005 D _E_data
+0800006b T _E_text
+20000008 B _S_bss
+20000000 D _S_data
+20001010 B _stack_top
+20000000 D arr0
+08000068 T arr1
+20000008 B arr2
+0800000c T main
+08000000 t reset
+08000004 t stop
+08000006 t vectore_handler
