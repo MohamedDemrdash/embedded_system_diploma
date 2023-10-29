@@ -1,0 +1,1331 @@
+<?xml version="1.0"?>
+<dumps>
+  <platform name="win64" char_bit="8" short_bit="16" int_bit="32" long_bit="32" long_long_bit="64" pointer_bit="64"/>
+  <rawtokens>
+    <file index="0" name="fifo.c"/>
+    <file index="1" name="fifo.h"/>
+    <file index="2" name="platform_types.h"/>
+    <tok fileIndex="0" linenr="1" column="1" str="/*x * fifo.cx *x *  Created on: Oct 29, 2023x *      Author: Mohamed Demrdashx */"/>
+    <tok fileIndex="0" linenr="7" column="1" str="#"/>
+    <tok fileIndex="0" linenr="7" column="2" str="include"/>
+    <tok fileIndex="0" linenr="7" column="10" str="&quot;fifo.h&quot;"/>
+    <tok fileIndex="0" linenr="8" column="1" str="#"/>
+    <tok fileIndex="0" linenr="8" column="2" str="include"/>
+    <tok fileIndex="0" linenr="8" column="10" str="&quot;platform_types.h&quot;"/>
+    <tok fileIndex="0" linenr="9" column="1" str="#"/>
+    <tok fileIndex="0" linenr="9" column="2" str="include"/>
+    <tok fileIndex="0" linenr="9" column="10" str="&quot;stdio.h&quot;"/>
+    <tok fileIndex="0" linenr="11" column="1" str="FIFO_state"/>
+    <tok fileIndex="0" linenr="11" column="12" str="FIFO_init"/>
+    <tok fileIndex="0" linenr="11" column="26" str="("/>
+    <tok fileIndex="0" linenr="11" column="27" str="FIFO_buffer"/>
+    <tok fileIndex="0" linenr="11" column="38" str="*"/>
+    <tok fileIndex="0" linenr="11" column="40" str="fifo_buf"/>
+    <tok fileIndex="0" linenr="11" column="48" str=","/>
+    <tok fileIndex="0" linenr="11" column="49" str="element_type"/>
+    <tok fileIndex="0" linenr="11" column="61" str="*"/>
+    <tok fileIndex="0" linenr="11" column="63" str="base_arr"/>
+    <tok fileIndex="0" linenr="11" column="71" str=","/>
+    <tok fileIndex="0" linenr="11" column="72" str="uint16"/>
+    <tok fileIndex="0" linenr="11" column="79" str="length"/>
+    <tok fileIndex="0" linenr="11" column="85" str=")"/>
+    <tok fileIndex="0" linenr="12" column="1" str="{"/>
+    <tok fileIndex="0" linenr="13" column="2" str="FIFO_state"/>
+    <tok fileIndex="0" linenr="13" column="13" str="state"/>
+    <tok fileIndex="0" linenr="13" column="18" str=";"/>
+    <tok fileIndex="0" linenr="15" column="3" str="if"/>
+    <tok fileIndex="0" linenr="15" column="5" str="("/>
+    <tok fileIndex="0" linenr="15" column="6" str="!"/>
+    <tok fileIndex="0" linenr="15" column="7" str="base_arr"/>
+    <tok fileIndex="0" linenr="15" column="15" str=")"/>
+    <tok fileIndex="0" linenr="16" column="3" str="{"/>
+    <tok fileIndex="0" linenr="17" column="4" str="state"/>
+    <tok fileIndex="0" linenr="17" column="10" str="="/>
+    <tok fileIndex="0" linenr="17" column="12" str="FIFO_NULL"/>
+    <tok fileIndex="0" linenr="17" column="21" str=";"/>
+    <tok fileIndex="0" linenr="18" column="3" str="}"/>
+    <tok fileIndex="0" linenr="19" column="3" str="else"/>
+    <tok fileIndex="0" linenr="20" column="3" str="{"/>
+    <tok fileIndex="0" linenr="21" column="4" str="fifo_buf"/>
+    <tok fileIndex="0" linenr="21" column="12" str="-&gt;"/>
+    <tok fileIndex="0" linenr="21" column="14" str="base"/>
+    <tok fileIndex="0" linenr="21" column="19" str="="/>
+    <tok fileIndex="0" linenr="21" column="21" str="base_arr"/>
+    <tok fileIndex="0" linenr="21" column="29" str=";"/>
+    <tok fileIndex="0" linenr="22" column="4" str="fifo_buf"/>
+    <tok fileIndex="0" linenr="22" column="12" str="-&gt;"/>
+    <tok fileIndex="0" linenr="22" column="14" str="head"/>
+    <tok fileIndex="0" linenr="22" column="19" str="="/>
+    <tok fileIndex="0" linenr="22" column="21" str="base_arr"/>
+    <tok fileIndex="0" linenr="22" column="29" str=";"/>
+    <tok fileIndex="0" linenr="23" column="4" str="fifo_buf"/>
+    <tok fileIndex="0" linenr="23" column="12" str="-&gt;"/>
+    <tok fileIndex="0" linenr="23" column="14" str="tail"/>
+    <tok fileIndex="0" linenr="23" column="19" str="="/>
+    <tok fileIndex="0" linenr="23" column="21" str="base_arr"/>
+    <tok fileIndex="0" linenr="23" column="29" str=";"/>
+    <tok fileIndex="0" linenr="24" column="4" str="fifo_buf"/>
+    <tok fileIndex="0" linenr="24" column="12" str="-&gt;"/>
+    <tok fileIndex="0" linenr="24" column="14" str="length"/>
+    <tok fileIndex="0" linenr="24" column="21" str="="/>
+    <tok fileIndex="0" linenr="24" column="23" str="length"/>
+    <tok fileIndex="0" linenr="24" column="29" str=";"/>
+    <tok fileIndex="0" linenr="25" column="4" str="fifo_buf"/>
+    <tok fileIndex="0" linenr="25" column="12" str="-&gt;"/>
+    <tok fileIndex="0" linenr="25" column="14" str="count"/>
+    <tok fileIndex="0" linenr="25" column="20" str="="/>
+    <tok fileIndex="0" linenr="25" column="22" str="0"/>
+    <tok fileIndex="0" linenr="25" column="23" str=";"/>
+    <tok fileIndex="0" linenr="26" column="4" str="state"/>
+    <tok fileIndex="0" linenr="26" column="10" str="="/>
+    <tok fileIndex="0" linenr="26" column="12" str="FIFO_NO_ERROR"/>
+    <tok fileIndex="0" linenr="26" column="25" str=";"/>
+    <tok fileIndex="0" linenr="27" column="3" str="}"/>
+    <tok fileIndex="0" linenr="29" column="3" str="return"/>
+    <tok fileIndex="0" linenr="29" column="10" str="state"/>
+    <tok fileIndex="0" linenr="29" column="15" str=";"/>
+    <tok fileIndex="0" linenr="32" column="1" str="}"/>
+    <tok fileIndex="0" linenr="34" column="1" str="FIFO_state"/>
+    <tok fileIndex="0" linenr="34" column="12" str="FIFO_enqueue"/>
+    <tok fileIndex="0" linenr="34" column="26" str="("/>
+    <tok fileIndex="0" linenr="34" column="27" str="FIFO_buffer"/>
+    <tok fileIndex="0" linenr="34" column="38" str="*"/>
+    <tok fileIndex="0" linenr="34" column="40" str="fifo_buf"/>
+    <tok fileIndex="0" linenr="34" column="48" str=","/>
+    <tok fileIndex="0" linenr="34" column="49" str="element_type"/>
+    <tok fileIndex="0" linenr="34" column="63" str="item"/>
+    <tok fileIndex="0" linenr="34" column="67" str=")"/>
+    <tok fileIndex="0" linenr="35" column="1" str="{"/>
+    <tok fileIndex="0" linenr="36" column="2" str="FIFO_state"/>
+    <tok fileIndex="0" linenr="36" column="13" str="state"/>
+    <tok fileIndex="0" linenr="36" column="18" str=";"/>
+    <tok fileIndex="0" linenr="37" column="2" str="if"/>
+    <tok fileIndex="0" linenr="37" column="4" str="("/>
+    <tok fileIndex="0" linenr="37" column="5" str="("/>
+    <tok fileIndex="0" linenr="37" column="6" str="state"/>
+    <tok fileIndex="0" linenr="37" column="12" str="="/>
+    <tok fileIndex="0" linenr="37" column="14" str="FIFO_is_full"/>
+    <tok fileIndex="0" linenr="37" column="26" str="("/>
+    <tok fileIndex="0" linenr="37" column="27" str="fifo_buf"/>
+    <tok fileIndex="0" linenr="37" column="35" str=")"/>
+    <tok fileIndex="0" linenr="37" column="36" str=")"/>
+    <tok fileIndex="0" linenr="37" column="38" str="=="/>
+    <tok fileIndex="0" linenr="37" column="41" str="FIFO_NO_ERROR"/>
+    <tok fileIndex="0" linenr="37" column="54" str=")"/>
+    <tok fileIndex="0" linenr="38" column="2" str="{"/>
+    <tok fileIndex="0" linenr="39" column="3" str="if"/>
+    <tok fileIndex="0" linenr="39" column="5" str="("/>
+    <tok fileIndex="0" linenr="39" column="6" str="fifo_buf"/>
+    <tok fileIndex="0" linenr="39" column="14" str="-&gt;"/>
+    <tok fileIndex="0" linenr="39" column="16" str="tail"/>
+    <tok fileIndex="0" linenr="39" column="21" str="=="/>
+    <tok fileIndex="0" linenr="39" column="24" str="fifo_buf"/>
+    <tok fileIndex="0" linenr="39" column="32" str="-&gt;"/>
+    <tok fileIndex="0" linenr="39" column="34" str="base"/>
+    <tok fileIndex="0" linenr="39" column="39" str="+"/>
+    <tok fileIndex="0" linenr="39" column="40" str="fifo_buf"/>
+    <tok fileIndex="0" linenr="39" column="48" str="-&gt;"/>
+    <tok fileIndex="0" linenr="39" column="50" str="length"/>
+    <tok fileIndex="0" linenr="39" column="56" str=")"/>
+    <tok fileIndex="0" linenr="40" column="3" str="{"/>
+    <tok fileIndex="0" linenr="41" column="4" str="fifo_buf"/>
+    <tok fileIndex="0" linenr="41" column="12" str="-&gt;"/>
+    <tok fileIndex="0" linenr="41" column="14" str="tail"/>
+    <tok fileIndex="0" linenr="41" column="19" str="="/>
+    <tok fileIndex="0" linenr="41" column="21" str="fifo_buf"/>
+    <tok fileIndex="0" linenr="41" column="29" str="-&gt;"/>
+    <tok fileIndex="0" linenr="41" column="31" str="base"/>
+    <tok fileIndex="0" linenr="41" column="35" str=";"/>
+    <tok fileIndex="0" linenr="42" column="3" str="}"/>
+    <tok fileIndex="0" linenr="43" column="3" str="*"/>
+    <tok fileIndex="0" linenr="43" column="4" str="("/>
+    <tok fileIndex="0" linenr="43" column="5" str="fifo_buf"/>
+    <tok fileIndex="0" linenr="43" column="13" str="-&gt;"/>
+    <tok fileIndex="0" linenr="43" column="15" str="tail"/>
+    <tok fileIndex="0" linenr="43" column="20" str="++"/>
+    <tok fileIndex="0" linenr="43" column="22" str=")"/>
+    <tok fileIndex="0" linenr="43" column="24" str="="/>
+    <tok fileIndex="0" linenr="43" column="26" str="item"/>
+    <tok fileIndex="0" linenr="43" column="30" str=";"/>
+    <tok fileIndex="0" linenr="44" column="3" str="("/>
+    <tok fileIndex="0" linenr="44" column="4" str="fifo_buf"/>
+    <tok fileIndex="0" linenr="44" column="12" str="-&gt;"/>
+    <tok fileIndex="0" linenr="44" column="14" str="count"/>
+    <tok fileIndex="0" linenr="44" column="19" str=")"/>
+    <tok fileIndex="0" linenr="44" column="20" str="++"/>
+    <tok fileIndex="0" linenr="44" column="22" str=";"/>
+    <tok fileIndex="0" linenr="45" column="3" str="state"/>
+    <tok fileIndex="0" linenr="45" column="9" str="="/>
+    <tok fileIndex="0" linenr="45" column="11" str="FIFO_NO_ERROR"/>
+    <tok fileIndex="0" linenr="45" column="24" str=";"/>
+    <tok fileIndex="0" linenr="46" column="2" str="}"/>
+    <tok fileIndex="0" linenr="47" column="2" str="else"/>
+    <tok fileIndex="0" linenr="48" column="2" str="{"/>
+    <tok fileIndex="0" linenr="50" column="2" str="}"/>
+    <tok fileIndex="0" linenr="51" column="2" str="return"/>
+    <tok fileIndex="0" linenr="51" column="9" str="state"/>
+    <tok fileIndex="0" linenr="51" column="14" str=";"/>
+    <tok fileIndex="0" linenr="52" column="1" str="}"/>
+    <tok fileIndex="0" linenr="54" column="1" str="FIFO_state"/>
+    <tok fileIndex="0" linenr="54" column="12" str="FIFO_dequeue"/>
+    <tok fileIndex="0" linenr="54" column="26" str="("/>
+    <tok fileIndex="0" linenr="54" column="27" str="FIFO_buffer"/>
+    <tok fileIndex="0" linenr="54" column="38" str="*"/>
+    <tok fileIndex="0" linenr="54" column="40" str="fifo_buf"/>
+    <tok fileIndex="0" linenr="54" column="48" str=","/>
+    <tok fileIndex="0" linenr="54" column="49" str="element_type"/>
+    <tok fileIndex="0" linenr="54" column="61" str="*"/>
+    <tok fileIndex="0" linenr="54" column="63" str="item"/>
+    <tok fileIndex="0" linenr="54" column="67" str=")"/>
+    <tok fileIndex="0" linenr="55" column="1" str="{"/>
+    <tok fileIndex="0" linenr="56" column="2" str="FIFO_state"/>
+    <tok fileIndex="0" linenr="56" column="13" str="state"/>
+    <tok fileIndex="0" linenr="56" column="18" str=";"/>
+    <tok fileIndex="0" linenr="57" column="2" str="if"/>
+    <tok fileIndex="0" linenr="57" column="4" str="("/>
+    <tok fileIndex="0" linenr="57" column="5" str="("/>
+    <tok fileIndex="0" linenr="57" column="6" str="state"/>
+    <tok fileIndex="0" linenr="57" column="12" str="="/>
+    <tok fileIndex="0" linenr="57" column="14" str="FIFO_is_empty"/>
+    <tok fileIndex="0" linenr="57" column="27" str="("/>
+    <tok fileIndex="0" linenr="57" column="28" str="fifo_buf"/>
+    <tok fileIndex="0" linenr="57" column="36" str=")"/>
+    <tok fileIndex="0" linenr="57" column="37" str=")"/>
+    <tok fileIndex="0" linenr="57" column="39" str="=="/>
+    <tok fileIndex="0" linenr="57" column="42" str="FIFO_NO_ERROR"/>
+    <tok fileIndex="0" linenr="57" column="55" str=")"/>
+    <tok fileIndex="0" linenr="58" column="2" str="{"/>
+    <tok fileIndex="0" linenr="59" column="3" str="if"/>
+    <tok fileIndex="0" linenr="59" column="5" str="("/>
+    <tok fileIndex="0" linenr="59" column="6" str="fifo_buf"/>
+    <tok fileIndex="0" linenr="59" column="14" str="-&gt;"/>
+    <tok fileIndex="0" linenr="59" column="16" str="head"/>
+    <tok fileIndex="0" linenr="59" column="21" str="=="/>
+    <tok fileIndex="0" linenr="59" column="24" str="fifo_buf"/>
+    <tok fileIndex="0" linenr="59" column="32" str="-&gt;"/>
+    <tok fileIndex="0" linenr="59" column="34" str="base"/>
+    <tok fileIndex="0" linenr="59" column="39" str="+"/>
+    <tok fileIndex="0" linenr="59" column="41" str="fifo_buf"/>
+    <tok fileIndex="0" linenr="59" column="49" str="-&gt;"/>
+    <tok fileIndex="0" linenr="59" column="51" str="length"/>
+    <tok fileIndex="0" linenr="59" column="57" str=")"/>
+    <tok fileIndex="0" linenr="60" column="3" str="{"/>
+    <tok fileIndex="0" linenr="61" column="4" str="fifo_buf"/>
+    <tok fileIndex="0" linenr="61" column="12" str="-&gt;"/>
+    <tok fileIndex="0" linenr="61" column="14" str="head"/>
+    <tok fileIndex="0" linenr="61" column="19" str="="/>
+    <tok fileIndex="0" linenr="61" column="21" str="fifo_buf"/>
+    <tok fileIndex="0" linenr="61" column="29" str="-&gt;"/>
+    <tok fileIndex="0" linenr="61" column="31" str="base"/>
+    <tok fileIndex="0" linenr="61" column="35" str=";"/>
+    <tok fileIndex="0" linenr="62" column="3" str="}"/>
+    <tok fileIndex="0" linenr="63" column="3" str="*"/>
+    <tok fileIndex="0" linenr="63" column="4" str="item"/>
+    <tok fileIndex="0" linenr="63" column="9" str="="/>
+    <tok fileIndex="0" linenr="63" column="11" str="*"/>
+    <tok fileIndex="0" linenr="63" column="12" str="("/>
+    <tok fileIndex="0" linenr="63" column="13" str="fifo_buf"/>
+    <tok fileIndex="0" linenr="63" column="21" str="-&gt;"/>
+    <tok fileIndex="0" linenr="63" column="23" str="head"/>
+    <tok fileIndex="0" linenr="63" column="27" str="++"/>
+    <tok fileIndex="0" linenr="63" column="29" str=")"/>
+    <tok fileIndex="0" linenr="63" column="30" str=";"/>
+    <tok fileIndex="0" linenr="64" column="3" str="("/>
+    <tok fileIndex="0" linenr="64" column="4" str="fifo_buf"/>
+    <tok fileIndex="0" linenr="64" column="12" str="-&gt;"/>
+    <tok fileIndex="0" linenr="64" column="14" str="count"/>
+    <tok fileIndex="0" linenr="64" column="19" str=")"/>
+    <tok fileIndex="0" linenr="64" column="20" str="--"/>
+    <tok fileIndex="0" linenr="64" column="22" str=";"/>
+    <tok fileIndex="0" linenr="65" column="2" str="}"/>
+    <tok fileIndex="0" linenr="66" column="2" str="else"/>
+    <tok fileIndex="0" linenr="67" column="2" str="{"/>
+    <tok fileIndex="0" linenr="69" column="2" str="}"/>
+    <tok fileIndex="0" linenr="71" column="2" str="return"/>
+    <tok fileIndex="0" linenr="71" column="9" str="state"/>
+    <tok fileIndex="0" linenr="71" column="14" str=";"/>
+    <tok fileIndex="0" linenr="72" column="1" str="}"/>
+    <tok fileIndex="0" linenr="74" column="1" str="FIFO_state"/>
+    <tok fileIndex="0" linenr="74" column="12" str="FIFO_is_full"/>
+    <tok fileIndex="0" linenr="74" column="26" str="("/>
+    <tok fileIndex="0" linenr="74" column="27" str="FIFO_buffer"/>
+    <tok fileIndex="0" linenr="74" column="38" str="*"/>
+    <tok fileIndex="0" linenr="74" column="40" str="fifo_buf"/>
+    <tok fileIndex="0" linenr="74" column="48" str=")"/>
+    <tok fileIndex="0" linenr="75" column="1" str="{"/>
+    <tok fileIndex="0" linenr="76" column="2" str="FIFO_state"/>
+    <tok fileIndex="0" linenr="76" column="13" str="state"/>
+    <tok fileIndex="0" linenr="76" column="18" str=";"/>
+    <tok fileIndex="0" linenr="78" column="2" str="if"/>
+    <tok fileIndex="0" linenr="78" column="4" str="("/>
+    <tok fileIndex="0" linenr="78" column="5" str="fifo_buf"/>
+    <tok fileIndex="0" linenr="78" column="13" str="-&gt;"/>
+    <tok fileIndex="0" linenr="78" column="15" str="base"/>
+    <tok fileIndex="0" linenr="78" column="20" str="&amp;&amp;"/>
+    <tok fileIndex="0" linenr="78" column="23" str="fifo_buf"/>
+    <tok fileIndex="0" linenr="78" column="31" str="-&gt;"/>
+    <tok fileIndex="0" linenr="78" column="33" str="head"/>
+    <tok fileIndex="0" linenr="78" column="38" str="&amp;&amp;"/>
+    <tok fileIndex="0" linenr="78" column="41" str="fifo_buf"/>
+    <tok fileIndex="0" linenr="78" column="49" str="-&gt;"/>
+    <tok fileIndex="0" linenr="78" column="51" str="tail"/>
+    <tok fileIndex="0" linenr="78" column="55" str=")"/>
+    <tok fileIndex="0" linenr="79" column="2" str="{"/>
+    <tok fileIndex="0" linenr="80" column="3" str="if"/>
+    <tok fileIndex="0" linenr="80" column="5" str="("/>
+    <tok fileIndex="0" linenr="80" column="6" str="fifo_buf"/>
+    <tok fileIndex="0" linenr="80" column="14" str="-&gt;"/>
+    <tok fileIndex="0" linenr="80" column="16" str="count"/>
+    <tok fileIndex="0" linenr="80" column="22" str="&gt;="/>
+    <tok fileIndex="0" linenr="80" column="25" str="fifo_buf"/>
+    <tok fileIndex="0" linenr="80" column="33" str="-&gt;"/>
+    <tok fileIndex="0" linenr="80" column="35" str="length"/>
+    <tok fileIndex="0" linenr="80" column="41" str=")"/>
+    <tok fileIndex="0" linenr="81" column="3" str="{"/>
+    <tok fileIndex="0" linenr="82" column="4" str="state"/>
+    <tok fileIndex="0" linenr="82" column="10" str="="/>
+    <tok fileIndex="0" linenr="82" column="12" str="FIFO_FULL"/>
+    <tok fileIndex="0" linenr="82" column="21" str=";"/>
+    <tok fileIndex="0" linenr="83" column="3" str="}"/>
+    <tok fileIndex="0" linenr="84" column="3" str="else"/>
+    <tok fileIndex="0" linenr="85" column="3" str="{"/>
+    <tok fileIndex="0" linenr="86" column="4" str="state"/>
+    <tok fileIndex="0" linenr="86" column="10" str="="/>
+    <tok fileIndex="0" linenr="86" column="12" str="FIFO_NO_ERROR"/>
+    <tok fileIndex="0" linenr="86" column="25" str=";"/>
+    <tok fileIndex="0" linenr="87" column="3" str="}"/>
+    <tok fileIndex="0" linenr="89" column="2" str="}"/>
+    <tok fileIndex="0" linenr="90" column="2" str="else"/>
+    <tok fileIndex="0" linenr="91" column="2" str="{"/>
+    <tok fileIndex="0" linenr="92" column="3" str="state"/>
+    <tok fileIndex="0" linenr="92" column="9" str="="/>
+    <tok fileIndex="0" linenr="92" column="11" str="FIFO_NULL"/>
+    <tok fileIndex="0" linenr="92" column="20" str=";"/>
+    <tok fileIndex="0" linenr="93" column="2" str="}"/>
+    <tok fileIndex="0" linenr="95" column="2" str="return"/>
+    <tok fileIndex="0" linenr="95" column="9" str="state"/>
+    <tok fileIndex="0" linenr="95" column="14" str=";"/>
+    <tok fileIndex="0" linenr="97" column="1" str="}"/>
+    <tok fileIndex="0" linenr="99" column="1" str="FIFO_state"/>
+    <tok fileIndex="0" linenr="99" column="12" str="FIFO_is_empty"/>
+    <tok fileIndex="0" linenr="99" column="26" str="("/>
+    <tok fileIndex="0" linenr="99" column="27" str="FIFO_buffer"/>
+    <tok fileIndex="0" linenr="99" column="38" str="*"/>
+    <tok fileIndex="0" linenr="99" column="40" str="fifo_buf"/>
+    <tok fileIndex="0" linenr="99" column="48" str=")"/>
+    <tok fileIndex="0" linenr="100" column="1" str="{"/>
+    <tok fileIndex="0" linenr="101" column="2" str="FIFO_state"/>
+    <tok fileIndex="0" linenr="101" column="13" str="state"/>
+    <tok fileIndex="0" linenr="101" column="18" str=";"/>
+    <tok fileIndex="0" linenr="103" column="2" str="if"/>
+    <tok fileIndex="0" linenr="103" column="4" str="("/>
+    <tok fileIndex="0" linenr="103" column="5" str="fifo_buf"/>
+    <tok fileIndex="0" linenr="103" column="13" str="-&gt;"/>
+    <tok fileIndex="0" linenr="103" column="15" str="base"/>
+    <tok fileIndex="0" linenr="103" column="20" str="&amp;&amp;"/>
+    <tok fileIndex="0" linenr="103" column="23" str="fifo_buf"/>
+    <tok fileIndex="0" linenr="103" column="31" str="-&gt;"/>
+    <tok fileIndex="0" linenr="103" column="33" str="head"/>
+    <tok fileIndex="0" linenr="103" column="38" str="&amp;&amp;"/>
+    <tok fileIndex="0" linenr="103" column="41" str="fifo_buf"/>
+    <tok fileIndex="0" linenr="103" column="49" str="-&gt;"/>
+    <tok fileIndex="0" linenr="103" column="51" str="tail"/>
+    <tok fileIndex="0" linenr="103" column="55" str=")"/>
+    <tok fileIndex="0" linenr="104" column="2" str="{"/>
+    <tok fileIndex="0" linenr="105" column="3" str="if"/>
+    <tok fileIndex="0" linenr="105" column="5" str="("/>
+    <tok fileIndex="0" linenr="105" column="6" str="fifo_buf"/>
+    <tok fileIndex="0" linenr="105" column="14" str="-&gt;"/>
+    <tok fileIndex="0" linenr="105" column="16" str="count"/>
+    <tok fileIndex="0" linenr="105" column="22" str="&lt;="/>
+    <tok fileIndex="0" linenr="105" column="25" str="0"/>
+    <tok fileIndex="0" linenr="105" column="26" str=")"/>
+    <tok fileIndex="0" linenr="106" column="3" str="{"/>
+    <tok fileIndex="0" linenr="107" column="4" str="state"/>
+    <tok fileIndex="0" linenr="107" column="10" str="="/>
+    <tok fileIndex="0" linenr="107" column="12" str="FIFO_EMPTY"/>
+    <tok fileIndex="0" linenr="107" column="22" str=";"/>
+    <tok fileIndex="0" linenr="108" column="3" str="}"/>
+    <tok fileIndex="0" linenr="109" column="3" str="else"/>
+    <tok fileIndex="0" linenr="110" column="3" str="{"/>
+    <tok fileIndex="0" linenr="111" column="4" str="state"/>
+    <tok fileIndex="0" linenr="111" column="10" str="="/>
+    <tok fileIndex="0" linenr="111" column="12" str="FIFO_NO_ERROR"/>
+    <tok fileIndex="0" linenr="111" column="25" str=";"/>
+    <tok fileIndex="0" linenr="112" column="3" str="}"/>
+    <tok fileIndex="0" linenr="114" column="2" str="}"/>
+    <tok fileIndex="0" linenr="115" column="2" str="else"/>
+    <tok fileIndex="0" linenr="116" column="2" str="{"/>
+    <tok fileIndex="0" linenr="117" column="3" str="state"/>
+    <tok fileIndex="0" linenr="117" column="9" str="="/>
+    <tok fileIndex="0" linenr="117" column="11" str="FIFO_NULL"/>
+    <tok fileIndex="0" linenr="117" column="20" str=";"/>
+    <tok fileIndex="0" linenr="118" column="2" str="}"/>
+    <tok fileIndex="0" linenr="120" column="2" str="return"/>
+    <tok fileIndex="0" linenr="120" column="9" str="state"/>
+    <tok fileIndex="0" linenr="120" column="14" str=";"/>
+    <tok fileIndex="0" linenr="122" column="1" str="}"/>
+    <tok fileIndex="0" linenr="123" column="1" str="FIFO_state"/>
+    <tok fileIndex="0" linenr="123" column="12" str="FIFO_display"/>
+    <tok fileIndex="0" linenr="123" column="26" str="("/>
+    <tok fileIndex="0" linenr="123" column="27" str="FIFO_buffer"/>
+    <tok fileIndex="0" linenr="123" column="38" str="*"/>
+    <tok fileIndex="0" linenr="123" column="40" str="fifo_buf"/>
+    <tok fileIndex="0" linenr="123" column="48" str=")"/>
+    <tok fileIndex="0" linenr="124" column="1" str="{"/>
+    <tok fileIndex="0" linenr="125" column="2" str="FIFO_state"/>
+    <tok fileIndex="0" linenr="125" column="13" str="state"/>
+    <tok fileIndex="0" linenr="125" column="18" str=";"/>
+    <tok fileIndex="0" linenr="126" column="2" str="if"/>
+    <tok fileIndex="0" linenr="126" column="4" str="("/>
+    <tok fileIndex="0" linenr="126" column="5" str="fifo_buf"/>
+    <tok fileIndex="0" linenr="126" column="13" str="-&gt;"/>
+    <tok fileIndex="0" linenr="126" column="15" str="base"/>
+    <tok fileIndex="0" linenr="126" column="20" str="&amp;&amp;"/>
+    <tok fileIndex="0" linenr="126" column="23" str="fifo_buf"/>
+    <tok fileIndex="0" linenr="126" column="31" str="-&gt;"/>
+    <tok fileIndex="0" linenr="126" column="33" str="head"/>
+    <tok fileIndex="0" linenr="126" column="38" str="&amp;&amp;"/>
+    <tok fileIndex="0" linenr="126" column="41" str="fifo_buf"/>
+    <tok fileIndex="0" linenr="126" column="49" str="-&gt;"/>
+    <tok fileIndex="0" linenr="126" column="51" str="tail"/>
+    <tok fileIndex="0" linenr="126" column="55" str=")"/>
+    <tok fileIndex="0" linenr="127" column="2" str="{"/>
+    <tok fileIndex="0" linenr="128" column="3" str="sint16"/>
+    <tok fileIndex="0" linenr="128" column="10" str="count"/>
+    <tok fileIndex="0" linenr="128" column="16" str="="/>
+    <tok fileIndex="0" linenr="128" column="18" str="0"/>
+    <tok fileIndex="0" linenr="128" column="20" str=","/>
+    <tok fileIndex="0" linenr="128" column="21" str="index"/>
+    <tok fileIndex="0" linenr="128" column="27" str="="/>
+    <tok fileIndex="0" linenr="128" column="28" str="0"/>
+    <tok fileIndex="0" linenr="128" column="29" str=";"/>
+    <tok fileIndex="0" linenr="129" column="3" str="for"/>
+    <tok fileIndex="0" linenr="129" column="6" str="("/>
+    <tok fileIndex="0" linenr="129" column="7" str="count"/>
+    <tok fileIndex="0" linenr="129" column="13" str="="/>
+    <tok fileIndex="0" linenr="129" column="15" str="0"/>
+    <tok fileIndex="0" linenr="129" column="16" str=";"/>
+    <tok fileIndex="0" linenr="129" column="17" str="count"/>
+    <tok fileIndex="0" linenr="129" column="23" str="&lt;"/>
+    <tok fileIndex="0" linenr="129" column="25" str="fifo_buf"/>
+    <tok fileIndex="0" linenr="129" column="33" str="-&gt;"/>
+    <tok fileIndex="0" linenr="129" column="35" str="count"/>
+    <tok fileIndex="0" linenr="129" column="40" str=";"/>
+    <tok fileIndex="0" linenr="129" column="41" str="count"/>
+    <tok fileIndex="0" linenr="129" column="46" str="++"/>
+    <tok fileIndex="0" linenr="129" column="49" str=","/>
+    <tok fileIndex="0" linenr="129" column="50" str="index"/>
+    <tok fileIndex="0" linenr="129" column="55" str="++"/>
+    <tok fileIndex="0" linenr="129" column="57" str=")"/>
+    <tok fileIndex="0" linenr="130" column="3" str="{"/>
+    <tok fileIndex="0" linenr="131" column="4" str="if"/>
+    <tok fileIndex="0" linenr="131" column="6" str="("/>
+    <tok fileIndex="0" linenr="131" column="7" str="fifo_buf"/>
+    <tok fileIndex="0" linenr="131" column="15" str="-&gt;"/>
+    <tok fileIndex="0" linenr="131" column="17" str="head"/>
+    <tok fileIndex="0" linenr="131" column="22" str="+"/>
+    <tok fileIndex="0" linenr="131" column="24" str="index"/>
+    <tok fileIndex="0" linenr="131" column="30" str="=="/>
+    <tok fileIndex="0" linenr="131" column="33" str="fifo_buf"/>
+    <tok fileIndex="0" linenr="131" column="41" str="-&gt;"/>
+    <tok fileIndex="0" linenr="131" column="43" str="base"/>
+    <tok fileIndex="0" linenr="131" column="48" str="+"/>
+    <tok fileIndex="0" linenr="131" column="49" str="fifo_buf"/>
+    <tok fileIndex="0" linenr="131" column="57" str="-&gt;"/>
+    <tok fileIndex="0" linenr="131" column="59" str="length"/>
+    <tok fileIndex="0" linenr="131" column="65" str=")"/>
+    <tok fileIndex="0" linenr="132" column="4" str="{"/>
+    <tok fileIndex="0" linenr="133" column="5" str="index"/>
+    <tok fileIndex="0" linenr="133" column="11" str="="/>
+    <tok fileIndex="0" linenr="133" column="13" str="("/>
+    <tok fileIndex="0" linenr="133" column="14" str="sint16"/>
+    <tok fileIndex="0" linenr="133" column="20" str=")"/>
+    <tok fileIndex="0" linenr="133" column="21" str="("/>
+    <tok fileIndex="0" linenr="133" column="22" str="index"/>
+    <tok fileIndex="0" linenr="133" column="28" str="-"/>
+    <tok fileIndex="0" linenr="133" column="30" str="fifo_buf"/>
+    <tok fileIndex="0" linenr="133" column="38" str="-&gt;"/>
+    <tok fileIndex="0" linenr="133" column="40" str="length"/>
+    <tok fileIndex="0" linenr="133" column="46" str=")"/>
+    <tok fileIndex="0" linenr="133" column="47" str=";"/>
+    <tok fileIndex="0" linenr="134" column="4" str="}"/>
+    <tok fileIndex="0" linenr="135" column="4" str="printf"/>
+    <tok fileIndex="0" linenr="135" column="10" str="("/>
+    <tok fileIndex="0" linenr="135" column="11" str="&quot;%d\n&quot;"/>
+    <tok fileIndex="0" linenr="135" column="17" str=","/>
+    <tok fileIndex="0" linenr="135" column="18" str="*"/>
+    <tok fileIndex="0" linenr="135" column="19" str="("/>
+    <tok fileIndex="0" linenr="135" column="20" str="fifo_buf"/>
+    <tok fileIndex="0" linenr="135" column="28" str="-&gt;"/>
+    <tok fileIndex="0" linenr="135" column="30" str="head"/>
+    <tok fileIndex="0" linenr="135" column="34" str="+"/>
+    <tok fileIndex="0" linenr="135" column="35" str="index"/>
+    <tok fileIndex="0" linenr="135" column="40" str=")"/>
+    <tok fileIndex="0" linenr="135" column="41" str=")"/>
+    <tok fileIndex="0" linenr="135" column="42" str=";"/>
+    <tok fileIndex="0" linenr="137" column="3" str="}"/>
+    <tok fileIndex="0" linenr="138" column="2" str="}"/>
+    <tok fileIndex="0" linenr="139" column="2" str="else"/>
+    <tok fileIndex="0" linenr="140" column="2" str="{"/>
+    <tok fileIndex="0" linenr="141" column="3" str="state"/>
+    <tok fileIndex="0" linenr="141" column="9" str="="/>
+    <tok fileIndex="0" linenr="141" column="11" str="FIFO_NULL"/>
+    <tok fileIndex="0" linenr="141" column="20" str=";"/>
+    <tok fileIndex="0" linenr="142" column="2" str="}"/>
+    <tok fileIndex="0" linenr="143" column="2" str="return"/>
+    <tok fileIndex="0" linenr="143" column="9" str="state"/>
+    <tok fileIndex="0" linenr="143" column="14" str=";"/>
+    <tok fileIndex="0" linenr="144" column="1" str="}"/>
+  </rawtokens>
+  <suppressions>
+  </suppressions>
+<dump cfg="">
+  <standards>
+    <c version="c11"/>
+    <cpp version="c++20"/>
+  </standards>
+  <directivelist>
+    <directive file="fifo.c" linenr="7" str="#include &quot;fifo.h&quot;"/>
+    <directive file="fifo.c" linenr="8" str="#include &quot;platform_types.h&quot;"/>
+    <directive file="fifo.c" linenr="9" str="#include &quot;stdio.h&quot;"/>
+    <directive file="fifo.h" linenr="8" str="#ifndef FIFO_H_"/>
+    <directive file="fifo.h" linenr="9" str="#define FIFO_H_"/>
+    <directive file="fifo.h" linenr="11" str="#include &quot;platform_types.h&quot;"/>
+    <directive file="fifo.h" linenr="14" str="#define element_type uint8"/>
+    <directive file="fifo.h" linenr="34" str="#define FIFO_INIT(FIFO_BUF,SIZE) element_type FIFO_BUF##_base_arr[SIZE]; FIFO_buffer FIFO_BUF##_fifo; FIFO_init(&amp;FIFO_BUF##_fifo,FIFO_BUF##_base_arr,SIZE)"/>
+    <directive file="fifo.h" linenr="47" str="#endif"/>
+    <directive file="platform_types.h" linenr="12" str="#ifndef PLATFORM_TYPES_H_"/>
+    <directive file="platform_types.h" linenr="13" str="#define PLATFORM_TYPES_H_"/>
+    <directive file="platform_types.h" linenr="15" str="#define CPU_TYPE_8 8"/>
+    <directive file="platform_types.h" linenr="16" str="#define CPU_TYPE_16 16"/>
+    <directive file="platform_types.h" linenr="17" str="#define CPU_TYPE_32 32"/>
+    <directive file="platform_types.h" linenr="18" str="#define CPU_TYPE_64 64"/>
+    <directive file="platform_types.h" linenr="19" str="#define MSB_FIRST 0"/>
+    <directive file="platform_types.h" linenr="20" str="#define LSB_FIRST 1"/>
+    <directive file="platform_types.h" linenr="21" str="#define HIGH_BYTE_FIRST 0"/>
+    <directive file="platform_types.h" linenr="22" str="#define LOW_BYTE_FIRST 1"/>
+    <directive file="platform_types.h" linenr="25" str="#ifndef TRUE"/>
+    <directive file="platform_types.h" linenr="26" str="#define TRUE 1"/>
+    <directive file="platform_types.h" linenr="27" str="#endif"/>
+    <directive file="platform_types.h" linenr="29" str="#ifndef FALSE"/>
+    <directive file="platform_types.h" linenr="30" str="#define FALSE 0"/>
+    <directive file="platform_types.h" linenr="31" str="#endif"/>
+    <directive file="platform_types.h" linenr="34" str="#define CPU_TYPE CPU_TYPE_32"/>
+    <directive file="platform_types.h" linenr="35" str="#define CPU_BIT_ORDER LSB_FIRST"/>
+    <directive file="platform_types.h" linenr="36" str="#define CPU_BYTE_ORDER LOW_BYTE_FIRST"/>
+    <directive file="platform_types.h" linenr="57" str="#endif"/>
+  </directivelist>
+  <tokenlist>
+    <token id="0000018B1CCD0F10" file="fifo.h" linenr="17" column="9" str="struct" scope="0000018B1CA83450" type="name"/>
+    <token id="0000018B1CAB26B0" file="fifo.h" linenr="17" column="0" str="FIFO_buffer" scope="0000018B1CA83450" type="name" type-scope="0000018B1CA83DE0"/>
+    <token id="0000018B1CADE290" file="fifo.h" linenr="18" column="1" str="{" scope="0000018B1CA83DE0" link="0000018B1CADEA10"/>
+    <token id="0000018B1CADE9B0" file="fifo.h" linenr="19" column="2" str="uint8" scope="0000018B1CA83DE0" type="name" isExpandedMacro="true" astParent="0000018B1CADE590"/>
+    <token id="0000018B1CADE590" file="fifo.h" linenr="19" column="14" str="*" scope="0000018B1CA83DE0" type="op" isArithmeticalOp="true" astOperand1="0000018B1CADE9B0" astOperand2="0000018B1CADEE90"/>
+    <token id="0000018B1CADEE90" file="fifo.h" linenr="19" column="16" str="base" scope="0000018B1CA83DE0" type="name" varId="1" variable="0000018B1D0A2660" astParent="0000018B1CADE590"/>
+    <token id="0000018B1CADE110" file="fifo.h" linenr="19" column="20" str=";" scope="0000018B1CA83DE0"/>
+    <token id="0000018B1CADEEF0" file="fifo.h" linenr="20" column="2" str="uint8" scope="0000018B1CA83DE0" type="name" isExpandedMacro="true" astParent="0000018B1CADE8F0"/>
+    <token id="0000018B1CADE8F0" file="fifo.h" linenr="20" column="14" str="*" scope="0000018B1CA83DE0" type="op" isArithmeticalOp="true" astOperand1="0000018B1CADEEF0" astOperand2="0000018B1CADE170"/>
+    <token id="0000018B1CADE170" file="fifo.h" linenr="20" column="16" str="head" scope="0000018B1CA83DE0" type="name" varId="2" variable="0000018B1D0A2F20" astParent="0000018B1CADE8F0"/>
+    <token id="0000018B1CADE1D0" file="fifo.h" linenr="20" column="20" str=";" scope="0000018B1CA83DE0"/>
+    <token id="0000018B1CADE230" file="fifo.h" linenr="21" column="2" str="uint8" scope="0000018B1CA83DE0" type="name" isExpandedMacro="true" astParent="0000018B1CADE2F0"/>
+    <token id="0000018B1CADE2F0" file="fifo.h" linenr="21" column="14" str="*" scope="0000018B1CA83DE0" type="op" isArithmeticalOp="true" astOperand1="0000018B1CADE230" astOperand2="0000018B1CADECB0"/>
+    <token id="0000018B1CADECB0" file="fifo.h" linenr="21" column="16" str="tail" scope="0000018B1CA83DE0" type="name" varId="3" variable="0000018B1D0A2820" astParent="0000018B1CADE2F0"/>
+    <token id="0000018B1CADE350" file="fifo.h" linenr="21" column="20" str=";" scope="0000018B1CA83DE0"/>
+    <token id="0000018B1CADED10" file="fifo.h" linenr="22" column="0" str="short" scope="0000018B1CA83DE0" type="name" isUnsigned="true"/>
+    <token id="0000018B1CADE3B0" file="fifo.h" linenr="22" column="9" str="length" scope="0000018B1CA83DE0" type="name" varId="4" variable="0000018B1D0A3000" valueType-type="short" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000018B1CADE950" file="fifo.h" linenr="22" column="15" str=";" scope="0000018B1CA83DE0"/>
+    <token id="0000018B1CADE410" file="fifo.h" linenr="23" column="0" str="short" scope="0000018B1CA83DE0" type="name" isUnsigned="true"/>
+    <token id="0000018B1CADE470" file="fifo.h" linenr="23" column="9" str="count" scope="0000018B1CA83DE0" type="name" varId="5" variable="0000018B1D0A2900" valueType-type="short" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000018B1CADE530" file="fifo.h" linenr="23" column="14" str=";" scope="0000018B1CA83DE0"/>
+    <token id="0000018B1CADEA10" file="fifo.h" linenr="24" column="1" str="}" scope="0000018B1CA83DE0" link="0000018B1CADE290"/>
+    <token id="0000018B1CAB2D10" file="fifo.h" linenr="24" column="0" str=";" scope="0000018B1CA83450"/>
+    <token id="0000018B1CADE650" file="fifo.h" linenr="26" column="9" str="enum" scope="0000018B1CA83450" type="name"/>
+    <token id="0000018B1CAB2170" file="fifo.h" linenr="26" column="0" str="FIFO_state" scope="0000018B1CA83450" type="name" type-scope="0000018B1CA83560"/>
+    <token id="0000018B1CADE6B0" file="fifo.h" linenr="27" column="1" str="{" scope="0000018B1CA83560" link="0000018B1CADED70"/>
+    <token id="0000018B1CADE7D0" file="fifo.h" linenr="28" column="2" str="FIFO_NO_ERROR" scope="0000018B1CA83560" type="name" values="0000018B1CCD2E60" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1CADE830" file="fifo.h" linenr="28" column="15" str="," scope="0000018B1CA83560"/>
+    <token id="0000018B1CADE890" file="fifo.h" linenr="29" column="2" str="FIFO_FULL" scope="0000018B1CA83560" type="name" values="0000018B1CCD3540" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1CADEA70" file="fifo.h" linenr="29" column="11" str="," scope="0000018B1CA83560"/>
+    <token id="0000018B1CADEAD0" file="fifo.h" linenr="30" column="2" str="FIFO_EMPTY" scope="0000018B1CA83560" type="name" values="0000018B1CCD3000" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1CADEB90" file="fifo.h" linenr="30" column="12" str="," scope="0000018B1CA83560"/>
+    <token id="0000018B1CADEBF0" file="fifo.h" linenr="31" column="2" str="FIFO_NULL" scope="0000018B1CA83560" type="name" values="0000018B1CCD3020" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1CADED70" file="fifo.h" linenr="32" column="1" str="}" scope="0000018B1CA83560" link="0000018B1CADE6B0"/>
+    <token id="0000018B1CAB1750" file="fifo.h" linenr="32" column="0" str=";" scope="0000018B1CA83450"/>
+    <token id="0000018B1CAB23B0" file="fifo.h" linenr="39" column="1" str="FIFO_state" scope="0000018B1CA83450" type="name" type-scope="0000018B1CA83560"/>
+    <token id="0000018B1D46EA80" file="fifo.h" linenr="39" column="12" str="FIFO_init" scope="0000018B1CA83450" type="name" function="0000018B1CAF28C0"/>
+    <token id="0000018B1D46F7A0" file="fifo.h" linenr="39" column="26" str="(" scope="0000018B1CA83450" link="0000018B1D46F500" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D46E4E0" file="fifo.h" linenr="39" column="27" str="struct" scope="0000018B1CA83450" type="name"/>
+    <token id="0000018B1CAB2B30" file="fifo.h" linenr="39" column="0" str="FIFO_buffer" scope="0000018B1CA83450" type="name" type-scope="0000018B1CA83DE0" astParent="0000018B1D46F4A0"/>
+    <token id="0000018B1D46F4A0" file="fifo.h" linenr="39" column="38" str="*" scope="0000018B1CA83450" type="op" isArithmeticalOp="true" astParent="0000018B1D46F260" astOperand1="0000018B1CAB2B30" astOperand2="0000018B1D46E7E0"/>
+    <token id="0000018B1D46E7E0" file="fifo.h" linenr="39" column="40" str="fifo_buf" scope="0000018B1CA83450" type="name" varId="6" astParent="0000018B1D46F4A0"/>
+    <token id="0000018B1D46F260" file="fifo.h" linenr="39" column="48" str="," scope="0000018B1CA83450" astParent="0000018B1D46F380" astOperand1="0000018B1D46F4A0" astOperand2="0000018B1D46EFC0"/>
+    <token id="0000018B1D46F140" file="fifo.h" linenr="39" column="49" str="uint8" scope="0000018B1CA83450" type="name" isExpandedMacro="true" astParent="0000018B1D46EFC0"/>
+    <token id="0000018B1D46EFC0" file="fifo.h" linenr="39" column="61" str="*" scope="0000018B1CA83450" type="op" isArithmeticalOp="true" astParent="0000018B1D46F260" astOperand1="0000018B1D46F140" astOperand2="0000018B1D46EA20"/>
+    <token id="0000018B1D46EA20" file="fifo.h" linenr="39" column="63" str="arr" scope="0000018B1CA83450" type="name" varId="7" astParent="0000018B1D46EFC0"/>
+    <token id="0000018B1D46F380" file="fifo.h" linenr="39" column="66" str="," scope="0000018B1CA83450" astOperand1="0000018B1D46F260" astOperand2="0000018B1D46F200"/>
+    <token id="0000018B1D46E240" file="fifo.h" linenr="39" column="0" str="short" scope="0000018B1CA83450" type="name" isUnsigned="true"/>
+    <token id="0000018B1D46F200" file="fifo.h" linenr="39" column="74" str="length" scope="0000018B1CA83450" type="name" varId="8" astParent="0000018B1D46F380"/>
+    <token id="0000018B1D46F500" file="fifo.h" linenr="39" column="80" str=")" scope="0000018B1CA83450" link="0000018B1D46F7A0"/>
+    <token id="0000018B1D46E2A0" file="fifo.h" linenr="39" column="81" str=";" scope="0000018B1CA83450"/>
+    <token id="0000018B1D46EC00" file="fifo.h" linenr="40" column="1" str="FIFO_state" scope="0000018B1CA83450" type="name" type-scope="0000018B1CA83560"/>
+    <token id="0000018B1D46EB40" file="fifo.h" linenr="40" column="12" str="FIFO_enqueue" scope="0000018B1CA83450" type="name" function="0000018B1CAF2DC0"/>
+    <token id="0000018B1D46F800" file="fifo.h" linenr="40" column="26" str="(" scope="0000018B1CA83450" link="0000018B1D46EBA0" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D46E780" file="fifo.h" linenr="40" column="27" str="struct" scope="0000018B1CA83450" type="name"/>
+    <token id="0000018B1CAB2830" file="fifo.h" linenr="40" column="0" str="FIFO_buffer" scope="0000018B1CA83450" type="name" type-scope="0000018B1CA83DE0" astParent="0000018B1D46F3E0"/>
+    <token id="0000018B1D46F3E0" file="fifo.h" linenr="40" column="38" str="*" scope="0000018B1CA83450" type="op" isArithmeticalOp="true" astParent="0000018B1D46E840" astOperand1="0000018B1CAB2830" astOperand2="0000018B1D46E720"/>
+    <token id="0000018B1D46E720" file="fifo.h" linenr="40" column="40" str="fifo_buf" scope="0000018B1CA83450" type="name" varId="9" astParent="0000018B1D46F3E0"/>
+    <token id="0000018B1D46E840" file="fifo.h" linenr="40" column="48" str="," scope="0000018B1CA83450" astOperand1="0000018B1D46F3E0" astOperand2="0000018B1D46E180"/>
+    <token id="0000018B1D46EAE0" file="fifo.h" linenr="40" column="49" str="uint8" scope="0000018B1CA83450" type="name" isExpandedMacro="true"/>
+    <token id="0000018B1D46E180" file="fifo.h" linenr="40" column="63" str="item" scope="0000018B1CA83450" type="name" varId="10" astParent="0000018B1D46E840"/>
+    <token id="0000018B1D46EBA0" file="fifo.h" linenr="40" column="67" str=")" scope="0000018B1CA83450" link="0000018B1D46F800"/>
+    <token id="0000018B1D46E060" file="fifo.h" linenr="40" column="68" str=";" scope="0000018B1CA83450"/>
+    <token id="0000018B1D46E540" file="fifo.h" linenr="41" column="1" str="FIFO_state" scope="0000018B1CA83450" type="name" type-scope="0000018B1CA83560"/>
+    <token id="0000018B1D46F560" file="fifo.h" linenr="41" column="12" str="FIFO_dequeue" scope="0000018B1CA83450" type="name" function="0000018B1CAF2BE0"/>
+    <token id="0000018B1D46E8A0" file="fifo.h" linenr="41" column="26" str="(" scope="0000018B1CA83450" link="0000018B1D46ECC0" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D46F2C0" file="fifo.h" linenr="41" column="27" str="struct" scope="0000018B1CA83450" type="name"/>
+    <token id="0000018B1CAB2410" file="fifo.h" linenr="41" column="0" str="FIFO_buffer" scope="0000018B1CA83450" type="name" type-scope="0000018B1CA83DE0" astParent="0000018B1D46E0C0"/>
+    <token id="0000018B1D46E0C0" file="fifo.h" linenr="41" column="38" str="*" scope="0000018B1CA83450" type="op" isArithmeticalOp="true" astParent="0000018B1D46E600" astOperand1="0000018B1CAB2410" astOperand2="0000018B1D46EC60"/>
+    <token id="0000018B1D46EC60" file="fifo.h" linenr="41" column="40" str="fifo_buf" scope="0000018B1CA83450" type="name" varId="11" astParent="0000018B1D46E0C0"/>
+    <token id="0000018B1D46E600" file="fifo.h" linenr="41" column="48" str="," scope="0000018B1CA83450" astOperand1="0000018B1D46E0C0" astOperand2="0000018B1D46F320"/>
+    <token id="0000018B1D46E6C0" file="fifo.h" linenr="41" column="49" str="uint8" scope="0000018B1CA83450" type="name" isExpandedMacro="true" astParent="0000018B1D46F320"/>
+    <token id="0000018B1D46F320" file="fifo.h" linenr="41" column="61" str="*" scope="0000018B1CA83450" type="op" isArithmeticalOp="true" astParent="0000018B1D46E600" astOperand1="0000018B1D46E6C0" astOperand2="0000018B1D46F020"/>
+    <token id="0000018B1D46F020" file="fifo.h" linenr="41" column="63" str="item" scope="0000018B1CA83450" type="name" varId="12" astParent="0000018B1D46F320"/>
+    <token id="0000018B1D46ECC0" file="fifo.h" linenr="41" column="67" str=")" scope="0000018B1CA83450" link="0000018B1D46E8A0"/>
+    <token id="0000018B1D46ED20" file="fifo.h" linenr="41" column="68" str=";" scope="0000018B1CA83450"/>
+    <token id="0000018B1D46E1E0" file="fifo.h" linenr="42" column="1" str="FIFO_state" scope="0000018B1CA83450" type="name" type-scope="0000018B1CA83560"/>
+    <token id="0000018B1D46ED80" file="fifo.h" linenr="42" column="12" str="FIFO_is_full" scope="0000018B1CA83450" type="name" function="0000018B1CAF1F60"/>
+    <token id="0000018B1D46EE40" file="fifo.h" linenr="42" column="26" str="(" scope="0000018B1CA83450" link="0000018B1D46F680" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D46F620" file="fifo.h" linenr="42" column="27" str="struct" scope="0000018B1CA83450" type="name"/>
+    <token id="0000018B1CAB20B0" file="fifo.h" linenr="42" column="0" str="FIFO_buffer" scope="0000018B1CA83450" type="name" type-scope="0000018B1CA83DE0" astParent="0000018B1D46F440"/>
+    <token id="0000018B1D46F440" file="fifo.h" linenr="42" column="38" str="*" scope="0000018B1CA83450" type="op" isArithmeticalOp="true" astOperand1="0000018B1CAB20B0" astOperand2="0000018B1D46F080"/>
+    <token id="0000018B1D46F080" file="fifo.h" linenr="42" column="40" str="fifo_buf" scope="0000018B1CA83450" type="name" varId="13" astParent="0000018B1D46F440"/>
+    <token id="0000018B1D46F680" file="fifo.h" linenr="42" column="48" str=")" scope="0000018B1CA83450" link="0000018B1D46EE40"/>
+    <token id="0000018B1D46EF60" file="fifo.h" linenr="42" column="49" str=";" scope="0000018B1CA83450"/>
+    <token id="0000018B1D46E300" file="fifo.h" linenr="43" column="1" str="FIFO_state" scope="0000018B1CA83450" type="name" type-scope="0000018B1CA83560"/>
+    <token id="0000018B1D46E360" file="fifo.h" linenr="43" column="12" str="FIFO_is_empty" scope="0000018B1CA83450" type="name" function="0000018B1CAF2960"/>
+    <token id="0000018B1D46F5C0" file="fifo.h" linenr="43" column="26" str="(" scope="0000018B1CA83450" link="0000018B1D46F740" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D46F6E0" file="fifo.h" linenr="43" column="27" str="struct" scope="0000018B1CA83450" type="name"/>
+    <token id="0000018B1CAB1DB0" file="fifo.h" linenr="43" column="0" str="FIFO_buffer" scope="0000018B1CA83450" type="name" type-scope="0000018B1CA83DE0" astParent="0000018B1D46EDE0"/>
+    <token id="0000018B1D46EDE0" file="fifo.h" linenr="43" column="38" str="*" scope="0000018B1CA83450" type="op" isArithmeticalOp="true" astOperand1="0000018B1CAB1DB0" astOperand2="0000018B1D46E660"/>
+    <token id="0000018B1D46E660" file="fifo.h" linenr="43" column="40" str="fifo_buf" scope="0000018B1CA83450" type="name" varId="14" astParent="0000018B1D46EDE0"/>
+    <token id="0000018B1D46F740" file="fifo.h" linenr="43" column="48" str=")" scope="0000018B1CA83450" link="0000018B1D46F5C0"/>
+    <token id="0000018B1D46E480" file="fifo.h" linenr="43" column="49" str=";" scope="0000018B1CA83450"/>
+    <token id="0000018B1D46E3C0" file="fifo.h" linenr="44" column="1" str="FIFO_state" scope="0000018B1CA83450" type="name" type-scope="0000018B1CA83560"/>
+    <token id="0000018B1D46E420" file="fifo.h" linenr="44" column="12" str="FIFO_display" scope="0000018B1CA83450" type="name" function="0000018B1D0F69F0"/>
+    <token id="0000018B1D46EEA0" file="fifo.h" linenr="44" column="26" str="(" scope="0000018B1CA83450" link="0000018B1D46F1A0" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D46EF00" file="fifo.h" linenr="44" column="27" str="struct" scope="0000018B1CA83450" type="name"/>
+    <token id="0000018B1CAB2B90" file="fifo.h" linenr="44" column="0" str="FIFO_buffer" scope="0000018B1CA83450" type="name" type-scope="0000018B1CA83DE0" astParent="0000018B1D46F0E0"/>
+    <token id="0000018B1D46F0E0" file="fifo.h" linenr="44" column="38" str="*" scope="0000018B1CA83450" type="op" isArithmeticalOp="true" astOperand1="0000018B1CAB2B90" astOperand2="0000018B1D46E5A0"/>
+    <token id="0000018B1D46E5A0" file="fifo.h" linenr="44" column="40" str="fifo_buf" scope="0000018B1CA83450" type="name" varId="15" astParent="0000018B1D46F0E0"/>
+    <token id="0000018B1D46F1A0" file="fifo.h" linenr="44" column="48" str=")" scope="0000018B1CA83450" link="0000018B1D46EEA0"/>
+    <token id="0000018B1D46E900" file="fifo.h" linenr="44" column="49" str=";" scope="0000018B1CA83450"/>
+    <token id="0000018B1D46E960" file="fifo.c" linenr="11" column="1" str="FIFO_state" scope="0000018B1CA83450" type="name" type-scope="0000018B1CA83560"/>
+    <token id="0000018B1D46FBC0" file="fifo.c" linenr="11" column="12" str="FIFO_init" scope="0000018B1CA83450" type="name" function="0000018B1CAF28C0"/>
+    <token id="0000018B1D46FDA0" file="fifo.c" linenr="11" column="26" str="(" scope="0000018B1CA83450" link="0000018B1D46FD40" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D46FE00" file="fifo.c" linenr="11" column="27" str="struct" scope="0000018B1CA83450" type="name"/>
+    <token id="0000018B1CAB2290" file="fifo.c" linenr="11" column="0" str="FIFO_buffer" scope="0000018B1CA83450" type="name" type-scope="0000018B1CA83DE0" astParent="0000018B1D46F980"/>
+    <token id="0000018B1D46F980" file="fifo.c" linenr="11" column="38" str="*" scope="0000018B1CA83450" type="op" isArithmeticalOp="true" astParent="0000018B1D46F920" astOperand1="0000018B1CAB2290" astOperand2="0000018B1D46FE60"/>
+    <token id="0000018B1D46FE60" file="fifo.c" linenr="11" column="40" str="fifo_buf" scope="0000018B1CA83450" type="name" varId="16" variable="0000018B1D0A4110" astParent="0000018B1D46F980" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="0000018B1CA83DE0"/>
+    <token id="0000018B1D46F920" file="fifo.c" linenr="11" column="48" str="," scope="0000018B1CA83450" astParent="0000018B1D46FF20" astOperand1="0000018B1D46F980" astOperand2="0000018B1D46FEC0"/>
+    <token id="0000018B1D46FAA0" file="fifo.c" linenr="11" column="49" str="uint8" scope="0000018B1CA83450" type="name" isExpandedMacro="true" astParent="0000018B1D46FEC0"/>
+    <token id="0000018B1D46FEC0" file="fifo.c" linenr="11" column="61" str="*" scope="0000018B1CA83450" type="op" isArithmeticalOp="true" astParent="0000018B1D46F920" astOperand1="0000018B1D46FAA0" astOperand2="0000018B1D46FCE0"/>
+    <token id="0000018B1D46FCE0" file="fifo.c" linenr="11" column="63" str="base_arr" scope="0000018B1CA83450" type="name" varId="17" variable="0000018B1D0A48F0" astParent="0000018B1D46FEC0"/>
+    <token id="0000018B1D46FF20" file="fifo.c" linenr="11" column="71" str="," scope="0000018B1CA83450" astOperand1="0000018B1D46F920" astOperand2="0000018B1D46FF80"/>
+    <token id="0000018B1D46FB60" file="fifo.c" linenr="11" column="0" str="short" scope="0000018B1CA83450" type="name" isUnsigned="true"/>
+    <token id="0000018B1D46FF80" file="fifo.c" linenr="11" column="79" str="length" scope="0000018B1CA83450" type="name" varId="18" variable="0000018B1D0A3380" astParent="0000018B1D46FF20" valueType-type="short" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000018B1D46FD40" file="fifo.c" linenr="11" column="85" str=")" scope="0000018B1CA83450" link="0000018B1D46FDA0"/>
+    <token id="0000018B1D46F860" file="fifo.c" linenr="12" column="1" str="{" scope="0000018B1CA83780" link="0000018B1D4713F0"/>
+    <token id="0000018B1D46FB00" file="fifo.c" linenr="13" column="2" str="FIFO_state" scope="0000018B1CA83780" type="name" type-scope="0000018B1CA83560"/>
+    <token id="0000018B1D46F8C0" file="fifo.c" linenr="13" column="13" str="state" scope="0000018B1CA83780" type="name" varId="19" variable="0000018B1D0A14E0" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D46FC20" file="fifo.c" linenr="13" column="18" str=";" scope="0000018B1CA83780"/>
+    <token id="0000018B1D46FC80" file="fifo.c" linenr="15" column="3" str="if" scope="0000018B1CA83780" type="name" astParent="0000018B1D46F9E0"/>
+    <token id="0000018B1D46F9E0" file="fifo.c" linenr="15" column="5" str="(" scope="0000018B1CA83780" link="0000018B1D470250" astOperand1="0000018B1D46FC80" astOperand2="0000018B1D46FA40"/>
+    <token id="0000018B1D46FA40" file="fifo.c" linenr="15" column="6" str="!" scope="0000018B1CA83780" type="op" isLogicalOp="true" astParent="0000018B1D46F9E0" astOperand1="0000018B1D471570" valueType-type="bool" valueType-reference="None"/>
+    <token id="0000018B1D471570" file="fifo.c" linenr="15" column="7" str="base_arr" scope="0000018B1CA83780" type="name" varId="17" variable="0000018B1D0A48F0" astParent="0000018B1D46FA40"/>
+    <token id="0000018B1D470250" file="fifo.c" linenr="15" column="15" str=")" scope="0000018B1CA83780" link="0000018B1D46F9E0"/>
+    <token id="0000018B1D4702B0" file="fifo.c" linenr="16" column="3" str="{" scope="0000018B1CA83EF0" link="0000018B1D471150"/>
+    <token id="0000018B1D470BB0" file="fifo.c" linenr="17" column="4" str="state" scope="0000018B1CA83EF0" type="name" varId="19" variable="0000018B1D0A14E0" astParent="0000018B1D470970" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D470970" file="fifo.c" linenr="17" column="10" str="=" scope="0000018B1CA83EF0" type="op" isAssignmentOp="true" astOperand1="0000018B1D470BB0" astOperand2="0000018B1D470490" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D470490" file="fifo.c" linenr="17" column="12" str="FIFO_NULL" scope="0000018B1CA83EF0" type="name" values="0000018B1CCD2F40" astParent="0000018B1D470970" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D471690" file="fifo.c" linenr="17" column="21" str=";" scope="0000018B1CA83EF0"/>
+    <token id="0000018B1D471150" file="fifo.c" linenr="18" column="3" str="}" scope="0000018B1CA83EF0" link="0000018B1D4702B0"/>
+    <token id="0000018B1D471270" file="fifo.c" linenr="19" column="3" str="else" scope="0000018B1CA83780" type="name"/>
+    <token id="0000018B1D4704F0" file="fifo.c" linenr="20" column="3" str="{" scope="0000018B1CA83890" link="0000018B1D4703D0"/>
+    <token id="0000018B1D4709D0" file="fifo.c" linenr="21" column="4" str="fifo_buf" scope="0000018B1CA83890" type="name" varId="16" variable="0000018B1D0A4110" astParent="0000018B1D470B50" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="0000018B1CA83DE0"/>
+    <token id="0000018B1D470B50" file="fifo.c" linenr="21" column="12" str="." scope="0000018B1CA83890" astParent="0000018B1D4715D0" astOperand1="0000018B1D4709D0" astOperand2="0000018B1D471030" originalName="->"/>
+    <token id="0000018B1D471030" file="fifo.c" linenr="21" column="14" str="base" scope="0000018B1CA83890" type="name" varId="20" variable="0000018B1D0A2660" astParent="0000018B1D470B50"/>
+    <token id="0000018B1D4715D0" file="fifo.c" linenr="21" column="19" str="=" scope="0000018B1CA83890" type="op" isAssignmentOp="true" astOperand1="0000018B1D470B50" astOperand2="0000018B1D470D90"/>
+    <token id="0000018B1D470D90" file="fifo.c" linenr="21" column="21" str="base_arr" scope="0000018B1CA83890" type="name" varId="17" variable="0000018B1D0A48F0" values="0000018B1CCD31A0" astParent="0000018B1D4715D0"/>
+    <token id="0000018B1D4710F0" file="fifo.c" linenr="21" column="29" str=";" scope="0000018B1CA83890"/>
+    <token id="0000018B1D470190" file="fifo.c" linenr="22" column="4" str="fifo_buf" scope="0000018B1CA83890" type="name" varId="16" variable="0000018B1D0A4110" astParent="0000018B1D470F10" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="0000018B1CA83DE0"/>
+    <token id="0000018B1D470F10" file="fifo.c" linenr="22" column="12" str="." scope="0000018B1CA83890" astParent="0000018B1D470A30" astOperand1="0000018B1D470190" astOperand2="0000018B1D4711B0" originalName="->"/>
+    <token id="0000018B1D4711B0" file="fifo.c" linenr="22" column="14" str="head" scope="0000018B1CA83890" type="name" varId="21" variable="0000018B1D0A2F20" astParent="0000018B1D470F10"/>
+    <token id="0000018B1D470A30" file="fifo.c" linenr="22" column="19" str="=" scope="0000018B1CA83890" type="op" isAssignmentOp="true" astOperand1="0000018B1D470F10" astOperand2="0000018B1D471330"/>
+    <token id="0000018B1D471330" file="fifo.c" linenr="22" column="21" str="base_arr" scope="0000018B1CA83890" type="name" varId="17" variable="0000018B1D0A48F0" values="0000018B1CCD3400" astParent="0000018B1D470A30"/>
+    <token id="0000018B1D470790" file="fifo.c" linenr="22" column="29" str=";" scope="0000018B1CA83890"/>
+    <token id="0000018B1D471450" file="fifo.c" linenr="23" column="4" str="fifo_buf" scope="0000018B1CA83890" type="name" varId="16" variable="0000018B1D0A4110" astParent="0000018B1D470F70" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="0000018B1CA83DE0"/>
+    <token id="0000018B1D470F70" file="fifo.c" linenr="23" column="12" str="." scope="0000018B1CA83890" astParent="0000018B1D4717B0" astOperand1="0000018B1D471450" astOperand2="0000018B1D470310" originalName="->"/>
+    <token id="0000018B1D470310" file="fifo.c" linenr="23" column="14" str="tail" scope="0000018B1CA83890" type="name" varId="22" variable="0000018B1D0A2820" astParent="0000018B1D470F70"/>
+    <token id="0000018B1D4717B0" file="fifo.c" linenr="23" column="19" str="=" scope="0000018B1CA83890" type="op" isAssignmentOp="true" astOperand1="0000018B1D470F70" astOperand2="0000018B1D470C10"/>
+    <token id="0000018B1D470C10" file="fifo.c" linenr="23" column="21" str="base_arr" scope="0000018B1CA83890" type="name" varId="17" variable="0000018B1D0A48F0" values="0000018B1CCD3420" astParent="0000018B1D4717B0"/>
+    <token id="0000018B1D4712D0" file="fifo.c" linenr="23" column="29" str=";" scope="0000018B1CA83890"/>
+    <token id="0000018B1D4706D0" file="fifo.c" linenr="24" column="4" str="fifo_buf" scope="0000018B1CA83890" type="name" varId="16" variable="0000018B1D0A4110" astParent="0000018B1D471810" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="0000018B1CA83DE0"/>
+    <token id="0000018B1D471810" file="fifo.c" linenr="24" column="12" str="." scope="0000018B1CA83890" astParent="0000018B1D471510" astOperand1="0000018B1D4706D0" astOperand2="0000018B1D471750" originalName="->" valueType-type="short" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000018B1D471750" file="fifo.c" linenr="24" column="14" str="length" scope="0000018B1CA83890" type="name" varId="23" variable="0000018B1D0A3000" astParent="0000018B1D471810" valueType-type="short" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000018B1D471510" file="fifo.c" linenr="24" column="21" str="=" scope="0000018B1CA83890" type="op" isAssignmentOp="true" astOperand1="0000018B1D471810" astOperand2="0000018B1D470370" valueType-type="short" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000018B1D470370" file="fifo.c" linenr="24" column="23" str="length" scope="0000018B1CA83890" type="name" varId="18" variable="0000018B1D0A3380" astParent="0000018B1D471510" valueType-type="short" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000018B1D470DF0" file="fifo.c" linenr="24" column="29" str=";" scope="0000018B1CA83890"/>
+    <token id="0000018B1D4707F0" file="fifo.c" linenr="25" column="4" str="fifo_buf" scope="0000018B1CA83890" type="name" varId="16" variable="0000018B1D0A4110" astParent="0000018B1D471630" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="0000018B1CA83DE0"/>
+    <token id="0000018B1D471630" file="fifo.c" linenr="25" column="12" str="." scope="0000018B1CA83890" astParent="0000018B1D470070" astOperand1="0000018B1D4707F0" astOperand2="0000018B1D4716F0" originalName="->" valueType-type="short" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000018B1D4716F0" file="fifo.c" linenr="25" column="14" str="count" scope="0000018B1CA83890" type="name" varId="24" variable="0000018B1D0A2900" astParent="0000018B1D471630" valueType-type="short" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000018B1D470070" file="fifo.c" linenr="25" column="20" str="=" scope="0000018B1CA83890" type="op" isAssignmentOp="true" astOperand1="0000018B1D471630" astOperand2="0000018B1D470C70" valueType-type="short" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000018B1D470C70" file="fifo.c" linenr="25" column="22" str="0" scope="0000018B1CA83890" type="number" isInt="true" values="0000018B1CCD2FA0" astParent="0000018B1D470070" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0000018B1D4700D0" file="fifo.c" linenr="25" column="23" str=";" scope="0000018B1CA83890"/>
+    <token id="0000018B1D470130" file="fifo.c" linenr="26" column="4" str="state" scope="0000018B1CA83890" type="name" varId="19" variable="0000018B1D0A14E0" astParent="0000018B1D4701F0" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D4701F0" file="fifo.c" linenr="26" column="10" str="=" scope="0000018B1CA83890" type="op" isAssignmentOp="true" astOperand1="0000018B1D470130" astOperand2="0000018B1D471390" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D471390" file="fifo.c" linenr="26" column="12" str="FIFO_NO_ERROR" scope="0000018B1CA83890" type="name" values="0000018B1CCD3440" astParent="0000018B1D4701F0" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D470FD0" file="fifo.c" linenr="26" column="25" str=";" scope="0000018B1CA83890"/>
+    <token id="0000018B1D4703D0" file="fifo.c" linenr="27" column="3" str="}" scope="0000018B1CA83890" link="0000018B1D4704F0"/>
+    <token id="0000018B1D471090" file="fifo.c" linenr="29" column="3" str="return" scope="0000018B1CA83780" type="name" astOperand1="0000018B1D470430" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D470430" file="fifo.c" linenr="29" column="10" str="state" scope="0000018B1CA83780" type="name" varId="19" variable="0000018B1D0A14E0" values="0000018B1CCD31C0" astParent="0000018B1D471090" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D470850" file="fifo.c" linenr="29" column="15" str=";" scope="0000018B1CA83780"/>
+    <token id="0000018B1D4713F0" file="fifo.c" linenr="32" column="1" str="}" scope="0000018B1CA83780" link="0000018B1D46F860"/>
+    <token id="0000018B1D4714B0" file="fifo.c" linenr="34" column="1" str="FIFO_state" scope="0000018B1CA83450" type="name" type-scope="0000018B1CA83560"/>
+    <token id="0000018B1D471210" file="fifo.c" linenr="34" column="12" str="FIFO_enqueue" scope="0000018B1CA83450" type="name" function="0000018B1CAF2DC0"/>
+    <token id="0000018B1D470550" file="fifo.c" linenr="34" column="26" str="(" scope="0000018B1CA83450" link="0000018B1D470910" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D4705B0" file="fifo.c" linenr="34" column="27" str="struct" scope="0000018B1CA83450" type="name"/>
+    <token id="0000018B1CAB22F0" file="fifo.c" linenr="34" column="0" str="FIFO_buffer" scope="0000018B1CA83450" type="name" type-scope="0000018B1CA83DE0" astParent="0000018B1D470610"/>
+    <token id="0000018B1D470610" file="fifo.c" linenr="34" column="38" str="*" scope="0000018B1CA83450" type="op" isArithmeticalOp="true" astParent="0000018B1D470730" astOperand1="0000018B1CAB22F0" astOperand2="0000018B1D470670"/>
+    <token id="0000018B1D470670" file="fifo.c" linenr="34" column="40" str="fifo_buf" scope="0000018B1CA83450" type="name" varId="25" variable="0000018B1D0A3E70" astParent="0000018B1D470610" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="0000018B1CA83DE0"/>
+    <token id="0000018B1D470730" file="fifo.c" linenr="34" column="48" str="," scope="0000018B1CA83450" astOperand1="0000018B1D470610" astOperand2="0000018B1D4708B0"/>
+    <token id="0000018B1D470E50" file="fifo.c" linenr="34" column="49" str="uint8" scope="0000018B1CA83450" type="name" isExpandedMacro="true"/>
+    <token id="0000018B1D4708B0" file="fifo.c" linenr="34" column="63" str="item" scope="0000018B1CA83450" type="name" varId="26" variable="0000018B1D0A3F50" astParent="0000018B1D470730"/>
+    <token id="0000018B1D470910" file="fifo.c" linenr="34" column="67" str=")" scope="0000018B1CA83450" link="0000018B1D470550"/>
+    <token id="0000018B1D470A90" file="fifo.c" linenr="35" column="1" str="{" scope="0000018B1CA839A0" link="0000018B1D11D920"/>
+    <token id="0000018B1D470CD0" file="fifo.c" linenr="36" column="2" str="FIFO_state" scope="0000018B1CA839A0" type="name" type-scope="0000018B1CA83560"/>
+    <token id="0000018B1D470D30" file="fifo.c" linenr="36" column="13" str="state" scope="0000018B1CA839A0" type="name" varId="27" variable="0000018B1D0A16A0" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D470AF0" file="fifo.c" linenr="36" column="18" str=";" scope="0000018B1CA839A0"/>
+    <token id="0000018B1D470EB0" file="fifo.c" linenr="37" column="2" str="if" scope="0000018B1CA839A0" type="name" astParent="0000018B1D4719F0"/>
+    <token id="0000018B1D4719F0" file="fifo.c" linenr="37" column="4" str="(" scope="0000018B1CA839A0" link="0000018B1D471AB0" astOperand1="0000018B1D470EB0" astOperand2="0000018B1D471CF0"/>
+    <token id="0000018B1D471C90" file="fifo.c" linenr="37" column="5" str="(" scope="0000018B1CA839A0" link="0000018B1D471F90"/>
+    <token id="0000018B1D471C30" file="fifo.c" linenr="37" column="6" str="state" scope="0000018B1CA839A0" type="name" varId="27" variable="0000018B1D0A16A0" astParent="0000018B1D471930" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D471930" file="fifo.c" linenr="37" column="12" str="=" scope="0000018B1CA839A0" type="op" isAssignmentOp="true" astParent="0000018B1D471CF0" astOperand1="0000018B1D471C30" astOperand2="0000018B1D471A50" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D471E10" file="fifo.c" linenr="37" column="14" str="FIFO_is_full" scope="0000018B1CA839A0" type="name" function="0000018B1CAF1F60" astParent="0000018B1D471A50"/>
+    <token id="0000018B1D471A50" file="fifo.c" linenr="37" column="26" str="(" scope="0000018B1CA839A0" link="0000018B1D471870" astParent="0000018B1D471930" astOperand1="0000018B1D471E10" astOperand2="0000018B1D471BD0" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D471BD0" file="fifo.c" linenr="37" column="27" str="fifo_buf" scope="0000018B1CA839A0" type="name" varId="25" variable="0000018B1D0A3E70" astParent="0000018B1D471A50" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="0000018B1CA83DE0"/>
+    <token id="0000018B1D471870" file="fifo.c" linenr="37" column="35" str=")" scope="0000018B1CA839A0" link="0000018B1D471A50"/>
+    <token id="0000018B1D471F90" file="fifo.c" linenr="37" column="36" str=")" scope="0000018B1CA839A0" link="0000018B1D471C90"/>
+    <token id="0000018B1D471CF0" file="fifo.c" linenr="37" column="38" str="==" scope="0000018B1CA839A0" type="op" isComparisonOp="true" astParent="0000018B1D4719F0" astOperand1="0000018B1D471930" astOperand2="0000018B1D471D50" valueType-type="bool" valueType-reference="None"/>
+    <token id="0000018B1D471D50" file="fifo.c" linenr="37" column="41" str="FIFO_NO_ERROR" scope="0000018B1CA839A0" type="name" values="0000018B1CCD34E0" astParent="0000018B1D471CF0" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D471AB0" file="fifo.c" linenr="37" column="54" str=")" scope="0000018B1CA839A0" link="0000018B1D4719F0"/>
+    <token id="0000018B1D4718D0" file="fifo.c" linenr="38" column="2" str="{" scope="0000018B1CA83AB0" link="0000018B1D11D9E0"/>
+    <token id="0000018B1D471E70" file="fifo.c" linenr="39" column="3" str="if" scope="0000018B1CA83AB0" type="name" astParent="0000018B1D471DB0"/>
+    <token id="0000018B1D471DB0" file="fifo.c" linenr="39" column="5" str="(" scope="0000018B1CA83AB0" link="0000018B1D11E520" astOperand1="0000018B1D471E70" astOperand2="0000018B1D471B10"/>
+    <token id="0000018B1D471990" file="fifo.c" linenr="39" column="6" str="fifo_buf" scope="0000018B1CA83AB0" type="name" varId="25" variable="0000018B1D0A3E70" astParent="0000018B1D471ED0" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="0000018B1CA83DE0"/>
+    <token id="0000018B1D471ED0" file="fifo.c" linenr="39" column="14" str="." scope="0000018B1CA83AB0" astParent="0000018B1D471B10" astOperand1="0000018B1D471990" astOperand2="0000018B1D471F30" originalName="->"/>
+    <token id="0000018B1D471F30" file="fifo.c" linenr="39" column="16" str="tail" scope="0000018B1CA83AB0" type="name" varId="28" variable="0000018B1D0A2820" astParent="0000018B1D471ED0"/>
+    <token id="0000018B1D471B10" file="fifo.c" linenr="39" column="21" str="==" scope="0000018B1CA83AB0" type="op" isComparisonOp="true" astParent="0000018B1D471DB0" astOperand1="0000018B1D471ED0" astOperand2="0000018B1D11D3E0" valueType-type="bool" valueType-reference="None"/>
+    <token id="0000018B1D471B70" file="fifo.c" linenr="39" column="24" str="fifo_buf" scope="0000018B1CA83AB0" type="name" varId="25" variable="0000018B1D0A3E70" astParent="0000018B1D11E280" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="0000018B1CA83DE0"/>
+    <token id="0000018B1D11E280" file="fifo.c" linenr="39" column="32" str="." scope="0000018B1CA83AB0" astParent="0000018B1D11D3E0" astOperand1="0000018B1D471B70" astOperand2="0000018B1D11D500" originalName="->"/>
+    <token id="0000018B1D11D500" file="fifo.c" linenr="39" column="34" str="base" scope="0000018B1CA83AB0" type="name" varId="29" variable="0000018B1D0A2660" astParent="0000018B1D11E280"/>
+    <token id="0000018B1D11D3E0" file="fifo.c" linenr="39" column="39" str="+" scope="0000018B1CA83AB0" type="op" isArithmeticalOp="true" astParent="0000018B1D471B10" astOperand1="0000018B1D11E280" astOperand2="0000018B1D11DE00"/>
+    <token id="0000018B1D11DB60" file="fifo.c" linenr="39" column="40" str="fifo_buf" scope="0000018B1CA83AB0" type="name" varId="25" variable="0000018B1D0A3E70" astParent="0000018B1D11DE00" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="0000018B1CA83DE0"/>
+    <token id="0000018B1D11DE00" file="fifo.c" linenr="39" column="48" str="." scope="0000018B1CA83AB0" astParent="0000018B1D11D3E0" astOperand1="0000018B1D11DB60" astOperand2="0000018B1D11D800" originalName="->" valueType-type="short" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000018B1D11D800" file="fifo.c" linenr="39" column="50" str="length" scope="0000018B1CA83AB0" type="name" varId="30" variable="0000018B1D0A3000" astParent="0000018B1D11DE00" valueType-type="short" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000018B1D11E520" file="fifo.c" linenr="39" column="56" str=")" scope="0000018B1CA83AB0" link="0000018B1D471DB0"/>
+    <token id="0000018B1D11E700" file="fifo.c" linenr="40" column="3" str="{" scope="0000018B1CA83BC0" link="0000018B1D11DF80"/>
+    <token id="0000018B1D11E5E0" file="fifo.c" linenr="41" column="4" str="fifo_buf" scope="0000018B1CA83BC0" type="name" varId="25" variable="0000018B1D0A3E70" astParent="0000018B1D11DC80" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="0000018B1CA83DE0"/>
+    <token id="0000018B1D11DC80" file="fifo.c" linenr="41" column="12" str="." scope="0000018B1CA83BC0" astParent="0000018B1D11D080" astOperand1="0000018B1D11E5E0" astOperand2="0000018B1D11E580" originalName="->"/>
+    <token id="0000018B1D11E580" file="fifo.c" linenr="41" column="14" str="tail" scope="0000018B1CA83BC0" type="name" varId="28" variable="0000018B1D0A2820" astParent="0000018B1D11DC80"/>
+    <token id="0000018B1D11D080" file="fifo.c" linenr="41" column="19" str="=" scope="0000018B1CA83BC0" type="op" isAssignmentOp="true" astOperand1="0000018B1D11DC80" astOperand2="0000018B1D11E2E0"/>
+    <token id="0000018B1D11E760" file="fifo.c" linenr="41" column="21" str="fifo_buf" scope="0000018B1CA83BC0" type="name" varId="25" variable="0000018B1D0A3E70" astParent="0000018B1D11E2E0" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="0000018B1CA83DE0"/>
+    <token id="0000018B1D11E2E0" file="fifo.c" linenr="41" column="29" str="." scope="0000018B1CA83BC0" astParent="0000018B1D11D080" astOperand1="0000018B1D11E760" astOperand2="0000018B1D11DF20" originalName="->"/>
+    <token id="0000018B1D11DF20" file="fifo.c" linenr="41" column="31" str="base" scope="0000018B1CA83BC0" type="name" varId="29" variable="0000018B1D0A2660" astParent="0000018B1D11E2E0"/>
+    <token id="0000018B1D11E640" file="fifo.c" linenr="41" column="35" str=";" scope="0000018B1CA83BC0"/>
+    <token id="0000018B1D11DF80" file="fifo.c" linenr="42" column="3" str="}" scope="0000018B1CA83BC0" link="0000018B1D11E700"/>
+    <token id="0000018B1D11E6A0" file="fifo.c" linenr="43" column="3" str="*" scope="0000018B1CA83AB0" type="op" isArithmeticalOp="true" astParent="0000018B1D11D1A0" astOperand1="0000018B1D11D680"/>
+    <token id="0000018B1D11D860" file="fifo.c" linenr="43" column="4" str="(" scope="0000018B1CA83AB0" link="0000018B1D11DE60"/>
+    <token id="0000018B1D11E340" file="fifo.c" linenr="43" column="5" str="fifo_buf" scope="0000018B1CA83AB0" type="name" varId="25" variable="0000018B1D0A3E70" astParent="0000018B1D11E3A0" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="0000018B1CA83DE0"/>
+    <token id="0000018B1D11E3A0" file="fifo.c" linenr="43" column="13" str="." scope="0000018B1CA83AB0" astParent="0000018B1D11D680" astOperand1="0000018B1D11E340" astOperand2="0000018B1D11DFE0" originalName="->"/>
+    <token id="0000018B1D11DFE0" file="fifo.c" linenr="43" column="15" str="tail" scope="0000018B1CA83AB0" type="name" varId="28" variable="0000018B1D0A2820" astParent="0000018B1D11E3A0"/>
+    <token id="0000018B1D11D680" file="fifo.c" linenr="43" column="20" str="++" scope="0000018B1CA83AB0" type="op" astParent="0000018B1D11E6A0" astOperand1="0000018B1D11E3A0"/>
+    <token id="0000018B1D11DE60" file="fifo.c" linenr="43" column="22" str=")" scope="0000018B1CA83AB0" link="0000018B1D11D860"/>
+    <token id="0000018B1D11D1A0" file="fifo.c" linenr="43" column="24" str="=" scope="0000018B1CA83AB0" type="op" isAssignmentOp="true" astOperand1="0000018B1D11E6A0" astOperand2="0000018B1D11E820"/>
+    <token id="0000018B1D11E820" file="fifo.c" linenr="43" column="26" str="item" scope="0000018B1CA83AB0" type="name" varId="26" variable="0000018B1D0A3F50" astParent="0000018B1D11D1A0"/>
+    <token id="0000018B1D11D7A0" file="fifo.c" linenr="43" column="30" str=";" scope="0000018B1CA83AB0"/>
+    <token id="0000018B1D11DBC0" file="fifo.c" linenr="44" column="4" str="fifo_buf" scope="0000018B1CA83AB0" type="name" varId="25" variable="0000018B1D0A3E70" astParent="0000018B1D11DCE0" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="0000018B1CA83DE0"/>
+    <token id="0000018B1D11DCE0" file="fifo.c" linenr="44" column="12" str="." scope="0000018B1CA83AB0" astParent="0000018B1D11E7C0" astOperand1="0000018B1D11DBC0" astOperand2="0000018B1D11D980" originalName="->" valueType-type="short" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000018B1D11D980" file="fifo.c" linenr="44" column="14" str="count" scope="0000018B1CA83AB0" type="name" varId="31" variable="0000018B1D0A2900" astParent="0000018B1D11DCE0" valueType-type="short" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000018B1D11E7C0" file="fifo.c" linenr="44" column="20" str="++" scope="0000018B1CA83AB0" type="op" astOperand1="0000018B1D11DCE0" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0000018B1D11E400" file="fifo.c" linenr="44" column="22" str=";" scope="0000018B1CA83AB0"/>
+    <token id="0000018B1D11DD40" file="fifo.c" linenr="45" column="3" str="state" scope="0000018B1CA83AB0" type="name" varId="27" variable="0000018B1D0A16A0" astParent="0000018B1D11E4C0" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D11E4C0" file="fifo.c" linenr="45" column="9" str="=" scope="0000018B1CA83AB0" type="op" isAssignmentOp="true" astOperand1="0000018B1D11DD40" astOperand2="0000018B1D11D140" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D11D140" file="fifo.c" linenr="45" column="11" str="FIFO_NO_ERROR" scope="0000018B1CA83AB0" type="name" values="0000018B1CCD2F80" astParent="0000018B1D11E4C0" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D11D260" file="fifo.c" linenr="45" column="24" str=";" scope="0000018B1CA83AB0"/>
+    <token id="0000018B1D11D9E0" file="fifo.c" linenr="46" column="2" str="}" scope="0000018B1CA83AB0" link="0000018B1D4718D0"/>
+    <token id="0000018B1D11E040" file="fifo.c" linenr="47" column="2" str="else" scope="0000018B1CA839A0" type="name"/>
+    <token id="0000018B1D11DDA0" file="fifo.c" linenr="48" column="2" str="{" scope="0000018B1CA83CD0" link="0000018B1D11D0E0"/>
+    <token id="0000018B1D11D0E0" file="fifo.c" linenr="50" column="2" str="}" scope="0000018B1CA83CD0" link="0000018B1D11DDA0"/>
+    <token id="0000018B1D11D200" file="fifo.c" linenr="51" column="2" str="return" scope="0000018B1CA839A0" type="name" astOperand1="0000018B1D11D4A0" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D11D4A0" file="fifo.c" linenr="51" column="9" str="state" scope="0000018B1CA839A0" type="name" varId="27" variable="0000018B1D0A16A0" values="0000018B1CCD2F60" astParent="0000018B1D11D200" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D11DB00" file="fifo.c" linenr="51" column="14" str=";" scope="0000018B1CA839A0"/>
+    <token id="0000018B1D11D920" file="fifo.c" linenr="52" column="1" str="}" scope="0000018B1CA839A0" link="0000018B1D470A90"/>
+    <token id="0000018B1D11D620" file="fifo.c" linenr="54" column="1" str="FIFO_state" scope="0000018B1CA83450" type="name" type-scope="0000018B1CA83560"/>
+    <token id="0000018B1D11E0A0" file="fifo.c" linenr="54" column="12" str="FIFO_dequeue" scope="0000018B1CA83450" type="name" function="0000018B1CAF2BE0"/>
+    <token id="0000018B1D11D2C0" file="fifo.c" linenr="54" column="26" str="(" scope="0000018B1CA83450" link="0000018B1D11D440" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D11E100" file="fifo.c" linenr="54" column="27" str="struct" scope="0000018B1CA83450" type="name"/>
+    <token id="0000018B1CAB21D0" file="fifo.c" linenr="54" column="0" str="FIFO_buffer" scope="0000018B1CA83450" type="name" type-scope="0000018B1CA83DE0" astParent="0000018B1D11D320"/>
+    <token id="0000018B1D11D320" file="fifo.c" linenr="54" column="38" str="*" scope="0000018B1CA83450" type="op" isArithmeticalOp="true" astParent="0000018B1D11D380" astOperand1="0000018B1CAB21D0" astOperand2="0000018B1D11E460"/>
+    <token id="0000018B1D11E460" file="fifo.c" linenr="54" column="40" str="fifo_buf" scope="0000018B1CA83450" type="name" varId="32" variable="0000018B1D0A45E0" astParent="0000018B1D11D320" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="0000018B1CA83DE0"/>
+    <token id="0000018B1D11D380" file="fifo.c" linenr="54" column="48" str="," scope="0000018B1CA83450" astOperand1="0000018B1D11D320" astOperand2="0000018B1D11E160"/>
+    <token id="0000018B1D11D8C0" file="fifo.c" linenr="54" column="49" str="uint8" scope="0000018B1CA83450" type="name" isExpandedMacro="true" astParent="0000018B1D11E160"/>
+    <token id="0000018B1D11E160" file="fifo.c" linenr="54" column="61" str="*" scope="0000018B1CA83450" type="op" isArithmeticalOp="true" astParent="0000018B1D11D380" astOperand1="0000018B1D11D8C0" astOperand2="0000018B1D11E1C0"/>
+    <token id="0000018B1D11E1C0" file="fifo.c" linenr="54" column="63" str="item" scope="0000018B1CA83450" type="name" varId="33" variable="0000018B1D0A47A0" astParent="0000018B1D11E160"/>
+    <token id="0000018B1D11D440" file="fifo.c" linenr="54" column="67" str=")" scope="0000018B1CA83450" link="0000018B1D11D2C0"/>
+    <token id="0000018B1D11D560" file="fifo.c" linenr="55" column="1" str="{" scope="0000018B1D122810" link="0000018B1D120050"/>
+    <token id="0000018B1D11E220" file="fifo.c" linenr="56" column="2" str="FIFO_state" scope="0000018B1D122810" type="name" type-scope="0000018B1CA83560"/>
+    <token id="0000018B1D11D5C0" file="fifo.c" linenr="56" column="13" str="state" scope="0000018B1D122810" type="name" varId="34" variable="0000018B1D0A42D0" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D11D6E0" file="fifo.c" linenr="56" column="18" str=";" scope="0000018B1D122810"/>
+    <token id="0000018B1D11D740" file="fifo.c" linenr="57" column="2" str="if" scope="0000018B1D122810" type="name" astParent="0000018B1D11DA40"/>
+    <token id="0000018B1D11DA40" file="fifo.c" linenr="57" column="4" str="(" scope="0000018B1D122810" link="0000018B1D11EE20" astOperand1="0000018B1D11D740" astOperand2="0000018B1D11EB20"/>
+    <token id="0000018B1D11DAA0" file="fifo.c" linenr="57" column="5" str="(" scope="0000018B1D122810" link="0000018B1D11EA00"/>
+    <token id="0000018B1D11ED00" file="fifo.c" linenr="57" column="6" str="state" scope="0000018B1D122810" type="name" varId="34" variable="0000018B1D0A42D0" astParent="0000018B1D11E940" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D11E940" file="fifo.c" linenr="57" column="12" str="=" scope="0000018B1D122810" type="op" isAssignmentOp="true" astParent="0000018B1D11EB20" astOperand1="0000018B1D11ED00" astOperand2="0000018B1D11EFA0" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D11ED60" file="fifo.c" linenr="57" column="14" str="FIFO_is_empty" scope="0000018B1D122810" type="name" function="0000018B1CAF2960" astParent="0000018B1D11EFA0"/>
+    <token id="0000018B1D11EFA0" file="fifo.c" linenr="57" column="27" str="(" scope="0000018B1D122810" link="0000018B1D11E880" astParent="0000018B1D11E940" astOperand1="0000018B1D11ED60" astOperand2="0000018B1D11EDC0" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D11EDC0" file="fifo.c" linenr="57" column="28" str="fifo_buf" scope="0000018B1D122810" type="name" varId="32" variable="0000018B1D0A45E0" astParent="0000018B1D11EFA0" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="0000018B1CA83DE0"/>
+    <token id="0000018B1D11E880" file="fifo.c" linenr="57" column="36" str=")" scope="0000018B1D122810" link="0000018B1D11EFA0"/>
+    <token id="0000018B1D11EA00" file="fifo.c" linenr="57" column="37" str=")" scope="0000018B1D122810" link="0000018B1D11DAA0"/>
+    <token id="0000018B1D11EB20" file="fifo.c" linenr="57" column="39" str="==" scope="0000018B1D122810" type="op" isComparisonOp="true" astParent="0000018B1D11DA40" astOperand1="0000018B1D11E940" astOperand2="0000018B1D11EB80" valueType-type="bool" valueType-reference="None"/>
+    <token id="0000018B1D11EB80" file="fifo.c" linenr="57" column="42" str="FIFO_NO_ERROR" scope="0000018B1D122810" type="name" values="0000018B1CCD3100" astParent="0000018B1D11EB20" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D11EE20" file="fifo.c" linenr="57" column="55" str=")" scope="0000018B1D122810" link="0000018B1D11DA40"/>
+    <token id="0000018B1D11EE80" file="fifo.c" linenr="58" column="2" str="{" scope="0000018B1D1220A0" link="0000018B1D120710"/>
+    <token id="0000018B1D11E9A0" file="fifo.c" linenr="59" column="3" str="if" scope="0000018B1D1220A0" type="name" astParent="0000018B1D11EAC0"/>
+    <token id="0000018B1D11EAC0" file="fifo.c" linenr="59" column="5" str="(" scope="0000018B1D1220A0" link="0000018B1D11FAB0" astOperand1="0000018B1D11E9A0" astOperand2="0000018B1D11EC40"/>
+    <token id="0000018B1D11E8E0" file="fifo.c" linenr="59" column="6" str="fifo_buf" scope="0000018B1D1220A0" type="name" varId="32" variable="0000018B1D0A45E0" astParent="0000018B1D11EEE0" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="0000018B1CA83DE0"/>
+    <token id="0000018B1D11EEE0" file="fifo.c" linenr="59" column="14" str="." scope="0000018B1D1220A0" astParent="0000018B1D11EC40" astOperand1="0000018B1D11E8E0" astOperand2="0000018B1D11ECA0" originalName="->"/>
+    <token id="0000018B1D11ECA0" file="fifo.c" linenr="59" column="16" str="head" scope="0000018B1D1220A0" type="name" varId="35" variable="0000018B1D0A2F20" astParent="0000018B1D11EEE0"/>
+    <token id="0000018B1D11EC40" file="fifo.c" linenr="59" column="21" str="==" scope="0000018B1D1220A0" type="op" isComparisonOp="true" astParent="0000018B1D11EAC0" astOperand1="0000018B1D11EEE0" astOperand2="0000018B1D11F930" valueType-type="bool" valueType-reference="None"/>
+    <token id="0000018B1D11EF40" file="fifo.c" linenr="59" column="24" str="fifo_buf" scope="0000018B1D1220A0" type="name" varId="32" variable="0000018B1D0A45E0" astParent="0000018B1D11EA60" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="0000018B1CA83DE0"/>
+    <token id="0000018B1D11EA60" file="fifo.c" linenr="59" column="32" str="." scope="0000018B1D1220A0" astParent="0000018B1D11F930" astOperand1="0000018B1D11EF40" astOperand2="0000018B1D11EBE0" originalName="->"/>
+    <token id="0000018B1D11EBE0" file="fifo.c" linenr="59" column="34" str="base" scope="0000018B1D1220A0" type="name" varId="36" variable="0000018B1D0A2660" astParent="0000018B1D11EA60"/>
+    <token id="0000018B1D11F930" file="fifo.c" linenr="59" column="39" str="+" scope="0000018B1D1220A0" type="op" isArithmeticalOp="true" astParent="0000018B1D11EC40" astOperand1="0000018B1D11EA60" astOperand2="0000018B1D11FED0"/>
+    <token id="0000018B1D11F510" file="fifo.c" linenr="59" column="41" str="fifo_buf" scope="0000018B1D1220A0" type="name" varId="32" variable="0000018B1D0A45E0" astParent="0000018B1D11FED0" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="0000018B1CA83DE0"/>
+    <token id="0000018B1D11FED0" file="fifo.c" linenr="59" column="49" str="." scope="0000018B1D1220A0" astParent="0000018B1D11F930" astOperand1="0000018B1D11F510" astOperand2="0000018B1D11F150" originalName="->" valueType-type="short" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000018B1D11F150" file="fifo.c" linenr="59" column="51" str="length" scope="0000018B1D1220A0" type="name" varId="37" variable="0000018B1D0A3000" astParent="0000018B1D11FED0" valueType-type="short" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000018B1D11FAB0" file="fifo.c" linenr="59" column="57" str=")" scope="0000018B1D1220A0" link="0000018B1D11EAC0"/>
+    <token id="0000018B1D120230" file="fifo.c" linenr="60" column="3" str="{" scope="0000018B1D1221B0" link="0000018B1D11FF90"/>
+    <token id="0000018B1D11FF30" file="fifo.c" linenr="61" column="4" str="fifo_buf" scope="0000018B1D1221B0" type="name" varId="32" variable="0000018B1D0A45E0" astParent="0000018B1D11F0F0" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="0000018B1CA83DE0"/>
+    <token id="0000018B1D11F0F0" file="fifo.c" linenr="61" column="12" str="." scope="0000018B1D1221B0" astParent="0000018B1D1203B0" astOperand1="0000018B1D11FF30" astOperand2="0000018B1D11F6F0" originalName="->"/>
+    <token id="0000018B1D11F6F0" file="fifo.c" linenr="61" column="14" str="head" scope="0000018B1D1221B0" type="name" varId="35" variable="0000018B1D0A2F20" astParent="0000018B1D11F0F0"/>
+    <token id="0000018B1D1203B0" file="fifo.c" linenr="61" column="19" str="=" scope="0000018B1D1221B0" type="op" isAssignmentOp="true" astOperand1="0000018B1D11F0F0" astOperand2="0000018B1D11FDB0"/>
+    <token id="0000018B1D1205F0" file="fifo.c" linenr="61" column="21" str="fifo_buf" scope="0000018B1D1221B0" type="name" varId="32" variable="0000018B1D0A45E0" astParent="0000018B1D11FDB0" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="0000018B1CA83DE0"/>
+    <token id="0000018B1D11FDB0" file="fifo.c" linenr="61" column="29" str="." scope="0000018B1D1221B0" astParent="0000018B1D1203B0" astOperand1="0000018B1D1205F0" astOperand2="0000018B1D120110" originalName="->"/>
+    <token id="0000018B1D120110" file="fifo.c" linenr="61" column="31" str="base" scope="0000018B1D1221B0" type="name" varId="36" variable="0000018B1D0A2660" astParent="0000018B1D11FDB0"/>
+    <token id="0000018B1D11F1B0" file="fifo.c" linenr="61" column="35" str=";" scope="0000018B1D1221B0"/>
+    <token id="0000018B1D11FF90" file="fifo.c" linenr="62" column="3" str="}" scope="0000018B1D1221B0" link="0000018B1D120230"/>
+    <token id="0000018B1D120170" file="fifo.c" linenr="63" column="3" str="*" scope="0000018B1D1220A0" type="op" isArithmeticalOp="true" astParent="0000018B1D120350" astOperand1="0000018B1D11FA50"/>
+    <token id="0000018B1D11FA50" file="fifo.c" linenr="63" column="4" str="item" scope="0000018B1D1220A0" type="name" varId="33" variable="0000018B1D0A47A0" astParent="0000018B1D120170"/>
+    <token id="0000018B1D120350" file="fifo.c" linenr="63" column="9" str="=" scope="0000018B1D1220A0" type="op" isAssignmentOp="true" astOperand1="0000018B1D120170" astOperand2="0000018B1D11F7B0"/>
+    <token id="0000018B1D11F7B0" file="fifo.c" linenr="63" column="11" str="*" scope="0000018B1D1220A0" type="op" isArithmeticalOp="true" astParent="0000018B1D120350" astOperand1="0000018B1D11FB70"/>
+    <token id="0000018B1D120470" file="fifo.c" linenr="63" column="12" str="(" scope="0000018B1D1220A0" link="0000018B1D1202F0"/>
+    <token id="0000018B1D11FFF0" file="fifo.c" linenr="63" column="13" str="fifo_buf" scope="0000018B1D1220A0" type="name" varId="32" variable="0000018B1D0A45E0" astParent="0000018B1D11F270" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="0000018B1CA83DE0"/>
+    <token id="0000018B1D11F270" file="fifo.c" linenr="63" column="21" str="." scope="0000018B1D1220A0" astParent="0000018B1D11FB70" astOperand1="0000018B1D11FFF0" astOperand2="0000018B1D1207D0" originalName="->"/>
+    <token id="0000018B1D1207D0" file="fifo.c" linenr="63" column="23" str="head" scope="0000018B1D1220A0" type="name" varId="35" variable="0000018B1D0A2F20" astParent="0000018B1D11F270"/>
+    <token id="0000018B1D11FB70" file="fifo.c" linenr="63" column="27" str="++" scope="0000018B1D1220A0" type="op" astParent="0000018B1D11F7B0" astOperand1="0000018B1D11F270"/>
+    <token id="0000018B1D1202F0" file="fifo.c" linenr="63" column="29" str=")" scope="0000018B1D1220A0" link="0000018B1D120470"/>
+    <token id="0000018B1D11F750" file="fifo.c" linenr="63" column="30" str=";" scope="0000018B1D1220A0"/>
+    <token id="0000018B1D11F570" file="fifo.c" linenr="64" column="4" str="fifo_buf" scope="0000018B1D1220A0" type="name" varId="32" variable="0000018B1D0A45E0" astParent="0000018B1D11F3F0" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="0000018B1CA83DE0"/>
+    <token id="0000018B1D11F3F0" file="fifo.c" linenr="64" column="12" str="." scope="0000018B1D1220A0" astParent="0000018B1D11FE10" astOperand1="0000018B1D11F570" astOperand2="0000018B1D11FBD0" originalName="->" valueType-type="short" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000018B1D11FBD0" file="fifo.c" linenr="64" column="14" str="count" scope="0000018B1D1220A0" type="name" varId="38" variable="0000018B1D0A2900" astParent="0000018B1D11F3F0" valueType-type="short" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000018B1D11FE10" file="fifo.c" linenr="64" column="20" str="--" scope="0000018B1D1220A0" type="op" astOperand1="0000018B1D11F3F0" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0000018B1D120530" file="fifo.c" linenr="64" column="22" str=";" scope="0000018B1D1220A0"/>
+    <token id="0000018B1D120710" file="fifo.c" linenr="65" column="2" str="}" scope="0000018B1D1220A0" link="0000018B1D11EE80"/>
+    <token id="0000018B1D120650" file="fifo.c" linenr="66" column="2" str="else" scope="0000018B1D122810" type="name"/>
+    <token id="0000018B1D11FC90" file="fifo.c" linenr="67" column="2" str="{" scope="0000018B1D1223D0" link="0000018B1D120590"/>
+    <token id="0000018B1D120590" file="fifo.c" linenr="69" column="2" str="}" scope="0000018B1D1223D0" link="0000018B1D11FC90"/>
+    <token id="0000018B1D11F090" file="fifo.c" linenr="71" column="2" str="return" scope="0000018B1D122810" type="name" astOperand1="0000018B1D120770" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D120770" file="fifo.c" linenr="71" column="9" str="state" scope="0000018B1D122810" type="name" varId="34" variable="0000018B1D0A42D0" values="0000018B1CCD3040" astParent="0000018B1D11F090" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D120410" file="fifo.c" linenr="71" column="14" str=";" scope="0000018B1D122810"/>
+    <token id="0000018B1D120050" file="fifo.c" linenr="72" column="1" str="}" scope="0000018B1D122810" link="0000018B1D11D560"/>
+    <token id="0000018B1D1206B0" file="fifo.c" linenr="74" column="1" str="FIFO_state" scope="0000018B1CA83450" type="name" type-scope="0000018B1CA83560"/>
+    <token id="0000018B1D1200B0" file="fifo.c" linenr="74" column="12" str="FIFO_is_full" scope="0000018B1CA83450" type="name" function="0000018B1CAF1F60"/>
+    <token id="0000018B1D120830" file="fifo.c" linenr="74" column="26" str="(" scope="0000018B1CA83450" link="0000018B1D1201D0" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D11F870" file="fifo.c" linenr="74" column="27" str="struct" scope="0000018B1CA83450" type="name"/>
+    <token id="0000018B1CAB1E10" file="fifo.c" linenr="74" column="0" str="FIFO_buffer" scope="0000018B1CA83450" type="name" type-scope="0000018B1CA83DE0" astParent="0000018B1D1204D0"/>
+    <token id="0000018B1D1204D0" file="fifo.c" linenr="74" column="38" str="*" scope="0000018B1CA83450" type="op" isArithmeticalOp="true" astOperand1="0000018B1CAB1E10" astOperand2="0000018B1D11F210"/>
+    <token id="0000018B1D11F210" file="fifo.c" linenr="74" column="40" str="fifo_buf" scope="0000018B1CA83450" type="name" varId="39" variable="0000018B1D0A38C0" astParent="0000018B1D1204D0" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="0000018B1CA83DE0"/>
+    <token id="0000018B1D1201D0" file="fifo.c" linenr="74" column="48" str=")" scope="0000018B1CA83450" link="0000018B1D120830"/>
+    <token id="0000018B1D11F690" file="fifo.c" linenr="75" column="1" str="{" scope="0000018B1D122C50" link="0000018B1D11A040"/>
+    <token id="0000018B1D11FE70" file="fifo.c" linenr="76" column="2" str="FIFO_state" scope="0000018B1D122C50" type="name" type-scope="0000018B1CA83560"/>
+    <token id="0000018B1D11F2D0" file="fifo.c" linenr="76" column="13" str="state" scope="0000018B1D122C50" type="name" varId="40" variable="0000018B1D0A37E0" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D11F330" file="fifo.c" linenr="76" column="18" str=";" scope="0000018B1D122C50"/>
+    <token id="0000018B1D11F8D0" file="fifo.c" linenr="78" column="2" str="if" scope="0000018B1D122C50" type="name" astParent="0000018B1D11F390"/>
+    <token id="0000018B1D11F390" file="fifo.c" linenr="78" column="4" str="(" scope="0000018B1D122C50" link="0000018B1D120CB0" astOperand1="0000018B1D11F8D0" astOperand2="0000018B1D11F630"/>
+    <token id="0000018B1D11FC30" file="fifo.c" linenr="78" column="5" str="fifo_buf" scope="0000018B1D122C50" type="name" varId="39" variable="0000018B1D0A38C0" astParent="0000018B1D11FCF0" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="0000018B1CA83DE0"/>
+    <token id="0000018B1D11FCF0" file="fifo.c" linenr="78" column="13" str="." scope="0000018B1D122C50" astParent="0000018B1D11F450" astOperand1="0000018B1D11FC30" astOperand2="0000018B1D11F990" originalName="->"/>
+    <token id="0000018B1D11F990" file="fifo.c" linenr="78" column="15" str="base" scope="0000018B1D122C50" type="name" varId="41" variable="0000018B1D0A2660" astParent="0000018B1D11FCF0"/>
+    <token id="0000018B1D11F450" file="fifo.c" linenr="78" column="20" str="&amp;&amp;" scope="0000018B1D122C50" type="op" isLogicalOp="true" astParent="0000018B1D11F630" astOperand1="0000018B1D11FCF0" astOperand2="0000018B1D11F4B0" valueType-type="bool" valueType-reference="None"/>
+    <token id="0000018B1D11FD50" file="fifo.c" linenr="78" column="23" str="fifo_buf" scope="0000018B1D122C50" type="name" varId="39" variable="0000018B1D0A38C0" astParent="0000018B1D11F4B0" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="0000018B1CA83DE0"/>
+    <token id="0000018B1D11F4B0" file="fifo.c" linenr="78" column="31" str="." scope="0000018B1D122C50" astParent="0000018B1D11F450" astOperand1="0000018B1D11FD50" astOperand2="0000018B1D11F5D0" originalName="->"/>
+    <token id="0000018B1D11F5D0" file="fifo.c" linenr="78" column="33" str="head" scope="0000018B1D122C50" type="name" varId="42" variable="0000018B1D0A2F20" astParent="0000018B1D11F4B0"/>
+    <token id="0000018B1D11F630" file="fifo.c" linenr="78" column="38" str="&amp;&amp;" scope="0000018B1D122C50" type="op" isLogicalOp="true" astParent="0000018B1D11F390" astOperand1="0000018B1D11F450" astOperand2="0000018B1D11FB10" valueType-type="bool" valueType-reference="None"/>
+    <token id="0000018B1D11F9F0" file="fifo.c" linenr="78" column="41" str="fifo_buf" scope="0000018B1D122C50" type="name" varId="39" variable="0000018B1D0A38C0" astParent="0000018B1D11FB10" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="0000018B1CA83DE0"/>
+    <token id="0000018B1D11FB10" file="fifo.c" linenr="78" column="49" str="." scope="0000018B1D122C50" astParent="0000018B1D11F630" astOperand1="0000018B1D11F9F0" astOperand2="0000018B1D120B30" originalName="->"/>
+    <token id="0000018B1D120B30" file="fifo.c" linenr="78" column="51" str="tail" scope="0000018B1D122C50" type="name" varId="43" variable="0000018B1D0A2820" astParent="0000018B1D11FB10"/>
+    <token id="0000018B1D120CB0" file="fifo.c" linenr="78" column="55" str=")" scope="0000018B1D122C50" link="0000018B1D11F390"/>
+    <token id="0000018B1D120C50" file="fifo.c" linenr="79" column="2" str="{" scope="0000018B1D121600" link="0000018B1D11A640"/>
+    <token id="0000018B1D120EF0" file="fifo.c" linenr="80" column="3" str="if" scope="0000018B1D121600" type="name" astParent="0000018B1D120F50"/>
+    <token id="0000018B1D120F50" file="fifo.c" linenr="80" column="5" str="(" scope="0000018B1D121600" link="0000018B1D120890" astOperand1="0000018B1D120EF0" astOperand2="0000018B1D120A10"/>
+    <token id="0000018B1D1209B0" file="fifo.c" linenr="80" column="6" str="fifo_buf" scope="0000018B1D121600" type="name" varId="39" variable="0000018B1D0A38C0" astParent="0000018B1D120B90" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="0000018B1CA83DE0"/>
+    <token id="0000018B1D120B90" file="fifo.c" linenr="80" column="14" str="." scope="0000018B1D121600" astParent="0000018B1D120A10" astOperand1="0000018B1D1209B0" astOperand2="0000018B1D120BF0" originalName="->" valueType-type="short" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000018B1D120BF0" file="fifo.c" linenr="80" column="16" str="count" scope="0000018B1D121600" type="name" varId="44" variable="0000018B1D0A2900" astParent="0000018B1D120B90" valueType-type="short" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000018B1D120A10" file="fifo.c" linenr="80" column="22" str="&gt;=" scope="0000018B1D121600" type="op" isComparisonOp="true" astParent="0000018B1D120F50" astOperand1="0000018B1D120B90" astOperand2="0000018B1D120FB0" valueType-type="bool" valueType-reference="None"/>
+    <token id="0000018B1D120D10" file="fifo.c" linenr="80" column="25" str="fifo_buf" scope="0000018B1D121600" type="name" varId="39" variable="0000018B1D0A38C0" astParent="0000018B1D120FB0" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="0000018B1CA83DE0"/>
+    <token id="0000018B1D120FB0" file="fifo.c" linenr="80" column="33" str="." scope="0000018B1D121600" astParent="0000018B1D120A10" astOperand1="0000018B1D120D10" astOperand2="0000018B1D120D70" originalName="->" valueType-type="short" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000018B1D120D70" file="fifo.c" linenr="80" column="35" str="length" scope="0000018B1D121600" type="name" varId="45" variable="0000018B1D0A3000" astParent="0000018B1D120FB0" valueType-type="short" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000018B1D120890" file="fifo.c" linenr="80" column="41" str=")" scope="0000018B1D121600" link="0000018B1D120F50"/>
+    <token id="0000018B1D1208F0" file="fifo.c" linenr="81" column="3" str="{" scope="0000018B1D122700" link="0000018B1D120AD0"/>
+    <token id="0000018B1D120950" file="fifo.c" linenr="82" column="4" str="state" scope="0000018B1D122700" type="name" varId="40" variable="0000018B1D0A37E0" astParent="0000018B1D120DD0" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D120DD0" file="fifo.c" linenr="82" column="10" str="=" scope="0000018B1D122700" type="op" isAssignmentOp="true" astOperand1="0000018B1D120950" astOperand2="0000018B1D120E30" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D120E30" file="fifo.c" linenr="82" column="12" str="FIFO_FULL" scope="0000018B1D122700" type="name" values="0000018B1CCD3460" astParent="0000018B1D120DD0" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D120A70" file="fifo.c" linenr="82" column="21" str=";" scope="0000018B1D122700"/>
+    <token id="0000018B1D120AD0" file="fifo.c" linenr="83" column="3" str="}" scope="0000018B1D122700" link="0000018B1D1208F0"/>
+    <token id="0000018B1D120E90" file="fifo.c" linenr="84" column="3" str="else" scope="0000018B1D121600" type="name"/>
+    <token id="0000018B1D119500" file="fifo.c" linenr="85" column="3" str="{" scope="0000018B1D122920" link="0000018B1D11A2E0"/>
+    <token id="0000018B1D11A280" file="fifo.c" linenr="86" column="4" str="state" scope="0000018B1D122920" type="name" varId="40" variable="0000018B1D0A37E0" astParent="0000018B1D119F80" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D119F80" file="fifo.c" linenr="86" column="10" str="=" scope="0000018B1D122920" type="op" isAssignmentOp="true" astOperand1="0000018B1D11A280" astOperand2="0000018B1D11A7C0" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D11A7C0" file="fifo.c" linenr="86" column="12" str="FIFO_NO_ERROR" scope="0000018B1D122920" type="name" values="0000018B1CCD3160" astParent="0000018B1D119F80" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D119260" file="fifo.c" linenr="86" column="25" str=";" scope="0000018B1D122920"/>
+    <token id="0000018B1D11A2E0" file="fifo.c" linenr="87" column="3" str="}" scope="0000018B1D122920" link="0000018B1D119500"/>
+    <token id="0000018B1D11A640" file="fifo.c" linenr="89" column="2" str="}" scope="0000018B1D121600" link="0000018B1D120C50"/>
+    <token id="0000018B1D119D40" file="fifo.c" linenr="90" column="2" str="else" scope="0000018B1D122C50" type="name"/>
+    <token id="0000018B1D119680" file="fifo.c" linenr="91" column="2" str="{" scope="0000018B1D121710" link="0000018B1D119BC0"/>
+    <token id="0000018B1D11A3A0" file="fifo.c" linenr="92" column="3" str="state" scope="0000018B1D121710" type="name" varId="40" variable="0000018B1D0A37E0" astParent="0000018B1D1194A0" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D1194A0" file="fifo.c" linenr="92" column="9" str="=" scope="0000018B1D121710" type="op" isAssignmentOp="true" astOperand1="0000018B1D11A3A0" astOperand2="0000018B1D11A6A0" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D11A6A0" file="fifo.c" linenr="92" column="11" str="FIFO_NULL" scope="0000018B1D121710" type="name" values="0000018B1CCD3340" astParent="0000018B1D1194A0" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D119380" file="fifo.c" linenr="92" column="20" str=";" scope="0000018B1D121710"/>
+    <token id="0000018B1D119BC0" file="fifo.c" linenr="93" column="2" str="}" scope="0000018B1D121710" link="0000018B1D119680"/>
+    <token id="0000018B1D119DA0" file="fifo.c" linenr="95" column="2" str="return" scope="0000018B1D122C50" type="name" astOperand1="0000018B1D119E00" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D119E00" file="fifo.c" linenr="95" column="9" str="state" scope="0000018B1D122C50" type="name" varId="40" variable="0000018B1D0A37E0" values="0000018B1CCD3480" astParent="0000018B1D119DA0" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D11A760" file="fifo.c" linenr="95" column="14" str=";" scope="0000018B1D122C50"/>
+    <token id="0000018B1D11A040" file="fifo.c" linenr="97" column="1" str="}" scope="0000018B1D122C50" link="0000018B1D11F690"/>
+    <token id="0000018B1D11A100" file="fifo.c" linenr="99" column="1" str="FIFO_state" scope="0000018B1CA83450" type="name" type-scope="0000018B1CA83560"/>
+    <token id="0000018B1D119FE0" file="fifo.c" linenr="99" column="12" str="FIFO_is_empty" scope="0000018B1CA83450" type="name" function="0000018B1CAF2960"/>
+    <token id="0000018B1D119B60" file="fifo.c" linenr="99" column="26" str="(" scope="0000018B1CA83450" link="0000018B1D119E60" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D11A1C0" file="fifo.c" linenr="99" column="27" str="struct" scope="0000018B1CA83450" type="name"/>
+    <token id="0000018B1CAB1690" file="fifo.c" linenr="99" column="0" str="FIFO_buffer" scope="0000018B1CA83450" type="name" type-scope="0000018B1CA83DE0" astParent="0000018B1D119440"/>
+    <token id="0000018B1D119440" file="fifo.c" linenr="99" column="38" str="*" scope="0000018B1CA83450" type="op" isArithmeticalOp="true" astOperand1="0000018B1CAB1690" astOperand2="0000018B1D11A400"/>
+    <token id="0000018B1D11A400" file="fifo.c" linenr="99" column="40" str="fifo_buf" scope="0000018B1CA83450" type="name" varId="46" variable="0000018B1D0A3850" astParent="0000018B1D119440" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="0000018B1CA83DE0"/>
+    <token id="0000018B1D119E60" file="fifo.c" linenr="99" column="48" str=")" scope="0000018B1CA83450" link="0000018B1D119B60"/>
+    <token id="0000018B1D119C20" file="fifo.c" linenr="100" column="1" str="{" scope="0000018B1D121820" link="0000018B1D11B6C0"/>
+    <token id="0000018B1D11A220" file="fifo.c" linenr="101" column="2" str="FIFO_state" scope="0000018B1D121820" type="name" type-scope="0000018B1CA83560"/>
+    <token id="0000018B1D119800" file="fifo.c" linenr="101" column="13" str="state" scope="0000018B1D121820" type="name" varId="47" variable="0000018B1D0A40A0" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D119320" file="fifo.c" linenr="101" column="18" str=";" scope="0000018B1D121820"/>
+    <token id="0000018B1D1193E0" file="fifo.c" linenr="103" column="2" str="if" scope="0000018B1D121820" type="name" astParent="0000018B1D119C80"/>
+    <token id="0000018B1D119C80" file="fifo.c" linenr="103" column="4" str="(" scope="0000018B1D121820" link="0000018B1D1195C0" astOperand1="0000018B1D1193E0" astOperand2="0000018B1D11A5E0"/>
+    <token id="0000018B1D11A0A0" file="fifo.c" linenr="103" column="5" str="fifo_buf" scope="0000018B1D121820" type="name" varId="46" variable="0000018B1D0A3850" astParent="0000018B1D11A460" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="0000018B1CA83DE0"/>
+    <token id="0000018B1D11A460" file="fifo.c" linenr="103" column="13" str="." scope="0000018B1D121820" astParent="0000018B1D1192C0" astOperand1="0000018B1D11A0A0" astOperand2="0000018B1D11A4C0" originalName="->"/>
+    <token id="0000018B1D11A4C0" file="fifo.c" linenr="103" column="15" str="base" scope="0000018B1D121820" type="name" varId="48" variable="0000018B1D0A2660" astParent="0000018B1D11A460"/>
+    <token id="0000018B1D1192C0" file="fifo.c" linenr="103" column="20" str="&amp;&amp;" scope="0000018B1D121820" type="op" isLogicalOp="true" astParent="0000018B1D11A5E0" astOperand1="0000018B1D11A460" astOperand2="0000018B1D11A820" valueType-type="bool" valueType-reference="None"/>
+    <token id="0000018B1D119140" file="fifo.c" linenr="103" column="23" str="fifo_buf" scope="0000018B1D121820" type="name" varId="46" variable="0000018B1D0A3850" astParent="0000018B1D11A820" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="0000018B1CA83DE0"/>
+    <token id="0000018B1D11A820" file="fifo.c" linenr="103" column="31" str="." scope="0000018B1D121820" astParent="0000018B1D1192C0" astOperand1="0000018B1D119140" astOperand2="0000018B1D1196E0" originalName="->"/>
+    <token id="0000018B1D1196E0" file="fifo.c" linenr="103" column="33" str="head" scope="0000018B1D121820" type="name" varId="49" variable="0000018B1D0A2F20" astParent="0000018B1D11A820"/>
+    <token id="0000018B1D11A5E0" file="fifo.c" linenr="103" column="38" str="&amp;&amp;" scope="0000018B1D121820" type="op" isLogicalOp="true" astParent="0000018B1D119C80" astOperand1="0000018B1D1192C0" astOperand2="0000018B1D11A580" valueType-type="bool" valueType-reference="None"/>
+    <token id="0000018B1D119200" file="fifo.c" linenr="103" column="41" str="fifo_buf" scope="0000018B1D121820" type="name" varId="46" variable="0000018B1D0A3850" astParent="0000018B1D11A580" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="0000018B1CA83DE0"/>
+    <token id="0000018B1D11A580" file="fifo.c" linenr="103" column="49" str="." scope="0000018B1D121820" astParent="0000018B1D11A5E0" astOperand1="0000018B1D119200" astOperand2="0000018B1D119560" originalName="->"/>
+    <token id="0000018B1D119560" file="fifo.c" linenr="103" column="51" str="tail" scope="0000018B1D121820" type="name" varId="50" variable="0000018B1D0A2820" astParent="0000018B1D11A580"/>
+    <token id="0000018B1D1195C0" file="fifo.c" linenr="103" column="55" str=")" scope="0000018B1D121820" link="0000018B1D119C80"/>
+    <token id="0000018B1D119CE0" file="fifo.c" linenr="104" column="2" str="{" scope="0000018B1D121A40" link="0000018B1D11B360"/>
+    <token id="0000018B1D119980" file="fifo.c" linenr="105" column="3" str="if" scope="0000018B1D121A40" type="name" astParent="0000018B1D119620"/>
+    <token id="0000018B1D119620" file="fifo.c" linenr="105" column="5" str="(" scope="0000018B1D121A40" link="0000018B1D119EC0" astOperand1="0000018B1D119980" astOperand2="0000018B1D119740"/>
+    <token id="0000018B1D11A700" file="fifo.c" linenr="105" column="6" str="fifo_buf" scope="0000018B1D121A40" type="name" varId="46" variable="0000018B1D0A3850" astParent="0000018B1D11A160" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="0000018B1CA83DE0"/>
+    <token id="0000018B1D11A160" file="fifo.c" linenr="105" column="14" str="." scope="0000018B1D121A40" astParent="0000018B1D119740" astOperand1="0000018B1D11A700" astOperand2="0000018B1D11A340" originalName="->" valueType-type="short" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000018B1D11A340" file="fifo.c" linenr="105" column="16" str="count" scope="0000018B1D121A40" type="name" varId="51" variable="0000018B1D0A2900" astParent="0000018B1D11A160" valueType-type="short" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000018B1D119740" file="fifo.c" linenr="105" column="22" str="&lt;=" scope="0000018B1D121A40" type="op" isComparisonOp="true" astParent="0000018B1D119620" astOperand1="0000018B1D11A160" astOperand2="0000018B1D1199E0" valueType-type="bool" valueType-reference="None"/>
+    <token id="0000018B1D1199E0" file="fifo.c" linenr="105" column="25" str="0" scope="0000018B1D121A40" type="number" isInt="true" values="0000018B1CCD3240" astParent="0000018B1D119740" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0000018B1D119EC0" file="fifo.c" linenr="105" column="26" str=")" scope="0000018B1D121A40" link="0000018B1D119620"/>
+    <token id="0000018B1D11A520" file="fifo.c" linenr="106" column="3" str="{" scope="0000018B1D1222C0" link="0000018B1D1197A0"/>
+    <token id="0000018B1D119080" file="fifo.c" linenr="107" column="4" str="state" scope="0000018B1D1222C0" type="name" varId="47" variable="0000018B1D0A40A0" astParent="0000018B1D1190E0" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D1190E0" file="fifo.c" linenr="107" column="10" str="=" scope="0000018B1D1222C0" type="op" isAssignmentOp="true" astOperand1="0000018B1D119080" astOperand2="0000018B1D119860" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D119860" file="fifo.c" linenr="107" column="12" str="FIFO_EMPTY" scope="0000018B1D1222C0" type="name" values="0000018B1CCD30A0" astParent="0000018B1D1190E0" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D1191A0" file="fifo.c" linenr="107" column="22" str=";" scope="0000018B1D1222C0"/>
+    <token id="0000018B1D1197A0" file="fifo.c" linenr="108" column="3" str="}" scope="0000018B1D1222C0" link="0000018B1D11A520"/>
+    <token id="0000018B1D1198C0" file="fifo.c" linenr="109" column="3" str="else" scope="0000018B1D121A40" type="name"/>
+    <token id="0000018B1D119920" file="fifo.c" linenr="110" column="3" str="{" scope="0000018B1D121E80" link="0000018B1D11B660"/>
+    <token id="0000018B1D119F20" file="fifo.c" linenr="111" column="4" str="state" scope="0000018B1D121E80" type="name" varId="47" variable="0000018B1D0A40A0" astParent="0000018B1D119A40" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D119A40" file="fifo.c" linenr="111" column="10" str="=" scope="0000018B1D121E80" type="op" isAssignmentOp="true" astOperand1="0000018B1D119F20" astOperand2="0000018B1D119AA0" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D119AA0" file="fifo.c" linenr="111" column="12" str="FIFO_NO_ERROR" scope="0000018B1D121E80" type="name" values="0000018B1CCD33A0" astParent="0000018B1D119A40" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D119B00" file="fifo.c" linenr="111" column="25" str=";" scope="0000018B1D121E80"/>
+    <token id="0000018B1D11B660" file="fifo.c" linenr="112" column="3" str="}" scope="0000018B1D121E80" link="0000018B1D119920"/>
+    <token id="0000018B1D11B360" file="fifo.c" linenr="114" column="2" str="}" scope="0000018B1D121A40" link="0000018B1D119CE0"/>
+    <token id="0000018B1D11B480" file="fifo.c" linenr="115" column="2" str="else" scope="0000018B1D121820" type="name"/>
+    <token id="0000018B1D11B180" file="fifo.c" linenr="116" column="2" str="{" scope="0000018B1D1224E0" link="0000018B1D11BCC0"/>
+    <token id="0000018B1D11BDE0" file="fifo.c" linenr="117" column="3" str="state" scope="0000018B1D1224E0" type="name" varId="47" variable="0000018B1D0A40A0" astParent="0000018B1D11B3C0" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D11B3C0" file="fifo.c" linenr="117" column="9" str="=" scope="0000018B1D1224E0" type="op" isAssignmentOp="true" astOperand1="0000018B1D11BDE0" astOperand2="0000018B1D11BA80" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D11BA80" file="fifo.c" linenr="117" column="11" str="FIFO_NULL" scope="0000018B1D1224E0" type="name" values="0000018B1CCD2FC0" astParent="0000018B1D11B3C0" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D11B4E0" file="fifo.c" linenr="117" column="20" str=";" scope="0000018B1D1224E0"/>
+    <token id="0000018B1D11BCC0" file="fifo.c" linenr="118" column="2" str="}" scope="0000018B1D1224E0" link="0000018B1D11B180"/>
+    <token id="0000018B1D11A940" file="fifo.c" linenr="120" column="2" str="return" scope="0000018B1D121820" type="name" astOperand1="0000018B1D11AA60" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D11AA60" file="fifo.c" linenr="120" column="9" str="state" scope="0000018B1D121820" type="name" varId="47" variable="0000018B1D0A40A0" values="0000018B1CCD3500" astParent="0000018B1D11A940" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D11B1E0" file="fifo.c" linenr="120" column="14" str=";" scope="0000018B1D121820"/>
+    <token id="0000018B1D11B6C0" file="fifo.c" linenr="122" column="1" str="}" scope="0000018B1D121820" link="0000018B1D119C20"/>
+    <token id="0000018B1D11B5A0" file="fifo.c" linenr="123" column="1" str="FIFO_state" scope="0000018B1CA83450" type="name" type-scope="0000018B1CA83560"/>
+    <token id="0000018B1D11BD80" file="fifo.c" linenr="123" column="12" str="FIFO_display" scope="0000018B1CA83450" type="name" function="0000018B1D0F69F0"/>
+    <token id="0000018B1D11BF00" file="fifo.c" linenr="123" column="26" str="(" scope="0000018B1CA83450" link="0000018B1D11AE20" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D11ACA0" file="fifo.c" linenr="123" column="27" str="struct" scope="0000018B1CA83450" type="name"/>
+    <token id="0000018B1CAB1F30" file="fifo.c" linenr="123" column="0" str="FIFO_buffer" scope="0000018B1CA83450" type="name" type-scope="0000018B1CA83DE0" astParent="0000018B1D11B300"/>
+    <token id="0000018B1D11B300" file="fifo.c" linenr="123" column="38" str="*" scope="0000018B1CA83450" type="op" isArithmeticalOp="true" astOperand1="0000018B1CAB1F30" astOperand2="0000018B1D11B120"/>
+    <token id="0000018B1D11B120" file="fifo.c" linenr="123" column="40" str="fifo_buf" scope="0000018B1CA83450" type="name" varId="52" variable="0000018B1D0A39A0" astParent="0000018B1D11B300" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="0000018B1CA83DE0"/>
+    <token id="0000018B1D11AE20" file="fifo.c" linenr="123" column="48" str=")" scope="0000018B1CA83450" link="0000018B1D11BF00"/>
+    <token id="0000018B1D11B540" file="fifo.c" linenr="124" column="1" str="{" scope="0000018B1D121930" link="0000018B1CAB1C90"/>
+    <token id="0000018B1D11BF60" file="fifo.c" linenr="125" column="2" str="FIFO_state" scope="0000018B1D121930" type="name" type-scope="0000018B1CA83560"/>
+    <token id="0000018B1D11B600" file="fifo.c" linenr="125" column="13" str="state" scope="0000018B1D121930" type="name" varId="53" variable="0000018B1D0A3230" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1D11BD20" file="fifo.c" linenr="125" column="18" str=";" scope="0000018B1D121930"/>
+    <token id="0000018B1D11BC60" file="fifo.c" linenr="126" column="2" str="if" scope="0000018B1D121930" type="name" astParent="0000018B1D11A8E0"/>
+    <token id="0000018B1D11A8E0" file="fifo.c" linenr="126" column="4" str="(" scope="0000018B1D121930" link="0000018B1D11B840" astOperand1="0000018B1D11BC60" astOperand2="0000018B1D11B780"/>
+    <token id="0000018B1D11B000" file="fifo.c" linenr="126" column="5" str="fifo_buf" scope="0000018B1D121930" type="name" varId="52" variable="0000018B1D0A39A0" astParent="0000018B1D11B720" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="0000018B1CA83DE0"/>
+    <token id="0000018B1D11B720" file="fifo.c" linenr="126" column="13" str="." scope="0000018B1D121930" astParent="0000018B1D11AC40" astOperand1="0000018B1D11B000" astOperand2="0000018B1D11B960" originalName="->"/>
+    <token id="0000018B1D11B960" file="fifo.c" linenr="126" column="15" str="base" scope="0000018B1D121930" type="name" varId="54" variable="0000018B1D0A2660" astParent="0000018B1D11B720"/>
+    <token id="0000018B1D11AC40" file="fifo.c" linenr="126" column="20" str="&amp;&amp;" scope="0000018B1D121930" type="op" isLogicalOp="true" astParent="0000018B1D11B780" astOperand1="0000018B1D11B720" astOperand2="0000018B1D11C020" valueType-type="bool" valueType-reference="None"/>
+    <token id="0000018B1D11BFC0" file="fifo.c" linenr="126" column="23" str="fifo_buf" scope="0000018B1D121930" type="name" varId="52" variable="0000018B1D0A39A0" astParent="0000018B1D11C020" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="0000018B1CA83DE0"/>
+    <token id="0000018B1D11C020" file="fifo.c" linenr="126" column="31" str="." scope="0000018B1D121930" astParent="0000018B1D11AC40" astOperand1="0000018B1D11BFC0" astOperand2="0000018B1D11B420" originalName="->"/>
+    <token id="0000018B1D11B420" file="fifo.c" linenr="126" column="33" str="head" scope="0000018B1D121930" type="name" varId="55" variable="0000018B1D0A2F20" astParent="0000018B1D11C020"/>
+    <token id="0000018B1D11B780" file="fifo.c" linenr="126" column="38" str="&amp;&amp;" scope="0000018B1D121930" type="op" isLogicalOp="true" astParent="0000018B1D11A8E0" astOperand1="0000018B1D11AC40" astOperand2="0000018B1D11B9C0" valueType-type="bool" valueType-reference="None"/>
+    <token id="0000018B1D11BE40" file="fifo.c" linenr="126" column="41" str="fifo_buf" scope="0000018B1D121930" type="name" varId="52" variable="0000018B1D0A39A0" astParent="0000018B1D11B9C0" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="0000018B1CA83DE0"/>
+    <token id="0000018B1D11B9C0" file="fifo.c" linenr="126" column="49" str="." scope="0000018B1D121930" astParent="0000018B1D11B780" astOperand1="0000018B1D11BE40" astOperand2="0000018B1D11B7E0" originalName="->"/>
+    <token id="0000018B1D11B7E0" file="fifo.c" linenr="126" column="51" str="tail" scope="0000018B1D121930" type="name" varId="56" variable="0000018B1D0A2820" astParent="0000018B1D11B9C0"/>
+    <token id="0000018B1D11B840" file="fifo.c" linenr="126" column="55" str=")" scope="0000018B1D121930" link="0000018B1D11A8E0"/>
+    <token id="0000018B1D11AB80" file="fifo.c" linenr="127" column="2" str="{" scope="0000018B1D122A30" link="0000018B1CAB17B0"/>
+    <token id="0000018B1D11B8A0" file="fifo.c" linenr="128" column="0" str="short" scope="0000018B1D122A30" type="name" isSigned="true"/>
+    <token id="0000018B1D11A880" file="fifo.c" linenr="128" column="10" str="count" scope="0000018B1D122A30" type="name" varId="57" variable="0000018B1D0A4C70" valueType-type="short" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0000018B1D11B900" file="fifo.c" linenr="128" column="16" str=";" scope="0000018B1D122A30" isSplittedVarDeclEq="true"/>
+    <token id="0000018B1CAB2770" file="fifo.c" linenr="128" column="10" str="count" scope="0000018B1D122A30" type="name" varId="57" variable="0000018B1D0A4C70" astParent="0000018B1CAB2050" valueType-type="short" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0000018B1CAB2050" file="fifo.c" linenr="128" column="16" str="=" scope="0000018B1D122A30" type="op" isAssignmentOp="true" astOperand1="0000018B1CAB2770" astOperand2="0000018B1D11A9A0" valueType-type="short" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0000018B1D11A9A0" file="fifo.c" linenr="128" column="18" str="0" scope="0000018B1D122A30" type="number" isInt="true" values="0000018B1CCD3560" astParent="0000018B1CAB2050" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0000018B1D11AD00" file="fifo.c" linenr="128" column="20" str=";" scope="0000018B1D122A30" isSplittedVarDeclComma="true"/>
+    <token id="0000018B1CAB2E30" file="fifo.c" linenr="128" column="0" str="short" scope="0000018B1D122A30" type="name" isSigned="true"/>
+    <token id="0000018B1D11B060" file="fifo.c" linenr="128" column="21" str="index" scope="0000018B1D122A30" type="name" varId="58" variable="0000018B1D0A3930" valueType-type="short" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0000018B1D11B240" file="fifo.c" linenr="128" column="27" str=";" scope="0000018B1D122A30" isSplittedVarDeclEq="true"/>
+    <token id="0000018B1CAB2A70" file="fifo.c" linenr="128" column="21" str="index" scope="0000018B1D122A30" type="name" varId="58" variable="0000018B1D0A3930" astParent="0000018B1CAB25F0" valueType-type="short" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0000018B1CAB25F0" file="fifo.c" linenr="128" column="27" str="=" scope="0000018B1D122A30" type="op" isAssignmentOp="true" astOperand1="0000018B1CAB2A70" astOperand2="0000018B1D11BA20" valueType-type="short" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0000018B1D11BA20" file="fifo.c" linenr="128" column="28" str="0" scope="0000018B1D122A30" type="number" isInt="true" values="0000018B1CCD3080" astParent="0000018B1CAB25F0" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0000018B1D11BB40" file="fifo.c" linenr="128" column="29" str=";" scope="0000018B1D122A30"/>
+    <token id="0000018B1D11AB20" file="fifo.c" linenr="129" column="3" str="for" scope="0000018B1D122A30" type="name" astParent="0000018B1D11AEE0"/>
+    <token id="0000018B1D11AEE0" file="fifo.c" linenr="129" column="6" str="(" scope="0000018B1D122A30" link="0000018B1D11CD40" astOperand1="0000018B1D11AB20" astOperand2="0000018B1D11ABE0"/>
+    <token id="0000018B1D11AA00" file="fifo.c" linenr="129" column="7" str="count" scope="0000018B1D122A30" type="name" varId="57" variable="0000018B1D0A4C70" astParent="0000018B1D11B2A0" valueType-type="short" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0000018B1D11B2A0" file="fifo.c" linenr="129" column="13" str="=" scope="0000018B1D122A30" type="op" isAssignmentOp="true" astParent="0000018B1D11ABE0" astOperand1="0000018B1D11AA00" astOperand2="0000018B1D11B0C0" valueType-type="short" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0000018B1D11B0C0" file="fifo.c" linenr="129" column="15" str="0" scope="0000018B1D122A30" type="number" isInt="true" values="0000018B1CCD33C0" astParent="0000018B1D11B2A0" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0000018B1D11ABE0" file="fifo.c" linenr="129" column="16" str=";" scope="0000018B1D122A30" astParent="0000018B1D11AEE0" astOperand1="0000018B1D11B2A0" astOperand2="0000018B1D11AAC0"/>
+    <token id="0000018B1D11AD60" file="fifo.c" linenr="129" column="17" str="count" scope="0000018B1D122A30" type="name" varId="57" variable="0000018B1D0A4C70" values="0000018B1CCD3060" astParent="0000018B1D11BBA0" valueType-type="short" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0000018B1D11BBA0" file="fifo.c" linenr="129" column="23" str="&lt;" scope="0000018B1D122A30" type="op" isComparisonOp="true" astParent="0000018B1D11AAC0" astOperand1="0000018B1D11AD60" astOperand2="0000018B1D11BC00" valueType-type="bool" valueType-reference="None"/>
+    <token id="0000018B1D11BAE0" file="fifo.c" linenr="129" column="25" str="fifo_buf" scope="0000018B1D122A30" type="name" varId="52" variable="0000018B1D0A39A0" astParent="0000018B1D11BC00" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="0000018B1CA83DE0"/>
+    <token id="0000018B1D11BC00" file="fifo.c" linenr="129" column="33" str="." scope="0000018B1D122A30" astParent="0000018B1D11BBA0" astOperand1="0000018B1D11BAE0" astOperand2="0000018B1D11BEA0" originalName="->" valueType-type="short" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000018B1D11BEA0" file="fifo.c" linenr="129" column="35" str="count" scope="0000018B1D122A30" type="name" varId="59" variable="0000018B1D0A2900" astParent="0000018B1D11BC00" valueType-type="short" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000018B1D11AAC0" file="fifo.c" linenr="129" column="40" str=";" scope="0000018B1D122A30" astParent="0000018B1D11ABE0" astOperand1="0000018B1D11BBA0" astOperand2="0000018B1D11AF40"/>
+    <token id="0000018B1D11ADC0" file="fifo.c" linenr="129" column="41" str="count" scope="0000018B1D122A30" type="name" varId="57" variable="0000018B1D0A4C70" values="0000018B1CCD3180" astParent="0000018B1D11AE80" valueType-type="short" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0000018B1D11AE80" file="fifo.c" linenr="129" column="46" str="++" scope="0000018B1D122A30" type="op" values="0000018B1CCD2DE0" astParent="0000018B1D11AF40" astOperand1="0000018B1D11ADC0" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0000018B1D11AF40" file="fifo.c" linenr="129" column="49" str="," scope="0000018B1D122A30" astParent="0000018B1D11AAC0" astOperand1="0000018B1D11AE80" astOperand2="0000018B1D11CCE0"/>
+    <token id="0000018B1D11AFA0" file="fifo.c" linenr="129" column="50" str="index" scope="0000018B1D122A30" type="name" varId="58" variable="0000018B1D0A3930" astParent="0000018B1D11CCE0" valueType-type="short" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0000018B1D11CCE0" file="fifo.c" linenr="129" column="55" str="++" scope="0000018B1D122A30" type="op" astParent="0000018B1D11AF40" astOperand1="0000018B1D11AFA0" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0000018B1D11CD40" file="fifo.c" linenr="129" column="57" str=")" scope="0000018B1D122A30" link="0000018B1D11AEE0"/>
+    <token id="0000018B1D11C200" file="fifo.c" linenr="130" column="3" str="{" scope="0000018B1D1212D0" link="0000018B1CAB2950"/>
+    <token id="0000018B1D11C0E0" file="fifo.c" linenr="131" column="4" str="if" scope="0000018B1D1212D0" type="name" astParent="0000018B1D11CF80"/>
+    <token id="0000018B1D11CF80" file="fifo.c" linenr="131" column="6" str="(" scope="0000018B1D1212D0" link="0000018B1D11C680" astOperand1="0000018B1D11C0E0" astOperand2="0000018B1D11C260"/>
+    <token id="0000018B1D11C440" file="fifo.c" linenr="131" column="7" str="fifo_buf" scope="0000018B1D1212D0" type="name" varId="52" variable="0000018B1D0A39A0" astParent="0000018B1D11CE00" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="0000018B1CA83DE0"/>
+    <token id="0000018B1D11CE00" file="fifo.c" linenr="131" column="15" str="." scope="0000018B1D1212D0" values="0000018B1CCD3520" astParent="0000018B1D11CE60" astOperand1="0000018B1D11C440" astOperand2="0000018B1D11C140" originalName="->"/>
+    <token id="0000018B1D11C140" file="fifo.c" linenr="131" column="17" str="head" scope="0000018B1D1212D0" type="name" varId="55" variable="0000018B1D0A2F20" astParent="0000018B1D11CE00"/>
+    <token id="0000018B1D11CE60" file="fifo.c" linenr="131" column="22" str="+" scope="0000018B1D1212D0" type="op" isArithmeticalOp="true" astParent="0000018B1D11C260" astOperand1="0000018B1D11CE00" astOperand2="0000018B1D11C1A0"/>
+    <token id="0000018B1D11C1A0" file="fifo.c" linenr="131" column="24" str="index" scope="0000018B1D1212D0" type="name" varId="58" variable="0000018B1D0A3930" astParent="0000018B1D11CE60" valueType-type="short" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0000018B1D11C260" file="fifo.c" linenr="131" column="30" str="==" scope="0000018B1D1212D0" type="op" isComparisonOp="true" astParent="0000018B1D11CF80" astOperand1="0000018B1D11CE60" astOperand2="0000018B1D11CEC0" valueType-type="bool" valueType-reference="None"/>
+    <token id="0000018B1D11C7A0" file="fifo.c" linenr="131" column="33" str="fifo_buf" scope="0000018B1D1212D0" type="name" varId="52" variable="0000018B1D0A39A0" astParent="0000018B1D11C620" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="0000018B1CA83DE0"/>
+    <token id="0000018B1D11C620" file="fifo.c" linenr="131" column="41" str="." scope="0000018B1D1212D0" values="0000018B1CCD34A0" astParent="0000018B1D11CEC0" astOperand1="0000018B1D11C7A0" astOperand2="0000018B1D11C320" originalName="->"/>
+    <token id="0000018B1D11C320" file="fifo.c" linenr="131" column="43" str="base" scope="0000018B1D1212D0" type="name" varId="54" variable="0000018B1D0A2660" astParent="0000018B1D11C620"/>
+    <token id="0000018B1D11CEC0" file="fifo.c" linenr="131" column="48" str="+" scope="0000018B1D1212D0" type="op" isArithmeticalOp="true" astParent="0000018B1D11C260" astOperand1="0000018B1D11C620" astOperand2="0000018B1D11CC20"/>
+    <token id="0000018B1D11CB60" file="fifo.c" linenr="131" column="49" str="fifo_buf" scope="0000018B1D1212D0" type="name" varId="52" variable="0000018B1D0A39A0" astParent="0000018B1D11CC20" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="0000018B1CA83DE0"/>
+    <token id="0000018B1D11CC20" file="fifo.c" linenr="131" column="57" str="." scope="0000018B1D1212D0" astParent="0000018B1D11CEC0" astOperand1="0000018B1D11CB60" astOperand2="0000018B1D11C380" originalName="->" valueType-type="short" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000018B1D11C380" file="fifo.c" linenr="131" column="59" str="length" scope="0000018B1D1212D0" type="name" varId="60" variable="0000018B1D0A3000" astParent="0000018B1D11CC20" valueType-type="short" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000018B1D11C680" file="fifo.c" linenr="131" column="65" str=")" scope="0000018B1D1212D0" link="0000018B1D11CF80"/>
+    <token id="0000018B1D11C740" file="fifo.c" linenr="132" column="4" str="{" scope="0000018B1D1225F0" link="0000018B1D11C080"/>
+    <token id="0000018B1D11CA40" file="fifo.c" linenr="133" column="5" str="index" scope="0000018B1D1225F0" type="name" varId="58" variable="0000018B1D0A3930" astParent="0000018B1D11CF20" valueType-type="short" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0000018B1D11CF20" file="fifo.c" linenr="133" column="11" str="=" scope="0000018B1D1225F0" type="op" isAssignmentOp="true" astOperand1="0000018B1D11CA40" astOperand2="0000018B1D11C8C0" valueType-type="short" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0000018B1D11C8C0" file="fifo.c" linenr="133" column="13" str="(" scope="0000018B1D1225F0" link="0000018B1D11C2C0" astParent="0000018B1D11CF20" astOperand1="0000018B1D11C6E0" valueType-type="short" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0000018B1D11CB00" file="fifo.c" linenr="133" column="0" str="short" scope="0000018B1D1225F0" type="name" isSigned="true"/>
+    <token id="0000018B1D11C2C0" file="fifo.c" linenr="133" column="20" str=")" scope="0000018B1D1225F0" link="0000018B1D11C8C0"/>
+    <token id="0000018B1D11C9E0" file="fifo.c" linenr="133" column="21" str="(" scope="0000018B1D1225F0" link="0000018B1D11CAA0"/>
+    <token id="0000018B1D11CBC0" file="fifo.c" linenr="133" column="22" str="index" scope="0000018B1D1225F0" type="name" varId="58" variable="0000018B1D0A3930" astParent="0000018B1D11C6E0" valueType-type="short" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0000018B1D11C6E0" file="fifo.c" linenr="133" column="28" str="-" scope="0000018B1D1225F0" type="op" isArithmeticalOp="true" astParent="0000018B1D11C8C0" astOperand1="0000018B1D11CBC0" astOperand2="0000018B1D11C500" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0000018B1D11CC80" file="fifo.c" linenr="133" column="30" str="fifo_buf" scope="0000018B1D1225F0" type="name" varId="52" variable="0000018B1D0A39A0" astParent="0000018B1D11C500" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="0000018B1CA83DE0"/>
+    <token id="0000018B1D11C500" file="fifo.c" linenr="133" column="38" str="." scope="0000018B1D1225F0" astParent="0000018B1D11C6E0" astOperand1="0000018B1D11CC80" astOperand2="0000018B1D11CDA0" originalName="->" valueType-type="short" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000018B1D11CDA0" file="fifo.c" linenr="133" column="40" str="length" scope="0000018B1D1225F0" type="name" varId="60" variable="0000018B1D0A3000" astParent="0000018B1D11C500" valueType-type="short" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000018B1D11CAA0" file="fifo.c" linenr="133" column="46" str=")" scope="0000018B1D1225F0" link="0000018B1D11C9E0"/>
+    <token id="0000018B1D11C3E0" file="fifo.c" linenr="133" column="47" str=";" scope="0000018B1D1225F0"/>
+    <token id="0000018B1D11C080" file="fifo.c" linenr="134" column="4" str="}" scope="0000018B1D1225F0" link="0000018B1D11C740"/>
+    <token id="0000018B1D11C4A0" file="fifo.c" linenr="135" column="4" str="printf" scope="0000018B1D1212D0" type="name" astParent="0000018B1D11C560"/>
+    <token id="0000018B1D11C560" file="fifo.c" linenr="135" column="10" str="(" scope="0000018B1D1212D0" link="0000018B1CAB2110" astOperand1="0000018B1D11C4A0" astOperand2="0000018B1D11C800" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-originalTypeName="int"/>
+    <token id="0000018B1D11C5C0" file="fifo.c" linenr="135" column="11" str="&quot;%d\n&quot;" scope="0000018B1D1212D0" type="string" strlen="3" values="0000018B1CCD3280" astParent="0000018B1D11C800" valueType-type="char" valueType-pointer="1" valueType-constness="1" valueType-reference="None"/>
+    <token id="0000018B1D11C800" file="fifo.c" linenr="135" column="17" str="," scope="0000018B1D1212D0" astParent="0000018B1D11C560" astOperand1="0000018B1D11C5C0" astOperand2="0000018B1D11C860"/>
+    <token id="0000018B1D11C860" file="fifo.c" linenr="135" column="18" str="*" scope="0000018B1D1212D0" type="op" isArithmeticalOp="true" astParent="0000018B1D11C800" astOperand1="0000018B1CAB1F90"/>
+    <token id="0000018B1D11C920" file="fifo.c" linenr="135" column="19" str="(" scope="0000018B1D1212D0" link="0000018B1CAB2230"/>
+    <token id="0000018B1D11C980" file="fifo.c" linenr="135" column="20" str="fifo_buf" scope="0000018B1D1212D0" type="name" varId="52" variable="0000018B1D0A39A0" astParent="0000018B1CAB2BF0" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="0000018B1CA83DE0"/>
+    <token id="0000018B1CAB2BF0" file="fifo.c" linenr="135" column="28" str="." scope="0000018B1D1212D0" values="0000018B1CCD2FE0" astParent="0000018B1CAB1F90" astOperand1="0000018B1D11C980" astOperand2="0000018B1CAB2530" originalName="->"/>
+    <token id="0000018B1CAB2530" file="fifo.c" linenr="135" column="30" str="head" scope="0000018B1D1212D0" type="name" varId="55" variable="0000018B1D0A2F20" astParent="0000018B1CAB2BF0"/>
+    <token id="0000018B1CAB1F90" file="fifo.c" linenr="135" column="34" str="+" scope="0000018B1D1212D0" type="op" isArithmeticalOp="true" astParent="0000018B1D11C860" astOperand1="0000018B1CAB2BF0" astOperand2="0000018B1CAB2AD0"/>
+    <token id="0000018B1CAB2AD0" file="fifo.c" linenr="135" column="35" str="index" scope="0000018B1D1212D0" type="name" varId="58" variable="0000018B1D0A3930" astParent="0000018B1CAB1F90" valueType-type="short" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0000018B1CAB2230" file="fifo.c" linenr="135" column="40" str=")" scope="0000018B1D1212D0" link="0000018B1D11C920"/>
+    <token id="0000018B1CAB2110" file="fifo.c" linenr="135" column="41" str=")" scope="0000018B1D1212D0" link="0000018B1D11C560"/>
+    <token id="0000018B1CAB1BD0" file="fifo.c" linenr="135" column="42" str=";" scope="0000018B1D1212D0"/>
+    <token id="0000018B1CAB2950" file="fifo.c" linenr="137" column="3" str="}" scope="0000018B1D1212D0" link="0000018B1D11C200"/>
+    <token id="0000018B1CAB17B0" file="fifo.c" linenr="138" column="2" str="}" scope="0000018B1D122A30" link="0000018B1D11AB80"/>
+    <token id="0000018B1CAB1FF0" file="fifo.c" linenr="139" column="2" str="else" scope="0000018B1D121930" type="name"/>
+    <token id="0000018B1CAB2C50" file="fifo.c" linenr="140" column="2" str="{" scope="0000018B1D122B40" link="0000018B1CAB1870"/>
+    <token id="0000018B1CAB19F0" file="fifo.c" linenr="141" column="3" str="state" scope="0000018B1D122B40" type="name" varId="53" variable="0000018B1D0A3230" astParent="0000018B1CAB2890" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1CAB2890" file="fifo.c" linenr="141" column="9" str="=" scope="0000018B1D122B40" type="op" isAssignmentOp="true" astOperand1="0000018B1CAB19F0" astOperand2="0000018B1CAB2590" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1CAB2590" file="fifo.c" linenr="141" column="11" str="FIFO_NULL" scope="0000018B1D122B40" type="name" values="0000018B1CCD30C0" astParent="0000018B1CAB2890" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1CAB2DD0" file="fifo.c" linenr="141" column="20" str=";" scope="0000018B1D122B40"/>
+    <token id="0000018B1CAB1870" file="fifo.c" linenr="142" column="2" str="}" scope="0000018B1D122B40" link="0000018B1CAB2C50"/>
+    <token id="0000018B1CAB28F0" file="fifo.c" linenr="143" column="2" str="return" scope="0000018B1D121930" type="name" astOperand1="0000018B1CAB2CB0" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1CAB2CB0" file="fifo.c" linenr="143" column="9" str="state" scope="0000018B1D121930" type="name" varId="53" variable="0000018B1D0A3230" values="0000018B1CCD3200" astParent="0000018B1CAB28F0" valueType-type="int" valueType-sign="signed" valueType-reference="None" valueType-typeScope="0000018B1CA83560"/>
+    <token id="0000018B1CAB2350" file="fifo.c" linenr="143" column="14" str=";" scope="0000018B1D121930"/>
+    <token id="0000018B1CAB1C90" file="fifo.c" linenr="144" column="1" str="}" scope="0000018B1D121930" link="0000018B1D11B540"/>
+  </tokenlist>
+  <scopes>
+    <scope id="0000018B1CA83450" type="Global">
+      <functionList>
+        <function id="0000018B1CAF28C0" tokenDef="0000018B1D46EA80" name="FIFO_init" type="Function">
+          <arg nr="1" variable="0000018B1D0A4110"/>
+          <arg nr="2" variable="0000018B1D0A48F0"/>
+          <arg nr="3" variable="0000018B1D0A3380"/>
+        </function>
+        <function id="0000018B1CAF2DC0" tokenDef="0000018B1D46EB40" name="FIFO_enqueue" type="Function">
+          <arg nr="1" variable="0000018B1D0A3E70"/>
+          <arg nr="2" variable="0000018B1D0A3F50"/>
+        </function>
+        <function id="0000018B1CAF2BE0" tokenDef="0000018B1D46F560" name="FIFO_dequeue" type="Function">
+          <arg nr="1" variable="0000018B1D0A45E0"/>
+          <arg nr="2" variable="0000018B1D0A47A0"/>
+        </function>
+        <function id="0000018B1CAF1F60" tokenDef="0000018B1D46ED80" name="FIFO_is_full" type="Function">
+          <arg nr="1" variable="0000018B1D0A38C0"/>
+        </function>
+        <function id="0000018B1CAF2960" tokenDef="0000018B1D46E360" name="FIFO_is_empty" type="Function">
+          <arg nr="1" variable="0000018B1D0A3850"/>
+        </function>
+        <function id="0000018B1D0F69F0" tokenDef="0000018B1D46E420" name="FIFO_display" type="Function">
+          <arg nr="1" variable="0000018B1D0A39A0"/>
+        </function>
+      </functionList>
+    </scope>
+    <scope id="0000018B1CA83DE0" type="Struct" className="FIFO_buffer" bodyStart="0000018B1CADE290" bodyEnd="0000018B1CADEA10" nestedIn="0000018B1CA83450">
+      <varlist>
+        <var id="0000018B1D0A2660"/>
+        <var id="0000018B1D0A2F20"/>
+        <var id="0000018B1D0A2820"/>
+        <var id="0000018B1D0A3000"/>
+        <var id="0000018B1D0A2900"/>
+      </varlist>
+    </scope>
+    <scope id="0000018B1CA83560" type="Enum" className="FIFO_state" bodyStart="0000018B1CADE6B0" bodyEnd="0000018B1CADED70" nestedIn="0000018B1CA83450"/>
+    <scope id="0000018B1CA83780" type="Function" className="FIFO_init" bodyStart="0000018B1D46F860" bodyEnd="0000018B1D4713F0" nestedIn="0000018B1CA83450" function="0000018B1CAF28C0">
+      <varlist>
+        <var id="0000018B1D0A14E0"/>
+      </varlist>
+    </scope>
+    <scope id="0000018B1CA83EF0" type="If" bodyStart="0000018B1D4702B0" bodyEnd="0000018B1D471150" nestedIn="0000018B1CA83780"/>
+    <scope id="0000018B1CA83890" type="Else" bodyStart="0000018B1D4704F0" bodyEnd="0000018B1D4703D0" nestedIn="0000018B1CA83780"/>
+    <scope id="0000018B1CA839A0" type="Function" className="FIFO_enqueue" bodyStart="0000018B1D470A90" bodyEnd="0000018B1D11D920" nestedIn="0000018B1CA83450" function="0000018B1CAF2DC0">
+      <varlist>
+        <var id="0000018B1D0A16A0"/>
+      </varlist>
+    </scope>
+    <scope id="0000018B1CA83AB0" type="If" bodyStart="0000018B1D4718D0" bodyEnd="0000018B1D11D9E0" nestedIn="0000018B1CA839A0"/>
+    <scope id="0000018B1CA83BC0" type="If" bodyStart="0000018B1D11E700" bodyEnd="0000018B1D11DF80" nestedIn="0000018B1CA83AB0"/>
+    <scope id="0000018B1CA83CD0" type="Else" bodyStart="0000018B1D11DDA0" bodyEnd="0000018B1D11D0E0" nestedIn="0000018B1CA839A0"/>
+    <scope id="0000018B1D122810" type="Function" className="FIFO_dequeue" bodyStart="0000018B1D11D560" bodyEnd="0000018B1D120050" nestedIn="0000018B1CA83450" function="0000018B1CAF2BE0">
+      <varlist>
+        <var id="0000018B1D0A42D0"/>
+      </varlist>
+    </scope>
+    <scope id="0000018B1D1220A0" type="If" bodyStart="0000018B1D11EE80" bodyEnd="0000018B1D120710" nestedIn="0000018B1D122810"/>
+    <scope id="0000018B1D1221B0" type="If" bodyStart="0000018B1D120230" bodyEnd="0000018B1D11FF90" nestedIn="0000018B1D1220A0"/>
+    <scope id="0000018B1D1223D0" type="Else" bodyStart="0000018B1D11FC90" bodyEnd="0000018B1D120590" nestedIn="0000018B1D122810"/>
+    <scope id="0000018B1D122C50" type="Function" className="FIFO_is_full" bodyStart="0000018B1D11F690" bodyEnd="0000018B1D11A040" nestedIn="0000018B1CA83450" function="0000018B1CAF1F60">
+      <varlist>
+        <var id="0000018B1D0A37E0"/>
+      </varlist>
+    </scope>
+    <scope id="0000018B1D121600" type="If" bodyStart="0000018B1D120C50" bodyEnd="0000018B1D11A640" nestedIn="0000018B1D122C50"/>
+    <scope id="0000018B1D122700" type="If" bodyStart="0000018B1D1208F0" bodyEnd="0000018B1D120AD0" nestedIn="0000018B1D121600"/>
+    <scope id="0000018B1D122920" type="Else" bodyStart="0000018B1D119500" bodyEnd="0000018B1D11A2E0" nestedIn="0000018B1D121600"/>
+    <scope id="0000018B1D121710" type="Else" bodyStart="0000018B1D119680" bodyEnd="0000018B1D119BC0" nestedIn="0000018B1D122C50"/>
+    <scope id="0000018B1D121820" type="Function" className="FIFO_is_empty" bodyStart="0000018B1D119C20" bodyEnd="0000018B1D11B6C0" nestedIn="0000018B1CA83450" function="0000018B1CAF2960">
+      <varlist>
+        <var id="0000018B1D0A40A0"/>
+      </varlist>
+    </scope>
+    <scope id="0000018B1D121A40" type="If" bodyStart="0000018B1D119CE0" bodyEnd="0000018B1D11B360" nestedIn="0000018B1D121820"/>
+    <scope id="0000018B1D1222C0" type="If" bodyStart="0000018B1D11A520" bodyEnd="0000018B1D1197A0" nestedIn="0000018B1D121A40"/>
+    <scope id="0000018B1D121E80" type="Else" bodyStart="0000018B1D119920" bodyEnd="0000018B1D11B660" nestedIn="0000018B1D121A40"/>
+    <scope id="0000018B1D1224E0" type="Else" bodyStart="0000018B1D11B180" bodyEnd="0000018B1D11BCC0" nestedIn="0000018B1D121820"/>
+    <scope id="0000018B1D121930" type="Function" className="FIFO_display" bodyStart="0000018B1D11B540" bodyEnd="0000018B1CAB1C90" nestedIn="0000018B1CA83450" function="0000018B1D0F69F0">
+      <varlist>
+        <var id="0000018B1D0A3230"/>
+      </varlist>
+    </scope>
+    <scope id="0000018B1D122A30" type="If" bodyStart="0000018B1D11AB80" bodyEnd="0000018B1CAB17B0" nestedIn="0000018B1D121930">
+      <varlist>
+        <var id="0000018B1D0A4C70"/>
+        <var id="0000018B1D0A3930"/>
+      </varlist>
+    </scope>
+    <scope id="0000018B1D1212D0" type="For" bodyStart="0000018B1D11C200" bodyEnd="0000018B1CAB2950" nestedIn="0000018B1D122A30"/>
+    <scope id="0000018B1D1225F0" type="If" bodyStart="0000018B1D11C740" bodyEnd="0000018B1D11C080" nestedIn="0000018B1D1212D0"/>
+    <scope id="0000018B1D122B40" type="Else" bodyStart="0000018B1CAB2C50" bodyEnd="0000018B1CAB1870" nestedIn="0000018B1D121930"/>
+  </scopes>
+  <variables>
+    <var id="0000018B1D0A14E0" nameToken="0000018B1D46F8C0" typeStartToken="0000018B1D46FB00" typeEndToken="0000018B1D46FB00" access="Local" scope="0000018B1CA83780" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="true" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000018B1D0A16A0" nameToken="0000018B1D470D30" typeStartToken="0000018B1D470CD0" typeEndToken="0000018B1D470CD0" access="Local" scope="0000018B1CA839A0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="true" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000018B1D0A2660" nameToken="0000018B1CADEE90" typeStartToken="0000018B1CADE9B0" typeEndToken="0000018B1CADE590" access="Public" scope="0000018B1CA83DE0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="true" isReference="false" isStatic="false"/>
+    <var id="0000018B1D0A2820" nameToken="0000018B1CADECB0" typeStartToken="0000018B1CADE230" typeEndToken="0000018B1CADE2F0" access="Public" scope="0000018B1CA83DE0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="true" isReference="false" isStatic="false"/>
+    <var id="0000018B1D0A2900" nameToken="0000018B1CADE470" typeStartToken="0000018B1CADE410" typeEndToken="0000018B1CADE410" access="Public" scope="0000018B1CA83DE0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000018B1D0A2F20" nameToken="0000018B1CADE170" typeStartToken="0000018B1CADEEF0" typeEndToken="0000018B1CADE8F0" access="Public" scope="0000018B1CA83DE0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="true" isReference="false" isStatic="false"/>
+    <var id="0000018B1D0A3000" nameToken="0000018B1CADE3B0" typeStartToken="0000018B1CADED10" typeEndToken="0000018B1CADED10" access="Public" scope="0000018B1CA83DE0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000018B1D0A3230" nameToken="0000018B1D11B600" typeStartToken="0000018B1D11BF60" typeEndToken="0000018B1D11BF60" access="Local" scope="0000018B1D121930" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="true" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000018B1D0A3380" nameToken="0000018B1D46FF80" typeStartToken="0000018B1D46FB60" typeEndToken="0000018B1D46FB60" access="Argument" scope="0000018B1CA83780" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000018B1D0A37E0" nameToken="0000018B1D11F2D0" typeStartToken="0000018B1D11FE70" typeEndToken="0000018B1D11FE70" access="Local" scope="0000018B1D122C50" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="true" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000018B1D0A3850" nameToken="0000018B1D11A400" typeStartToken="0000018B1CAB1690" typeEndToken="0000018B1D119440" access="Argument" scope="0000018B1D121820" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="true" isReference="false" isStatic="false"/>
+    <var id="0000018B1D0A38C0" nameToken="0000018B1D11F210" typeStartToken="0000018B1CAB1E10" typeEndToken="0000018B1D1204D0" access="Argument" scope="0000018B1D122C50" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="true" isReference="false" isStatic="false"/>
+    <var id="0000018B1D0A3930" nameToken="0000018B1D11B060" typeStartToken="0000018B1CAB2E30" typeEndToken="0000018B1CAB2E30" access="Local" scope="0000018B1D122A30" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="true" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000018B1D0A39A0" nameToken="0000018B1D11B120" typeStartToken="0000018B1CAB1F30" typeEndToken="0000018B1D11B300" access="Argument" scope="0000018B1D121930" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="true" isReference="false" isStatic="false"/>
+    <var id="0000018B1D0A3E70" nameToken="0000018B1D470670" typeStartToken="0000018B1CAB22F0" typeEndToken="0000018B1D470610" access="Argument" scope="0000018B1CA839A0" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="true" isReference="false" isStatic="false"/>
+    <var id="0000018B1D0A3F50" nameToken="0000018B1D4708B0" typeStartToken="0000018B1D470E50" typeEndToken="0000018B1D470E50" access="Argument" scope="0000018B1CA839A0" constness="0" isArgument="true" isArray="false" isClass="true" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000018B1D0A40A0" nameToken="0000018B1D119800" typeStartToken="0000018B1D11A220" typeEndToken="0000018B1D11A220" access="Local" scope="0000018B1D121820" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="true" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000018B1D0A4110" nameToken="0000018B1D46FE60" typeStartToken="0000018B1CAB2290" typeEndToken="0000018B1D46F980" access="Argument" scope="0000018B1CA83780" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="true" isReference="false" isStatic="false"/>
+    <var id="0000018B1D0A42D0" nameToken="0000018B1D11D5C0" typeStartToken="0000018B1D11E220" typeEndToken="0000018B1D11E220" access="Local" scope="0000018B1D122810" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="true" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000018B1D0A45E0" nameToken="0000018B1D11E460" typeStartToken="0000018B1CAB21D0" typeEndToken="0000018B1D11D320" access="Argument" scope="0000018B1D122810" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="true" isReference="false" isStatic="false"/>
+    <var id="0000018B1D0A47A0" nameToken="0000018B1D11E1C0" typeStartToken="0000018B1D11D8C0" typeEndToken="0000018B1D11E160" access="Argument" scope="0000018B1D122810" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="true" isReference="false" isStatic="false"/>
+    <var id="0000018B1D0A48F0" nameToken="0000018B1D46FCE0" typeStartToken="0000018B1D46FAA0" typeEndToken="0000018B1D46FEC0" access="Argument" scope="0000018B1CA83780" constness="0" isArgument="true" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="true" isReference="false" isStatic="false"/>
+    <var id="0000018B1D0A4C70" nameToken="0000018B1D11A880" typeStartToken="0000018B1D11B8A0" typeEndToken="0000018B1D11B8A0" access="Local" scope="0000018B1D122A30" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="true" isPointer="false" isReference="false" isStatic="false"/>
+  </variables>
+  <valueflow>
+    <values id="0000018B1CCD2E60">
+      <value intvalue="0" known="true"/>
+    </values>
+    <values id="0000018B1CCD3540">
+      <value intvalue="1" known="true"/>
+    </values>
+    <values id="0000018B1CCD3000">
+      <value intvalue="2" known="true"/>
+    </values>
+    <values id="0000018B1CCD3020">
+      <value intvalue="3" known="true"/>
+    </values>
+    <values id="0000018B1CCD2F40">
+      <value intvalue="3" known="true"/>
+    </values>
+    <values id="0000018B1CCD31A0">
+      <value intvalue="0" condition-line="15" impossible="true"/>
+    </values>
+    <values id="0000018B1CCD3400">
+      <value intvalue="0" condition-line="15" impossible="true"/>
+    </values>
+    <values id="0000018B1CCD3420">
+      <value intvalue="0" condition-line="15" impossible="true"/>
+    </values>
+    <values id="0000018B1CCD2FA0">
+      <value intvalue="0" known="true"/>
+    </values>
+    <values id="0000018B1CCD3440">
+      <value intvalue="0" known="true"/>
+    </values>
+    <values id="0000018B1CCD31C0">
+      <value intvalue="3" possible="true"/>
+      <value intvalue="0" possible="true"/>
+    </values>
+    <values id="0000018B1CCD34E0">
+      <value intvalue="0" known="true"/>
+    </values>
+    <values id="0000018B1CCD2F80">
+      <value intvalue="0" known="true"/>
+    </values>
+    <values id="0000018B1CCD2F60">
+      <value intvalue="0" condition-line="37" possible="true"/>
+    </values>
+    <values id="0000018B1CCD3100">
+      <value intvalue="0" known="true"/>
+    </values>
+    <values id="0000018B1CCD3040">
+      <value intvalue="0" condition-line="57" possible="true"/>
+    </values>
+    <values id="0000018B1CCD3460">
+      <value intvalue="1" known="true"/>
+    </values>
+    <values id="0000018B1CCD3160">
+      <value intvalue="0" known="true"/>
+    </values>
+    <values id="0000018B1CCD3340">
+      <value intvalue="3" known="true"/>
+    </values>
+    <values id="0000018B1CCD3480">
+      <value intvalue="1" possible="true"/>
+      <value intvalue="0" possible="true"/>
+      <value intvalue="3" possible="true"/>
+    </values>
+    <values id="0000018B1CCD3240">
+      <value intvalue="0" known="true"/>
+    </values>
+    <values id="0000018B1CCD30A0">
+      <value intvalue="2" known="true"/>
+    </values>
+    <values id="0000018B1CCD33A0">
+      <value intvalue="0" known="true"/>
+    </values>
+    <values id="0000018B1CCD2FC0">
+      <value intvalue="3" known="true"/>
+    </values>
+    <values id="0000018B1CCD3500">
+      <value intvalue="2" possible="true"/>
+      <value intvalue="0" possible="true"/>
+      <value intvalue="3" possible="true"/>
+    </values>
+    <values id="0000018B1CCD3560">
+      <value intvalue="0" known="true"/>
+    </values>
+    <values id="0000018B1CCD3080">
+      <value intvalue="0" known="true"/>
+    </values>
+    <values id="0000018B1CCD33C0">
+      <value intvalue="0" known="true"/>
+    </values>
+    <values id="0000018B1CCD3060">
+      <value intvalue="0" possible="true"/>
+    </values>
+    <values id="0000018B1CCD3180">
+      <value intvalue="0" possible="true"/>
+    </values>
+    <values id="0000018B1CCD2DE0">
+      <value intvalue="0" possible="true"/>
+    </values>
+    <values id="0000018B1CCD3520">
+      <value intvalue="0" condition-line="126" impossible="true"/>
+    </values>
+    <values id="0000018B1CCD34A0">
+      <value intvalue="0" condition-line="126" impossible="true"/>
+    </values>
+    <values id="0000018B1CCD3280">
+      <value tokvalue="0000018B1D11C5C0" known="true"/>
+    </values>
+    <values id="0000018B1CCD2FE0">
+      <value intvalue="0" condition-line="126" impossible="true"/>
+    </values>
+    <values id="0000018B1CCD30C0">
+      <value intvalue="3" known="true"/>
+    </values>
+    <values id="0000018B1CCD3200">
+      <value intvalue="3" possible="true"/>
+      <value uninit="1" possible="true"/>
+    </values>
+  </valueflow>
+</dump>
+</dumps>

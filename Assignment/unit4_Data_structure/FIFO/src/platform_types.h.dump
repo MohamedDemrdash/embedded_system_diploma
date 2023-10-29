@@ -1,0 +1,204 @@
+<?xml version="1.0"?>
+<dumps>
+  <platform name="win64" char_bit="8" short_bit="16" int_bit="32" long_bit="32" long_long_bit="64" pointer_bit="64"/>
+  <rawtokens>
+    <file index="0" name="platform_types.h"/>
+    <tok fileIndex="0" linenr="1" column="1" str="/*x * platform_types.hx *x * Created on: Aug 14, 2023x * Author: Mohamed Hussein Demrdashx * Brief : This file wrote based on AtuoSAR_SWS_Platform_Types documentx * xx   R20-11 and specify the platform types for STMicroelectronics ST30x * xx   mapped to the ANSI C typesx *x */"/>
+    <tok fileIndex="0" linenr="12" column="1" str="#"/>
+    <tok fileIndex="0" linenr="12" column="2" str="ifndef"/>
+    <tok fileIndex="0" linenr="12" column="9" str="PLATFORM_TYPES_H_"/>
+    <tok fileIndex="0" linenr="13" column="1" str="#"/>
+    <tok fileIndex="0" linenr="13" column="2" str="define"/>
+    <tok fileIndex="0" linenr="13" column="9" str="PLATFORM_TYPES_H_"/>
+    <tok fileIndex="0" linenr="15" column="1" str="#"/>
+    <tok fileIndex="0" linenr="15" column="2" str="define"/>
+    <tok fileIndex="0" linenr="15" column="9" str="CPU_TYPE_8"/>
+    <tok fileIndex="0" linenr="15" column="27" str="8"/>
+    <tok fileIndex="0" linenr="16" column="1" str="#"/>
+    <tok fileIndex="0" linenr="16" column="2" str="define"/>
+    <tok fileIndex="0" linenr="16" column="9" str="CPU_TYPE_16"/>
+    <tok fileIndex="0" linenr="16" column="27" str="16"/>
+    <tok fileIndex="0" linenr="17" column="1" str="#"/>
+    <tok fileIndex="0" linenr="17" column="2" str="define"/>
+    <tok fileIndex="0" linenr="17" column="9" str="CPU_TYPE_32"/>
+    <tok fileIndex="0" linenr="17" column="27" str="32"/>
+    <tok fileIndex="0" linenr="18" column="1" str="#"/>
+    <tok fileIndex="0" linenr="18" column="2" str="define"/>
+    <tok fileIndex="0" linenr="18" column="9" str="CPU_TYPE_64"/>
+    <tok fileIndex="0" linenr="18" column="27" str="64"/>
+    <tok fileIndex="0" linenr="19" column="1" str="#"/>
+    <tok fileIndex="0" linenr="19" column="2" str="define"/>
+    <tok fileIndex="0" linenr="19" column="9" str="MSB_FIRST"/>
+    <tok fileIndex="0" linenr="19" column="27" str="0"/>
+    <tok fileIndex="0" linenr="20" column="1" str="#"/>
+    <tok fileIndex="0" linenr="20" column="2" str="define"/>
+    <tok fileIndex="0" linenr="20" column="9" str="LSB_FIRST"/>
+    <tok fileIndex="0" linenr="20" column="27" str="1"/>
+    <tok fileIndex="0" linenr="21" column="1" str="#"/>
+    <tok fileIndex="0" linenr="21" column="2" str="define"/>
+    <tok fileIndex="0" linenr="21" column="9" str="HIGH_BYTE_FIRST"/>
+    <tok fileIndex="0" linenr="21" column="27" str="0"/>
+    <tok fileIndex="0" linenr="22" column="1" str="#"/>
+    <tok fileIndex="0" linenr="22" column="2" str="define"/>
+    <tok fileIndex="0" linenr="22" column="9" str="LOW_BYTE_FIRST"/>
+    <tok fileIndex="0" linenr="22" column="27" str="1"/>
+    <tok fileIndex="0" linenr="25" column="1" str="#"/>
+    <tok fileIndex="0" linenr="25" column="2" str="ifndef"/>
+    <tok fileIndex="0" linenr="25" column="9" str="TRUE"/>
+    <tok fileIndex="0" linenr="26" column="1" str="#"/>
+    <tok fileIndex="0" linenr="26" column="2" str="define"/>
+    <tok fileIndex="0" linenr="26" column="9" str="TRUE"/>
+    <tok fileIndex="0" linenr="26" column="14" str="1"/>
+    <tok fileIndex="0" linenr="27" column="1" str="#"/>
+    <tok fileIndex="0" linenr="27" column="2" str="endif"/>
+    <tok fileIndex="0" linenr="29" column="1" str="#"/>
+    <tok fileIndex="0" linenr="29" column="2" str="ifndef"/>
+    <tok fileIndex="0" linenr="29" column="9" str="FALSE"/>
+    <tok fileIndex="0" linenr="30" column="1" str="#"/>
+    <tok fileIndex="0" linenr="30" column="2" str="define"/>
+    <tok fileIndex="0" linenr="30" column="9" str="FALSE"/>
+    <tok fileIndex="0" linenr="30" column="15" str="0"/>
+    <tok fileIndex="0" linenr="31" column="1" str="#"/>
+    <tok fileIndex="0" linenr="31" column="2" str="endif"/>
+    <tok fileIndex="0" linenr="34" column="1" str="#"/>
+    <tok fileIndex="0" linenr="34" column="2" str="define"/>
+    <tok fileIndex="0" linenr="34" column="9" str="CPU_TYPE"/>
+    <tok fileIndex="0" linenr="34" column="27" str="CPU_TYPE_32"/>
+    <tok fileIndex="0" linenr="35" column="1" str="#"/>
+    <tok fileIndex="0" linenr="35" column="2" str="define"/>
+    <tok fileIndex="0" linenr="35" column="9" str="CPU_BIT_ORDER"/>
+    <tok fileIndex="0" linenr="35" column="27" str="LSB_FIRST"/>
+    <tok fileIndex="0" linenr="36" column="1" str="#"/>
+    <tok fileIndex="0" linenr="36" column="2" str="define"/>
+    <tok fileIndex="0" linenr="36" column="9" str="CPU_BYTE_ORDER"/>
+    <tok fileIndex="0" linenr="36" column="27" str="LOW_BYTE_FIRST"/>
+    <tok fileIndex="0" linenr="39" column="1" str="typedef"/>
+    <tok fileIndex="0" linenr="39" column="9" str="unsigned"/>
+    <tok fileIndex="0" linenr="39" column="18" str="char"/>
+    <tok fileIndex="0" linenr="39" column="30" str="boolean"/>
+    <tok fileIndex="0" linenr="39" column="37" str=";"/>
+    <tok fileIndex="0" linenr="40" column="1" str="typedef"/>
+    <tok fileIndex="0" linenr="40" column="9" str="signed"/>
+    <tok fileIndex="0" linenr="40" column="16" str="char"/>
+    <tok fileIndex="0" linenr="40" column="30" str="sint8"/>
+    <tok fileIndex="0" linenr="40" column="35" str=";"/>
+    <tok fileIndex="0" linenr="41" column="1" str="typedef"/>
+    <tok fileIndex="0" linenr="41" column="9" str="unsigned"/>
+    <tok fileIndex="0" linenr="41" column="18" str="char"/>
+    <tok fileIndex="0" linenr="41" column="30" str="uint8"/>
+    <tok fileIndex="0" linenr="41" column="35" str=";"/>
+    <tok fileIndex="0" linenr="42" column="1" str="typedef"/>
+    <tok fileIndex="0" linenr="42" column="9" str="signed"/>
+    <tok fileIndex="0" linenr="42" column="16" str="short"/>
+    <tok fileIndex="0" linenr="42" column="30" str="sint16"/>
+    <tok fileIndex="0" linenr="42" column="36" str=";"/>
+    <tok fileIndex="0" linenr="43" column="1" str="typedef"/>
+    <tok fileIndex="0" linenr="43" column="9" str="unsigned"/>
+    <tok fileIndex="0" linenr="43" column="18" str="short"/>
+    <tok fileIndex="0" linenr="43" column="30" str="uint16"/>
+    <tok fileIndex="0" linenr="43" column="36" str=";"/>
+    <tok fileIndex="0" linenr="44" column="1" str="typedef"/>
+    <tok fileIndex="0" linenr="44" column="9" str="signed"/>
+    <tok fileIndex="0" linenr="44" column="16" str="long"/>
+    <tok fileIndex="0" linenr="44" column="30" str="sint32"/>
+    <tok fileIndex="0" linenr="44" column="36" str=";"/>
+    <tok fileIndex="0" linenr="45" column="1" str="typedef"/>
+    <tok fileIndex="0" linenr="45" column="9" str="signed"/>
+    <tok fileIndex="0" linenr="45" column="16" str="long"/>
+    <tok fileIndex="0" linenr="45" column="21" str="long"/>
+    <tok fileIndex="0" linenr="45" column="30" str="sint64"/>
+    <tok fileIndex="0" linenr="45" column="36" str=";"/>
+    <tok fileIndex="0" linenr="46" column="1" str="typedef"/>
+    <tok fileIndex="0" linenr="46" column="9" str="unsigned"/>
+    <tok fileIndex="0" linenr="46" column="18" str="long"/>
+    <tok fileIndex="0" linenr="46" column="30" str="uint32"/>
+    <tok fileIndex="0" linenr="46" column="36" str=";"/>
+    <tok fileIndex="0" linenr="47" column="1" str="typedef"/>
+    <tok fileIndex="0" linenr="47" column="9" str="unsigned"/>
+    <tok fileIndex="0" linenr="47" column="18" str="long"/>
+    <tok fileIndex="0" linenr="47" column="23" str="long"/>
+    <tok fileIndex="0" linenr="47" column="30" str="uint64"/>
+    <tok fileIndex="0" linenr="47" column="36" str=";"/>
+    <tok fileIndex="0" linenr="48" column="1" str="typedef"/>
+    <tok fileIndex="0" linenr="48" column="9" str="unsigned"/>
+    <tok fileIndex="0" linenr="48" column="18" str="long"/>
+    <tok fileIndex="0" linenr="48" column="30" str="uint8_least"/>
+    <tok fileIndex="0" linenr="48" column="41" str=";"/>
+    <tok fileIndex="0" linenr="49" column="1" str="typedef"/>
+    <tok fileIndex="0" linenr="49" column="9" str="unsigned"/>
+    <tok fileIndex="0" linenr="49" column="18" str="long"/>
+    <tok fileIndex="0" linenr="49" column="30" str="uint16_least"/>
+    <tok fileIndex="0" linenr="49" column="42" str=";"/>
+    <tok fileIndex="0" linenr="50" column="1" str="typedef"/>
+    <tok fileIndex="0" linenr="50" column="9" str="unsigned"/>
+    <tok fileIndex="0" linenr="50" column="18" str="long"/>
+    <tok fileIndex="0" linenr="50" column="30" str="uint32_least"/>
+    <tok fileIndex="0" linenr="50" column="42" str=";"/>
+    <tok fileIndex="0" linenr="51" column="1" str="typedef"/>
+    <tok fileIndex="0" linenr="51" column="9" str="signed"/>
+    <tok fileIndex="0" linenr="51" column="16" str="long"/>
+    <tok fileIndex="0" linenr="51" column="30" str="sint8_least"/>
+    <tok fileIndex="0" linenr="51" column="41" str=";"/>
+    <tok fileIndex="0" linenr="52" column="1" str="typedef"/>
+    <tok fileIndex="0" linenr="52" column="9" str="signed"/>
+    <tok fileIndex="0" linenr="52" column="16" str="long"/>
+    <tok fileIndex="0" linenr="52" column="30" str="sint16_least"/>
+    <tok fileIndex="0" linenr="52" column="42" str=";"/>
+    <tok fileIndex="0" linenr="53" column="1" str="typedef"/>
+    <tok fileIndex="0" linenr="53" column="9" str="signed"/>
+    <tok fileIndex="0" linenr="53" column="16" str="long"/>
+    <tok fileIndex="0" linenr="53" column="30" str="sint32_least"/>
+    <tok fileIndex="0" linenr="53" column="42" str=";"/>
+    <tok fileIndex="0" linenr="54" column="1" str="typedef"/>
+    <tok fileIndex="0" linenr="54" column="9" str="float"/>
+    <tok fileIndex="0" linenr="54" column="30" str="float32"/>
+    <tok fileIndex="0" linenr="54" column="37" str=";"/>
+    <tok fileIndex="0" linenr="55" column="1" str="typedef"/>
+    <tok fileIndex="0" linenr="55" column="9" str="double"/>
+    <tok fileIndex="0" linenr="55" column="30" str="float64"/>
+    <tok fileIndex="0" linenr="55" column="37" str=";"/>
+    <tok fileIndex="0" linenr="57" column="1" str="#"/>
+    <tok fileIndex="0" linenr="57" column="2" str="endif"/>
+    <tok fileIndex="0" linenr="57" column="8" str="/* PLATFORM_TYPES_H_ */"/>
+  </rawtokens>
+  <suppressions>
+  </suppressions>
+<dump cfg="">
+  <standards>
+    <c version="c11"/>
+    <cpp version="c++20"/>
+  </standards>
+  <directivelist>
+    <directive file="platform_types.h" linenr="12" str="#ifndef PLATFORM_TYPES_H_"/>
+    <directive file="platform_types.h" linenr="13" str="#define PLATFORM_TYPES_H_"/>
+    <directive file="platform_types.h" linenr="15" str="#define CPU_TYPE_8 8"/>
+    <directive file="platform_types.h" linenr="16" str="#define CPU_TYPE_16 16"/>
+    <directive file="platform_types.h" linenr="17" str="#define CPU_TYPE_32 32"/>
+    <directive file="platform_types.h" linenr="18" str="#define CPU_TYPE_64 64"/>
+    <directive file="platform_types.h" linenr="19" str="#define MSB_FIRST 0"/>
+    <directive file="platform_types.h" linenr="20" str="#define LSB_FIRST 1"/>
+    <directive file="platform_types.h" linenr="21" str="#define HIGH_BYTE_FIRST 0"/>
+    <directive file="platform_types.h" linenr="22" str="#define LOW_BYTE_FIRST 1"/>
+    <directive file="platform_types.h" linenr="25" str="#ifndef TRUE"/>
+    <directive file="platform_types.h" linenr="26" str="#define TRUE 1"/>
+    <directive file="platform_types.h" linenr="27" str="#endif"/>
+    <directive file="platform_types.h" linenr="29" str="#ifndef FALSE"/>
+    <directive file="platform_types.h" linenr="30" str="#define FALSE 0"/>
+    <directive file="platform_types.h" linenr="31" str="#endif"/>
+    <directive file="platform_types.h" linenr="34" str="#define CPU_TYPE CPU_TYPE_32"/>
+    <directive file="platform_types.h" linenr="35" str="#define CPU_BIT_ORDER LSB_FIRST"/>
+    <directive file="platform_types.h" linenr="36" str="#define CPU_BYTE_ORDER LOW_BYTE_FIRST"/>
+    <directive file="platform_types.h" linenr="57" str="#endif"/>
+  </directivelist>
+  <tokenlist>
+    <token id="0000018B1CAB3010" file="platform_types.h" linenr="55" column="37" str=";" scope="0000018B1CA83340"/>
+  </tokenlist>
+  <scopes>
+    <scope id="0000018B1CA83340" type="Global"/>
+  </scopes>
+  <variables>
+  </variables>
+  <valueflow>
+  </valueflow>
+</dump>
+</dumps>
