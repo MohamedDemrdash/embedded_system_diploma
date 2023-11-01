@@ -1,0 +1,6 @@
+654 Mahmoud Demrdash 3.990000 3 4 5 7 8
+741 Sara Amer 3.890000 1 3 6
+159 Ahmed Ali 2.690000 1 2 11 14 15
+963 Remon Mina 2.470000 1 6 7 9
+951 Ali Omran 2.350000 1 3 5 12 13
+852 Mohamed Demrdash 3.790000 8 9 10 11 12
