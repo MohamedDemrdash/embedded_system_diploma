@@ -1,0 +1,251 @@
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+RAM              0x20000000         0x00005000         xrw
+ROM              0x08000000         0x00010000         xr
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+                0x20005000                _estack = (ORIGIN (RAM) + LENGTH (RAM))
+                0x00000200                _Min_Heap_Size = 0x200
+                0x00000400                _Min_Stack_Size = 0x400
+
+.isr_vector     0x08000000      0x130
+                0x08000000                . = ALIGN (0x4)
+ *(.isr_vector)
+ .isr_vector    0x08000000      0x130 startup_stm32f103c8tx.o
+                0x08000000                g_pfnVectors
+                0x08000130                . = ALIGN (0x4)
+
+.text           0x08000130       0xe0
+                0x08000130                . = ALIGN (0x4)
+ *(.text)
+ .text          0x08000130       0x14 startup_stm32f103c8tx.o
+ .text          0x08000144       0x7c main.o
+                0x08000144                main
+ *(.text*)
+ .text.Reset_Handler
+                0x080001c0       0x4c startup_stm32f103c8tx.o
+                0x080001c0                Reset_Handler
+ .text.Default_Handler
+                0x0800020c        0x2 startup_stm32f103c8tx.o
+                0x0800020c                EXTI2_IRQHandler
+                0x0800020c                TIM8_TRG_COM_IRQHandler
+                0x0800020c                TIM8_CC_IRQHandler
+                0x0800020c                DebugMon_Handler
+                0x0800020c                TIM1_CC_IRQHandler
+                0x0800020c                HardFault_Handler
+                0x0800020c                TIM6_IRQHandler
+                0x0800020c                SysTick_Handler
+                0x0800020c                PVD_IRQHandler
+                0x0800020c                SDIO_IRQHandler
+                0x0800020c                PendSV_Handler
+                0x0800020c                NMI_Handler
+                0x0800020c                EXTI3_IRQHandler
+                0x0800020c                USB_HP_CAN_TX_IRQHandler
+                0x0800020c                EXTI0_IRQHandler
+                0x0800020c                I2C2_EV_IRQHandler
+                0x0800020c                UsageFault_Handler
+                0x0800020c                ADC1_2_IRQHandler
+                0x0800020c                SPI1_IRQHandler
+                0x0800020c                CAN_SCE_IRQHandler
+                0x0800020c                TAMPER_IRQHandler
+                0x0800020c                TIM8_UP_IRQHandler
+                0x0800020c                DMA2_Channel2_IRQHandler
+                0x0800020c                DMA1_Channel4_IRQHandler
+                0x0800020c                USART3_IRQHandler
+                0x0800020c                RTC_IRQHandler
+                0x0800020c                DMA1_Channel7_IRQHandler
+                0x0800020c                UART5_IRQHandler
+                0x0800020c                ADC3_IRQHandler
+                0x0800020c                TIM4_IRQHandler
+                0x0800020c                CAN_RX1_IRQHandler
+                0x0800020c                DMA2_Channel1_IRQHandler
+                0x0800020c                I2C1_EV_IRQHandler
+                0x0800020c                DMA1_Channel6_IRQHandler
+                0x0800020c                UART4_IRQHandler
+                0x0800020c                TIM3_IRQHandler
+                0x0800020c                RCC_IRQHandler
+                0x0800020c                TIM1_TRG_COM_IRQHandler
+                0x0800020c                DMA1_Channel1_IRQHandler
+                0x0800020c                Default_Handler
+                0x0800020c                EXTI15_10_IRQHandler
+                0x0800020c                TIM7_IRQHandler
+                0x0800020c                TIM5_IRQHandler
+                0x0800020c                EXTI9_5_IRQHandler
+                0x0800020c                SPI2_IRQHandler
+                0x0800020c                USB_LP_CAN_RX0_IRQHandler
+                0x0800020c                MemManage_Handler
+                0x0800020c                SVC_Handler
+                0x0800020c                DMA1_Channel5_IRQHandler
+                0x0800020c                EXTI4_IRQHandler
+                0x0800020c                DMA1_Channel3_IRQHandler
+                0x0800020c                FSMC_IRQHandler
+                0x0800020c                TIM1_UP_IRQHandler
+                0x0800020c                WWDG_IRQHandler
+                0x0800020c                TIM2_IRQHandler
+                0x0800020c                TIM1_BRK_IRQHandler
+                0x0800020c                EXTI1_IRQHandler
+                0x0800020c                RTCAlarm_IRQHandler
+                0x0800020c                DMA2_Channel4_5_IRQHandler
+                0x0800020c                USART2_IRQHandler
+                0x0800020c                I2C2_ER_IRQHandler
+                0x0800020c                DMA1_Channel2_IRQHandler
+                0x0800020c                TIM8_BRK_IRQHandler
+                0x0800020c                FLASH_IRQHandler
+                0x0800020c                BusFault_Handler
+                0x0800020c                USART1_IRQHandler
+                0x0800020c                SPI3_IRQHandler
+                0x0800020c                I2C1_ER_IRQHandler
+                0x0800020c                DMA2_Channel3_IRQHandler
+ *(.glue_7)
+ .glue_7        0x0800020e        0x0 linker stubs
+ *(.glue_7t)
+ .glue_7t       0x0800020e        0x0 linker stubs
+ *(.eh_frame)
+ *(.init)
+ *(.fini)
+                0x08000210                . = ALIGN (0x4)
+ *fill*         0x0800020e        0x2 
+                0x08000210                _etext = .
+
+.vfp11_veneer   0x08000210        0x0
+ .vfp11_veneer  0x08000210        0x0 linker stubs
+
+.v4_bx          0x08000210        0x0
+ .v4_bx         0x08000210        0x0 linker stubs
+
+.iplt           0x08000210        0x0
+ .iplt          0x08000210        0x0 startup_stm32f103c8tx.o
+
+.rel.dyn        0x08000210        0x0
+ .rel.iplt      0x08000210        0x0 startup_stm32f103c8tx.o
+
+.rodata         0x08000210        0x0
+                0x08000210                . = ALIGN (0x4)
+ *(.rodata)
+ *(.rodata*)
+                0x08000210                . = ALIGN (0x4)
+
+.ARM.extab      0x08000210        0x0
+                0x08000210                . = ALIGN (0x4)
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+                0x08000210                . = ALIGN (0x4)
+
+.ARM            0x08000210        0x0
+                0x08000210                . = ALIGN (0x4)
+                0x08000210                __exidx_start = .
+ *(.ARM.exidx*)
+                0x08000210                __exidx_end = .
+                0x08000210                . = ALIGN (0x4)
+
+.preinit_array  0x08000210        0x0
+                0x08000210                . = ALIGN (0x4)
+                [!provide]                PROVIDE (__preinit_array_start = .)
+ *(.preinit_array*)
+                [!provide]                PROVIDE (__preinit_array_end = .)
+                0x08000210                . = ALIGN (0x4)
+
+.init_array     0x08000210        0x0
+                0x08000210                . = ALIGN (0x4)
+                [!provide]                PROVIDE (__init_array_start = .)
+ *(SORT_BY_NAME(.init_array.*))
+ *(.init_array*)
+                [!provide]                PROVIDE (__init_array_end = .)
+                0x08000210                . = ALIGN (0x4)
+
+.fini_array     0x08000210        0x0
+                0x08000210                . = ALIGN (0x4)
+                [!provide]                PROVIDE (__fini_array_start = .)
+ *(SORT_BY_NAME(.fini_array.*))
+ *(.fini_array*)
+                [!provide]                PROVIDE (__fini_array_end = .)
+                0x08000210                . = ALIGN (0x4)
+                0x08000210                _sidata = LOADADDR (.data)
+
+.data           0x20000000        0x0 load address 0x08000210
+                0x20000000                . = ALIGN (0x4)
+                0x20000000                _sdata = .
+ *(.data)
+ .data          0x20000000        0x0 startup_stm32f103c8tx.o
+ .data          0x20000000        0x0 main.o
+ *(.data*)
+                0x20000000                . = ALIGN (0x4)
+                0x20000000                _edata = .
+
+.igot.plt       0x20000000        0x0 load address 0x08000210
+ .igot.plt      0x20000000        0x0 startup_stm32f103c8tx.o
+                0x20000000                . = ALIGN (0x4)
+
+.bss            0x20000000        0x0 load address 0x08000210
+                0x20000000                _sbss = .
+                0x20000000                __bss_start__ = _sbss
+ *(.bss)
+ .bss           0x20000000        0x0 startup_stm32f103c8tx.o
+ .bss           0x20000000        0x0 main.o
+ *(.bss*)
+ *(COMMON)
+                0x20000000                . = ALIGN (0x4)
+                0x20000000                _ebss = .
+                0x20000000                __bss_end__ = _ebss
+
+._user_heap_stack
+                0x20000000      0x600 load address 0x08000210
+                0x20000000                . = ALIGN (0x8)
+                [!provide]                PROVIDE (end = .)
+                [!provide]                PROVIDE (_end = .)
+                0x20000200                . = (. + _Min_Heap_Size)
+ *fill*         0x20000000      0x200 
+                0x20000600                . = (. + _Min_Stack_Size)
+ *fill*         0x20000200      0x400 
+                0x20000600                . = ALIGN (0x8)
+
+.ARM.attributes
+                0x00000000       0x2f
+ *(.ARM.attributes)
+ .ARM.attributes
+                0x00000000       0x21 startup_stm32f103c8tx.o
+ .ARM.attributes
+                0x00000021       0x2d main.o
+LOAD startup_stm32f103c8tx.o
+LOAD main.o
+OUTPUT(Lab_1.elf elf32-littlearm)
+LOAD linker stubs
+
+.debug_line     0x00000000       0xe8
+ .debug_line    0x00000000       0x78 startup_stm32f103c8tx.o
+ .debug_line    0x00000078       0x70 main.o
+
+.debug_info     0x00000000       0x99
+ .debug_info    0x00000000       0x22 startup_stm32f103c8tx.o
+ .debug_info    0x00000022       0x77 main.o
+
+.debug_abbrev   0x00000000       0x83
+ .debug_abbrev  0x00000000       0x12 startup_stm32f103c8tx.o
+ .debug_abbrev  0x00000012       0x71 main.o
+
+.debug_aranges  0x00000000       0x48
+ .debug_aranges
+                0x00000000       0x28 startup_stm32f103c8tx.o
+ .debug_aranges
+                0x00000028       0x20 main.o
+
+.debug_str      0x00000000      0x11b
+ .debug_str     0x00000000       0x95 startup_stm32f103c8tx.o
+ .debug_str     0x00000095       0x86 main.o
+                                 0xf5 (size before relaxing)
+
+.debug_ranges   0x00000000       0x20
+ .debug_ranges  0x00000000       0x20 startup_stm32f103c8tx.o
+
+.debug_loc      0x00000000       0x38
+ .debug_loc     0x00000000       0x38 main.o
+
+.comment        0x00000000       0x49
+ .comment       0x00000000       0x49 main.o
+                                 0x4a (size before relaxing)
+
+.debug_frame    0x00000000       0x2c
+ .debug_frame   0x00000000       0x2c main.o
