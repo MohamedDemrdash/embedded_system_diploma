@@ -1,0 +1,254 @@
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+RAM              0x20000000         0x00005000         xrw
+ROM              0x08000000         0x00010000         xr
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+                0x20005000                _estack = (ORIGIN (RAM) + LENGTH (RAM))
+                0x00000200                _Min_Heap_Size = 0x200
+                0x00000400                _Min_Stack_Size = 0x400
+
+.isr_vector     0x08000000      0x130
+                0x08000000                . = ALIGN (0x4)
+ *(.isr_vector)
+ .isr_vector    0x08000000      0x130 startup_stm32f103c8tx.o
+                0x08000000                g_pfnVectors
+                0x08000130                . = ALIGN (0x4)
+
+.text           0x08000130      0x15c
+                0x08000130                . = ALIGN (0x4)
+ *(.text)
+ .text          0x08000130       0x14 startup_stm32f103c8tx.o
+ .text          0x08000144       0xf8 main.o
+                0x08000144                CLOCK_INIT
+                0x0800016c                GPIO_INIT
+                0x080001c0                EXTI_INIT
+                0x080001fc                main
+                0x0800020e                EXTI1_IRQHandler
+ *(.text*)
+ .text.Reset_Handler
+                0x0800023c       0x4c startup_stm32f103c8tx.o
+                0x0800023c                Reset_Handler
+ .text.Default_Handler
+                0x08000288        0x2 startup_stm32f103c8tx.o
+                0x08000288                EXTI2_IRQHandler
+                0x08000288                TIM8_TRG_COM_IRQHandler
+                0x08000288                TIM8_CC_IRQHandler
+                0x08000288                DebugMon_Handler
+                0x08000288                TIM1_CC_IRQHandler
+                0x08000288                HardFault_Handler
+                0x08000288                TIM6_IRQHandler
+                0x08000288                SysTick_Handler
+                0x08000288                PVD_IRQHandler
+                0x08000288                SDIO_IRQHandler
+                0x08000288                PendSV_Handler
+                0x08000288                NMI_Handler
+                0x08000288                EXTI3_IRQHandler
+                0x08000288                USB_HP_CAN_TX_IRQHandler
+                0x08000288                EXTI0_IRQHandler
+                0x08000288                I2C2_EV_IRQHandler
+                0x08000288                UsageFault_Handler
+                0x08000288                ADC1_2_IRQHandler
+                0x08000288                SPI1_IRQHandler
+                0x08000288                CAN_SCE_IRQHandler
+                0x08000288                TAMPER_IRQHandler
+                0x08000288                TIM8_UP_IRQHandler
+                0x08000288                DMA2_Channel2_IRQHandler
+                0x08000288                DMA1_Channel4_IRQHandler
+                0x08000288                USART3_IRQHandler
+                0x08000288                RTC_IRQHandler
+                0x08000288                DMA1_Channel7_IRQHandler
+                0x08000288                UART5_IRQHandler
+                0x08000288                ADC3_IRQHandler
+                0x08000288                TIM4_IRQHandler
+                0x08000288                CAN_RX1_IRQHandler
+                0x08000288                DMA2_Channel1_IRQHandler
+                0x08000288                I2C1_EV_IRQHandler
+                0x08000288                DMA1_Channel6_IRQHandler
+                0x08000288                UART4_IRQHandler
+                0x08000288                TIM3_IRQHandler
+                0x08000288                RCC_IRQHandler
+                0x08000288                TIM1_TRG_COM_IRQHandler
+                0x08000288                DMA1_Channel1_IRQHandler
+                0x08000288                Default_Handler
+                0x08000288                EXTI15_10_IRQHandler
+                0x08000288                TIM7_IRQHandler
+                0x08000288                TIM5_IRQHandler
+                0x08000288                EXTI9_5_IRQHandler
+                0x08000288                SPI2_IRQHandler
+                0x08000288                USB_LP_CAN_RX0_IRQHandler
+                0x08000288                MemManage_Handler
+                0x08000288                SVC_Handler
+                0x08000288                DMA1_Channel5_IRQHandler
+                0x08000288                EXTI4_IRQHandler
+                0x08000288                DMA1_Channel3_IRQHandler
+                0x08000288                FSMC_IRQHandler
+                0x08000288                TIM1_UP_IRQHandler
+                0x08000288                WWDG_IRQHandler
+                0x08000288                TIM2_IRQHandler
+                0x08000288                TIM1_BRK_IRQHandler
+                0x08000288                RTCAlarm_IRQHandler
+                0x08000288                DMA2_Channel4_5_IRQHandler
+                0x08000288                USART2_IRQHandler
+                0x08000288                I2C2_ER_IRQHandler
+                0x08000288                DMA1_Channel2_IRQHandler
+                0x08000288                TIM8_BRK_IRQHandler
+                0x08000288                FLASH_IRQHandler
+                0x08000288                BusFault_Handler
+                0x08000288                USART1_IRQHandler
+                0x08000288                SPI3_IRQHandler
+                0x08000288                I2C1_ER_IRQHandler
+                0x08000288                DMA2_Channel3_IRQHandler
+ *(.glue_7)
+ .glue_7        0x0800028a        0x0 linker stubs
+ *(.glue_7t)
+ .glue_7t       0x0800028a        0x0 linker stubs
+ *(.eh_frame)
+ *(.init)
+ *(.fini)
+                0x0800028c                . = ALIGN (0x4)
+ *fill*         0x0800028a        0x2 
+                0x0800028c                _etext = .
+
+.vfp11_veneer   0x0800028c        0x0
+ .vfp11_veneer  0x0800028c        0x0 linker stubs
+
+.v4_bx          0x0800028c        0x0
+ .v4_bx         0x0800028c        0x0 linker stubs
+
+.iplt           0x0800028c        0x0
+ .iplt          0x0800028c        0x0 startup_stm32f103c8tx.o
+
+.rel.dyn        0x0800028c        0x0
+ .rel.iplt      0x0800028c        0x0 startup_stm32f103c8tx.o
+
+.rodata         0x0800028c        0x0
+                0x0800028c                . = ALIGN (0x4)
+ *(.rodata)
+ *(.rodata*)
+                0x0800028c                . = ALIGN (0x4)
+
+.ARM.extab      0x0800028c        0x0
+                0x0800028c                . = ALIGN (0x4)
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+                0x0800028c                . = ALIGN (0x4)
+
+.ARM            0x0800028c        0x0
+                0x0800028c                . = ALIGN (0x4)
+                0x0800028c                __exidx_start = .
+ *(.ARM.exidx*)
+                0x0800028c                __exidx_end = .
+                0x0800028c                . = ALIGN (0x4)
+
+.preinit_array  0x0800028c        0x0
+                0x0800028c                . = ALIGN (0x4)
+                [!provide]                PROVIDE (__preinit_array_start = .)
+ *(.preinit_array*)
+                [!provide]                PROVIDE (__preinit_array_end = .)
+                0x0800028c                . = ALIGN (0x4)
+
+.init_array     0x0800028c        0x0
+                0x0800028c                . = ALIGN (0x4)
+                [!provide]                PROVIDE (__init_array_start = .)
+ *(SORT_BY_NAME(.init_array.*))
+ *(.init_array*)
+                [!provide]                PROVIDE (__init_array_end = .)
+                0x0800028c                . = ALIGN (0x4)
+
+.fini_array     0x0800028c        0x0
+                0x0800028c                . = ALIGN (0x4)
+                [!provide]                PROVIDE (__fini_array_start = .)
+ *(SORT_BY_NAME(.fini_array.*))
+ *(.fini_array*)
+                [!provide]                PROVIDE (__fini_array_end = .)
+                0x0800028c                . = ALIGN (0x4)
+                0x0800028c                _sidata = LOADADDR (.data)
+
+.data           0x20000000        0x0 load address 0x0800028c
+                0x20000000                . = ALIGN (0x4)
+                0x20000000                _sdata = .
+ *(.data)
+ .data          0x20000000        0x0 startup_stm32f103c8tx.o
+ .data          0x20000000        0x0 main.o
+ *(.data*)
+                0x20000000                . = ALIGN (0x4)
+                0x20000000                _edata = .
+
+.igot.plt       0x20000000        0x0 load address 0x0800028c
+ .igot.plt      0x20000000        0x0 startup_stm32f103c8tx.o
+                0x20000000                . = ALIGN (0x4)
+
+.bss            0x20000000        0x0 load address 0x0800028c
+                0x20000000                _sbss = .
+                0x20000000                __bss_start__ = _sbss
+ *(.bss)
+ .bss           0x20000000        0x0 startup_stm32f103c8tx.o
+ .bss           0x20000000        0x0 main.o
+ *(.bss*)
+ *(COMMON)
+                0x20000000                . = ALIGN (0x4)
+                0x20000000                _ebss = .
+                0x20000000                __bss_end__ = _ebss
+
+._user_heap_stack
+                0x20000000      0x600 load address 0x0800028c
+                0x20000000                . = ALIGN (0x8)
+                [!provide]                PROVIDE (end = .)
+                [!provide]                PROVIDE (_end = .)
+                0x20000200                . = (. + _Min_Heap_Size)
+ *fill*         0x20000000      0x200 
+                0x20000600                . = (. + _Min_Stack_Size)
+ *fill*         0x20000200      0x400 
+                0x20000600                . = ALIGN (0x8)
+
+.ARM.attributes
+                0x00000000       0x2f
+ *(.ARM.attributes)
+ .ARM.attributes
+                0x00000000       0x21 startup_stm32f103c8tx.o
+ .ARM.attributes
+                0x00000021       0x2d main.o
+LOAD startup_stm32f103c8tx.o
+LOAD main.o
+OUTPUT(INTERRUPT_LAB2.elf elf32-littlearm)
+LOAD linker stubs
+
+.debug_line     0x00000000       0xea
+ .debug_line    0x00000000       0x78 startup_stm32f103c8tx.o
+ .debug_line    0x00000078       0x72 main.o
+
+.debug_info     0x00000000       0xd9
+ .debug_info    0x00000000       0x22 startup_stm32f103c8tx.o
+ .debug_info    0x00000022       0xb7 main.o
+
+.debug_abbrev   0x00000000       0x81
+ .debug_abbrev  0x00000000       0x12 startup_stm32f103c8tx.o
+ .debug_abbrev  0x00000012       0x6f main.o
+
+.debug_aranges  0x00000000       0x48
+ .debug_aranges
+                0x00000000       0x28 startup_stm32f103c8tx.o
+ .debug_aranges
+                0x00000028       0x20 main.o
+
+.debug_str      0x00000000      0x14b
+ .debug_str     0x00000000       0x95 startup_stm32f103c8tx.o
+ .debug_str     0x00000095       0xb6 main.o
+                                0x125 (size before relaxing)
+
+.debug_ranges   0x00000000       0x20
+ .debug_ranges  0x00000000       0x20 startup_stm32f103c8tx.o
+
+.debug_loc      0x00000000      0x13c
+ .debug_loc     0x00000000      0x13c main.o
+
+.comment        0x00000000       0x49
+ .comment       0x00000000       0x49 main.o
+                                 0x4a (size before relaxing)
+
+.debug_frame    0x00000000       0xac
+ .debug_frame   0x00000000       0xac main.o
