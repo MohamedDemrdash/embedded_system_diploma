@@ -11,24 +11,48 @@
 
 void GPIO_INIT(void)
 {
-	//Configure the Bit_3 at Port D to be input (INT1)
+	
+	//Configure the Bit_2 at Port D to be input EXTI 0
+	DDRD &= ~(1<<2);
+	
+	//Configure the Bit_3 at Port D to be input EXTI 1
 	DDRD &= ~(1<<3);
 	
-	//Configure the Bit_0 at Port B to be output for the led
-	DDRB |= (1<<0);
+	//Configure the Bit_2 at Port b to be input EXTI 2
+	DDRB &= ~(1<<2);
+	
+	//Configure the Bit_0 at Port 0 to be output for EXTI 0
+	DDRA |= (1<<0);
+	
+	//Configure the Bit_0 at Port 1 to be output for EXTI 1
+	DDRA |= (1<<1);
+	
+	//Configure the Bit_0 at Port 2 to be output for EXTI 2
+	DDRA |= (1<<2);
 }
 
 void EXTI_INIT(void)
 {
+	//Configure the EXTI 0 to be triggered with any logical change
+	MCUCR |= (0B01 << 0);
+	
 	//Configure the EXTI 1 to be triggered with rising edge
 	MCUCR |= (0B11 << 2);
 
+	//Configure the EXTI 2 to be triggered with falling edge
+	MCUCSR &= ~(1 << 6);
+	
 	//Enable the global interrupt bit at the status register
 	SREG |= (1<<7);
+	
+	//Enable the interrupt for the EXTI 0
+	GICR |= (1<<6);
 	
 	//Enable the interrupt for the EXTI 1
 	GICR |= (1<<7);
 	
+	//Enable the interrupt for the EXTI 2
+	GICR |= (1<<5);
 }
 
 int main(void)
@@ -42,6 +66,16 @@ int main(void)
 }
 
 
+ISR(INT0_vect)
+{
+	//The flag Bit of EXTI 0 will be cleared by hardware
+	
+	//Toggle the output at pin_0 at port A
+	PORTA ^= (1<<0);
+	_delay_ms(1000);
+	PORTA ^= (1<<0);
+	
+}
 
 
 //void EXT_INT1(void)
@@ -49,10 +83,19 @@ ISR(INT1_vect)
 {
 	//The flag Bit of EXTI 1 will be cleared by hardware
 	
-	//Toggle the output at pin_0 at port B
-	PORTB ^= (1<<0);
+	//Toggle the output at pin_1 at port A
+	PORTA ^= (1<<1);
 	_delay_ms(1000);
-	PORTB ^= (1<<0);
-	
+	PORTA ^= (1<<1);
 }
 
+ISR(INT2_vect)
+{
+	//The flag Bit of EXTI 2 will be cleared by hardware
+	
+	//Toggle the output at pin_2 at port A
+	PORTA ^= (1<<2);
+	_delay_ms(1000);
+	PORTA ^= (1<<2);
+	
+}

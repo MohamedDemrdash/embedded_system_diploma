@@ -7,7 +7,7 @@
  ##################
  
 CC=arm-none-eabi
-CFLAGS=-gdwarf-2
+CFLAGS=
 CORE=-mcpu=cortex-m3
 SRC=$(wildcard *.c)
 OBJ=$(SRC:.c=.o)

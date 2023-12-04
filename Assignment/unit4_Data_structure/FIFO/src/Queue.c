@@ -15,6 +15,7 @@
 int main(void) {
 
 	uint8 op;
+	uint8 item;
 	FIFO_INIT(UART,5);
 	while(1)
 	{
@@ -22,13 +23,13 @@ int main(void) {
 		fflush(stdin);
 		fflush(stdout);
 		scanf(" %d",&op);
-		sint8 item;
+
 		switch(op)
 		{
 		case 1:
 			printf("ADD new item\n");
 			fflush(stdin);
-			fflush(stdout);
+			//fflush(stdout);
 			scanf("%d",&item);
 			FIFO_enqueue(&UART_fifo,item);
 			break;

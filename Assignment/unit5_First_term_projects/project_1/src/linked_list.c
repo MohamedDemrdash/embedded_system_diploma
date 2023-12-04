@@ -224,7 +224,7 @@ LIST_STATE find_by_first_name(LIST_HEADER* header_student_list)
 	printf("\n");
 	while(current != NULL)
 	{
-		if(strcmp((const char*)current->first_name,(const char*)name) == 0)
+		if(stricmp((const char*)current->first_name,(const char*)name) == 0)
 		{
 			if(flag == 0)
 			{
