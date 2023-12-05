@@ -1,0 +1,919 @@
+
+task_2.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         0000054a  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         0000000e  00800060  0000054a  000005be  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .comment      00000030  00000000  00000000  000005cc  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  000005fc  2**2
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000100  00000000  00000000  00000638  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   0000103e  00000000  00000000  00000738  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 000009ca  00000000  00000000  00001776  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   000008d9  00000000  00000000  00002140  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  0000018c  00000000  00000000  00002a1c  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00000584  00000000  00000000  00002ba8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    00000469  00000000  00000000  0000312c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 000000b0  00000000  00000000  00003595  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+   8:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+   c:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  10:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  14:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  18:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  1c:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  20:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  24:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  28:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  2c:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  30:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  34:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  38:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  3c:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  40:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  44:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  48:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  4c:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  50:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d8 e0       	ldi	r29, 0x08	; 8
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+
+00000060 <__do_copy_data>:
+  60:	10 e0       	ldi	r17, 0x00	; 0
+  62:	a0 e6       	ldi	r26, 0x60	; 96
+  64:	b0 e0       	ldi	r27, 0x00	; 0
+  66:	ea e4       	ldi	r30, 0x4A	; 74
+  68:	f5 e0       	ldi	r31, 0x05	; 5
+  6a:	02 c0       	rjmp	.+4      	; 0x70 <__do_copy_data+0x10>
+  6c:	05 90       	lpm	r0, Z+
+  6e:	0d 92       	st	X+, r0
+  70:	ae 36       	cpi	r26, 0x6E	; 110
+  72:	b1 07       	cpc	r27, r17
+  74:	d9 f7       	brne	.-10     	; 0x6c <__do_copy_data+0xc>
+  76:	0e 94 4e 01 	call	0x29c	; 0x29c <main>
+  7a:	0c 94 a3 02 	jmp	0x546	; 0x546 <_exit>
+
+0000007e <__bad_interrupt>:
+  7e:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000082 <App_init>:
+SSD_Type SSD2 ={SSD_COMMON_CATHODE,SSD_PORTD,SSD_PORTB,6};	
+SW_Type SW1 = {SW_PORTC,0,SW_PULL_DOWN};
+	
+void App_init(void)
+{
+	SSD_voidInitialDataPort(SSD1);
+  82:	80 91 62 00 	lds	r24, 0x0062	; 0x800062 <SSD1>
+  86:	0e 94 c6 00 	call	0x18c	; 0x18c <SSD_voidInitialDataPort>
+	SSD_voidInitialDataPort(SSD2);
+  8a:	80 91 61 00 	lds	r24, 0x0061	; 0x800061 <SSD2>
+  8e:	0e 94 c6 00 	call	0x18c	; 0x18c <SSD_voidInitialDataPort>
+	SSD_voidEnable(SSD2);
+  92:	80 91 61 00 	lds	r24, 0x0061	; 0x800061 <SSD2>
+  96:	0e 94 cc 00 	call	0x198	; 0x198 <SSD_voidEnable>
+	SW_VoidInit(SW1);
+  9a:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <__DATA_REGION_ORIGIN__>
+  9e:	0e 94 9d 00 	call	0x13a	; 0x13a <SW_VoidInit>
+  a2:	08 95       	ret
+
+000000a4 <App_start>:
+}
+
+void App_start(void)
+{
+	uint8_t i =0 , flag = 0;
+  a4:	10 e0       	ldi	r17, 0x00	; 0
+  a6:	d0 e0       	ldi	r29, 0x00	; 0
+	
+	while(1)
+	{
+		
+			SSD_voidSendNumber(SSD1,i%10);
+  a8:	0d ec       	ldi	r16, 0xCD	; 205
+			SSD_voidDisable(SSD2);
+			
+			if(SW_Uint8GetPressed(SW1) && flag == 0)
+			{
+				i++;	
+				flag =1;
+  aa:	ee 24       	eor	r14, r14
+  ac:	e3 94       	inc	r14
+			}
+			if(!SW_Uint8GetPressed(SW1))
+			{
+				flag = 0;
+  ae:	f1 2c       	mov	r15, r1
+	uint8_t i =0 , flag = 0;
+	
+	while(1)
+	{
+		
+			SSD_voidSendNumber(SSD1,i%10);
+  b0:	d0 9f       	mul	r29, r16
+  b2:	c1 2d       	mov	r28, r1
+  b4:	11 24       	eor	r1, r1
+  b6:	c6 95       	lsr	r28
+  b8:	c6 95       	lsr	r28
+  ba:	c6 95       	lsr	r28
+  bc:	9c 2f       	mov	r25, r28
+  be:	99 0f       	add	r25, r25
+  c0:	89 2f       	mov	r24, r25
+  c2:	88 0f       	add	r24, r24
+  c4:	88 0f       	add	r24, r24
+  c6:	89 0f       	add	r24, r25
+  c8:	6d 2f       	mov	r22, r29
+  ca:	68 1b       	sub	r22, r24
+  cc:	80 91 62 00 	lds	r24, 0x0062	; 0x800062 <SSD1>
+  d0:	0e 94 1c 01 	call	0x238	; 0x238 <SSD_voidSendNumber>
+			SSD_voidEnable(SSD1);
+  d4:	80 91 62 00 	lds	r24, 0x0062	; 0x800062 <SSD1>
+  d8:	0e 94 cc 00 	call	0x198	; 0x198 <SSD_voidEnable>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  dc:	8f e1       	ldi	r24, 0x1F	; 31
+  de:	9e e4       	ldi	r25, 0x4E	; 78
+  e0:	01 97       	sbiw	r24, 0x01	; 1
+  e2:	f1 f7       	brne	.-4      	; 0xe0 <App_start+0x3c>
+  e4:	00 c0       	rjmp	.+0      	; 0xe6 <App_start+0x42>
+  e6:	00 00       	nop
+			_delay_ms(10);
+			//SSD_voidSendNumber(SSD1,i%10);
+			SSD_voidDisable(SSD1);
+  e8:	80 91 62 00 	lds	r24, 0x0062	; 0x800062 <SSD1>
+  ec:	0e 94 f4 00 	call	0x1e8	; 0x1e8 <SSD_voidDisable>
+			SSD_voidSendNumber(SSD2,i/10);
+  f0:	6c 2f       	mov	r22, r28
+  f2:	80 91 61 00 	lds	r24, 0x0061	; 0x800061 <SSD2>
+  f6:	0e 94 1c 01 	call	0x238	; 0x238 <SSD_voidSendNumber>
+			SSD_voidEnable(SSD2);
+  fa:	80 91 61 00 	lds	r24, 0x0061	; 0x800061 <SSD2>
+  fe:	0e 94 cc 00 	call	0x198	; 0x198 <SSD_voidEnable>
+ 102:	8f e1       	ldi	r24, 0x1F	; 31
+ 104:	9e e4       	ldi	r25, 0x4E	; 78
+ 106:	01 97       	sbiw	r24, 0x01	; 1
+ 108:	f1 f7       	brne	.-4      	; 0x106 <App_start+0x62>
+ 10a:	00 c0       	rjmp	.+0      	; 0x10c <App_start+0x68>
+ 10c:	00 00       	nop
+			_delay_ms(10);
+			//SSD_voidSendNumber(SSD2,i/10);
+			SSD_voidDisable(SSD2);
+ 10e:	80 91 61 00 	lds	r24, 0x0061	; 0x800061 <SSD2>
+ 112:	0e 94 f4 00 	call	0x1e8	; 0x1e8 <SSD_voidDisable>
+			
+			if(SW_Uint8GetPressed(SW1) && flag == 0)
+ 116:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <__DATA_REGION_ORIGIN__>
+ 11a:	0e 94 a1 00 	call	0x142	; 0x142 <SW_Uint8GetPressed>
+ 11e:	88 23       	and	r24, r24
+ 120:	21 f0       	breq	.+8      	; 0x12a <App_start+0x86>
+ 122:	11 11       	cpse	r17, r1
+ 124:	02 c0       	rjmp	.+4      	; 0x12a <App_start+0x86>
+			{
+				i++;	
+ 126:	df 5f       	subi	r29, 0xFF	; 255
+				flag =1;
+ 128:	1e 2d       	mov	r17, r14
+			}
+			if(!SW_Uint8GetPressed(SW1))
+ 12a:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <__DATA_REGION_ORIGIN__>
+ 12e:	0e 94 a1 00 	call	0x142	; 0x142 <SW_Uint8GetPressed>
+ 132:	81 11       	cpse	r24, r1
+ 134:	bd cf       	rjmp	.-134    	; 0xb0 <App_start+0xc>
+			{
+				flag = 0;
+ 136:	1f 2d       	mov	r17, r15
+ 138:	bb cf       	rjmp	.-138    	; 0xb0 <App_start+0xc>
+
+0000013a <SW_VoidInit>:
+#include "../../MCAL/DIO Driver/DIO_interface.h"
+
+void SW_VoidInit(SW_Type SW)
+{
+	DIO_Type PIN = {SW.Port,SW.Pin,INPUT,LOW};
+	DIO_VoidSetPinDir(PIN);
+ 13a:	8f 71       	andi	r24, 0x1F	; 31
+ 13c:	0e 94 55 01 	call	0x2aa	; 0x2aa <DIO_VoidSetPinDir>
+ 140:	08 95       	ret
+
+00000142 <SW_Uint8GetPressed>:
+}
+
+uint8_t SW_Uint8GetPressed(SW_Type SW)
+{
+ 142:	cf 93       	push	r28
+	uint8_t Get_Pressed = SW_NOT_PRESSED;
+	DIO_Type PIN = {SW.Port,SW.Pin,INPUT};
+ 144:	c8 2f       	mov	r28, r24
+ 146:	cf 71       	andi	r28, 0x1F	; 31
+	if (SW.Pull_State == SW_PULL_DOWN)
+ 148:	85 fd       	sbrc	r24, 5
+ 14a:	0d c0       	rjmp	.+26     	; 0x166 <SW_Uint8GetPressed+0x24>
+	{
+		if (LOW == DIO_Uint8ReadPin(PIN))
+ 14c:	8c 2f       	mov	r24, r28
+ 14e:	0e 94 55 02 	call	0x4aa	; 0x4aa <DIO_Uint8ReadPin>
+ 152:	88 23       	and	r24, r24
+ 154:	a9 f0       	breq	.+42     	; 0x180 <SW_Uint8GetPressed+0x3e>
+		{
+			Get_Pressed = SW_NOT_PRESSED;
+		}
+		else if (HIGH == DIO_Uint8ReadPin(PIN))
+ 156:	8c 2f       	mov	r24, r28
+ 158:	0e 94 55 02 	call	0x4aa	; 0x4aa <DIO_Uint8ReadPin>
+	DIO_VoidSetPinDir(PIN);
+}
+
+uint8_t SW_Uint8GetPressed(SW_Type SW)
+{
+	uint8_t Get_Pressed = SW_NOT_PRESSED;
+ 15c:	91 e0       	ldi	r25, 0x01	; 1
+ 15e:	81 30       	cpi	r24, 0x01	; 1
+ 160:	91 f0       	breq	.+36     	; 0x186 <SW_Uint8GetPressed+0x44>
+ 162:	90 e0       	ldi	r25, 0x00	; 0
+ 164:	10 c0       	rjmp	.+32     	; 0x186 <SW_Uint8GetPressed+0x44>
+			Get_Pressed = SW_PRESSED;
+		}
+	}
+	else if (SW.Pull_State == SW_PULL_UP)
+	{
+		if (HIGH == DIO_Uint8ReadPin(PIN))
+ 166:	8c 2f       	mov	r24, r28
+ 168:	0e 94 55 02 	call	0x4aa	; 0x4aa <DIO_Uint8ReadPin>
+ 16c:	81 30       	cpi	r24, 0x01	; 1
+ 16e:	51 f0       	breq	.+20     	; 0x184 <SW_Uint8GetPressed+0x42>
+		{
+			Get_Pressed = SW_NOT_PRESSED;
+		}
+		else if (LOW == DIO_Uint8ReadPin(PIN))
+ 170:	8c 2f       	mov	r24, r28
+ 172:	0e 94 55 02 	call	0x4aa	; 0x4aa <DIO_Uint8ReadPin>
+	DIO_VoidSetPinDir(PIN);
+}
+
+uint8_t SW_Uint8GetPressed(SW_Type SW)
+{
+	uint8_t Get_Pressed = SW_NOT_PRESSED;
+ 176:	91 e0       	ldi	r25, 0x01	; 1
+ 178:	88 23       	and	r24, r24
+ 17a:	29 f0       	breq	.+10     	; 0x186 <SW_Uint8GetPressed+0x44>
+ 17c:	90 e0       	ldi	r25, 0x00	; 0
+ 17e:	03 c0       	rjmp	.+6      	; 0x186 <SW_Uint8GetPressed+0x44>
+	DIO_Type PIN = {SW.Port,SW.Pin,INPUT};
+	if (SW.Pull_State == SW_PULL_DOWN)
+	{
+		if (LOW == DIO_Uint8ReadPin(PIN))
+		{
+			Get_Pressed = SW_NOT_PRESSED;
+ 180:	90 e0       	ldi	r25, 0x00	; 0
+ 182:	01 c0       	rjmp	.+2      	; 0x186 <SW_Uint8GetPressed+0x44>
+	}
+	else if (SW.Pull_State == SW_PULL_UP)
+	{
+		if (HIGH == DIO_Uint8ReadPin(PIN))
+		{
+			Get_Pressed = SW_NOT_PRESSED;
+ 184:	90 e0       	ldi	r25, 0x00	; 0
+		{
+			Get_Pressed = SW_PRESSED;
+		}
+	}
+	return Get_Pressed; 
+}
+ 186:	89 2f       	mov	r24, r25
+ 188:	cf 91       	pop	r28
+ 18a:	08 95       	ret
+
+0000018c <SSD_voidInitialDataPort>:
+
+
+
+void SSD_voidInitialDataPort( SSD_Type SSD )
+{
+	DIO_VoidSetPortDir(SSD.DataPort,PORT_OUT);
+ 18c:	86 95       	lsr	r24
+ 18e:	6f ef       	ldi	r22, 0xFF	; 255
+ 190:	83 70       	andi	r24, 0x03	; 3
+ 192:	0e 94 83 02 	call	0x506	; 0x506 <DIO_VoidSetPortDir>
+ 196:	08 95       	ret
+
+00000198 <SSD_voidEnable>:
+}
+void SSD_voidEnable( SSD_Type SSD)
+{
+ 198:	cf 93       	push	r28
+ 19a:	98 2f       	mov	r25, r24
+ 19c:	96 95       	lsr	r25
+ 19e:	96 95       	lsr	r25
+ 1a0:	96 95       	lsr	r25
+ 1a2:	93 70       	andi	r25, 0x03	; 3
+ 1a4:	c8 2f       	mov	r28, r24
+ 1a6:	c2 95       	swap	r28
+ 1a8:	c6 95       	lsr	r28
+ 1aa:	c7 70       	andi	r28, 0x07	; 7
+	if(SSD.Type == SSD_COMMON_CATHODE)
+ 1ac:	80 fd       	sbrc	r24, 0
+ 1ae:	0c c0       	rjmp	.+24     	; 0x1c8 <SSD_voidEnable+0x30>
+	{
+		DIO_Type PIN = {SSD.EnablePort,SSD.EnablePin,OUTPUT,LOW};
+ 1b0:	cc 0f       	add	r28, r28
+ 1b2:	cc 0f       	add	r28, r28
+ 1b4:	c9 2b       	or	r28, r25
+ 1b6:	c0 62       	ori	r28, 0x20	; 32
+ 1b8:	cf 7b       	andi	r28, 0xBF	; 191
+		DIO_VoidSetPinDir(PIN);
+ 1ba:	8c 2f       	mov	r24, r28
+ 1bc:	0e 94 55 01 	call	0x2aa	; 0x2aa <DIO_VoidSetPinDir>
+		DIO_VoidWritePin(PIN);	
+ 1c0:	8c 2f       	mov	r24, r28
+ 1c2:	0e 94 d5 01 	call	0x3aa	; 0x3aa <DIO_VoidWritePin>
+ 1c6:	0e c0       	rjmp	.+28     	; 0x1e4 <SSD_voidEnable+0x4c>
+	}
+	else if(SSD.Type == SSD_COMMON_ANODE)
+	{
+		DIO_Type PIN = {SSD.EnablePort,SSD.EnablePin,OUTPUT,HIGH};
+ 1c8:	8c 2f       	mov	r24, r28
+ 1ca:	88 0f       	add	r24, r24
+ 1cc:	88 0f       	add	r24, r24
+ 1ce:	c9 2f       	mov	r28, r25
+ 1d0:	c3 70       	andi	r28, 0x03	; 3
+ 1d2:	c8 2b       	or	r28, r24
+ 1d4:	c0 62       	ori	r28, 0x20	; 32
+ 1d6:	c0 64       	ori	r28, 0x40	; 64
+		DIO_VoidSetPinDir(PIN);
+ 1d8:	8c 2f       	mov	r24, r28
+ 1da:	0e 94 55 01 	call	0x2aa	; 0x2aa <DIO_VoidSetPinDir>
+		DIO_VoidWritePin(PIN);
+ 1de:	8c 2f       	mov	r24, r28
+ 1e0:	0e 94 d5 01 	call	0x3aa	; 0x3aa <DIO_VoidWritePin>
+	}
+}
+ 1e4:	cf 91       	pop	r28
+ 1e6:	08 95       	ret
+
+000001e8 <SSD_voidDisable>:
+void SSD_voidDisable( SSD_Type SSD)
+{
+ 1e8:	cf 93       	push	r28
+ 1ea:	98 2f       	mov	r25, r24
+ 1ec:	96 95       	lsr	r25
+ 1ee:	96 95       	lsr	r25
+ 1f0:	96 95       	lsr	r25
+ 1f2:	93 70       	andi	r25, 0x03	; 3
+ 1f4:	c8 2f       	mov	r28, r24
+ 1f6:	c2 95       	swap	r28
+ 1f8:	c6 95       	lsr	r28
+ 1fa:	c7 70       	andi	r28, 0x07	; 7
+	if(SSD.Type == SSD_COMMON_CATHODE)
+ 1fc:	80 fd       	sbrc	r24, 0
+ 1fe:	0c c0       	rjmp	.+24     	; 0x218 <SSD_voidDisable+0x30>
+	{
+		DIO_Type PIN = {SSD.EnablePort,SSD.EnablePin,OUTPUT,HIGH};
+ 200:	cc 0f       	add	r28, r28
+ 202:	cc 0f       	add	r28, r28
+ 204:	c9 2b       	or	r28, r25
+ 206:	c0 62       	ori	r28, 0x20	; 32
+ 208:	c0 64       	ori	r28, 0x40	; 64
+		DIO_VoidSetPinDir(PIN);
+ 20a:	8c 2f       	mov	r24, r28
+ 20c:	0e 94 55 01 	call	0x2aa	; 0x2aa <DIO_VoidSetPinDir>
+		DIO_VoidWritePin(PIN);
+ 210:	8c 2f       	mov	r24, r28
+ 212:	0e 94 d5 01 	call	0x3aa	; 0x3aa <DIO_VoidWritePin>
+ 216:	0e c0       	rjmp	.+28     	; 0x234 <SSD_voidDisable+0x4c>
+	}
+	else if(SSD.Type == SSD_COMMON_ANODE)
+	{
+		DIO_Type PIN = {SSD.EnablePort,SSD.EnablePin,OUTPUT,LOW};
+ 218:	8c 2f       	mov	r24, r28
+ 21a:	88 0f       	add	r24, r24
+ 21c:	88 0f       	add	r24, r24
+ 21e:	c9 2f       	mov	r28, r25
+ 220:	c3 70       	andi	r28, 0x03	; 3
+ 222:	c8 2b       	or	r28, r24
+ 224:	c0 62       	ori	r28, 0x20	; 32
+ 226:	cf 7b       	andi	r28, 0xBF	; 191
+		DIO_VoidSetPinDir(PIN);
+ 228:	8c 2f       	mov	r24, r28
+ 22a:	0e 94 55 01 	call	0x2aa	; 0x2aa <DIO_VoidSetPinDir>
+		DIO_VoidWritePin(PIN);
+ 22e:	8c 2f       	mov	r24, r28
+ 230:	0e 94 d5 01 	call	0x3aa	; 0x3aa <DIO_VoidWritePin>
+	}
+}
+ 234:	cf 91       	pop	r28
+ 236:	08 95       	ret
+
+00000238 <SSD_voidSendNumber>:
+void SSD_voidSendNumber( SSD_Type SSD,uint8_t Number)
+{
+ 238:	98 2f       	mov	r25, r24
+ 23a:	96 95       	lsr	r25
+ 23c:	93 70       	andi	r25, 0x03	; 3
+	if (SSD.Type == SSD_COMMON_CATHODE)
+ 23e:	80 fd       	sbrc	r24, 0
+ 240:	16 c0       	rjmp	.+44     	; 0x26e <SSD_voidSendNumber+0x36>
+	{
+		DIO_VoidWritePort(SSD.DataPort,Numbers[Number%10]);
+ 242:	8d ec       	ldi	r24, 0xCD	; 205
+ 244:	68 9f       	mul	r22, r24
+ 246:	81 2d       	mov	r24, r1
+ 248:	11 24       	eor	r1, r1
+ 24a:	86 95       	lsr	r24
+ 24c:	86 95       	lsr	r24
+ 24e:	86 95       	lsr	r24
+ 250:	88 0f       	add	r24, r24
+ 252:	28 2f       	mov	r18, r24
+ 254:	22 0f       	add	r18, r18
+ 256:	22 0f       	add	r18, r18
+ 258:	82 0f       	add	r24, r18
+ 25a:	68 1b       	sub	r22, r24
+ 25c:	e6 2f       	mov	r30, r22
+ 25e:	f0 e0       	ldi	r31, 0x00	; 0
+ 260:	ed 59       	subi	r30, 0x9D	; 157
+ 262:	ff 4f       	sbci	r31, 0xFF	; 255
+ 264:	60 81       	ld	r22, Z
+ 266:	89 2f       	mov	r24, r25
+ 268:	0e 94 93 02 	call	0x526	; 0x526 <DIO_VoidWritePort>
+ 26c:	08 95       	ret
+	}
+	else if (SSD.Type == SSD_COMMON_ANODE)
+	{
+		DIO_VoidWritePort(SSD.DataPort,~Numbers[Number%10]);
+ 26e:	8d ec       	ldi	r24, 0xCD	; 205
+ 270:	68 9f       	mul	r22, r24
+ 272:	81 2d       	mov	r24, r1
+ 274:	11 24       	eor	r1, r1
+ 276:	86 95       	lsr	r24
+ 278:	86 95       	lsr	r24
+ 27a:	86 95       	lsr	r24
+ 27c:	88 0f       	add	r24, r24
+ 27e:	28 2f       	mov	r18, r24
+ 280:	22 0f       	add	r18, r18
+ 282:	22 0f       	add	r18, r18
+ 284:	82 0f       	add	r24, r18
+ 286:	68 1b       	sub	r22, r24
+ 288:	e6 2f       	mov	r30, r22
+ 28a:	f0 e0       	ldi	r31, 0x00	; 0
+ 28c:	ed 59       	subi	r30, 0x9D	; 157
+ 28e:	ff 4f       	sbci	r31, 0xFF	; 255
+ 290:	60 81       	ld	r22, Z
+ 292:	60 95       	com	r22
+ 294:	89 2f       	mov	r24, r25
+ 296:	0e 94 93 02 	call	0x526	; 0x526 <DIO_VoidWritePort>
+ 29a:	08 95       	ret
+
+0000029c <main>:
+#define F_CPU 8000000UL
+
+
+int main(void)
+{
+	App_init();
+ 29c:	0e 94 41 00 	call	0x82	; 0x82 <App_init>
+	
+	App_start();
+ 2a0:	0e 94 52 00 	call	0xa4	; 0xa4 <App_start>
+ 2a4:	80 e0       	ldi	r24, 0x00	; 0
+ 2a6:	90 e0       	ldi	r25, 0x00	; 0
+ 2a8:	08 95       	ret
+
+000002aa <DIO_VoidSetPinDir>:
+			break;
+		case DIO_PORTC :
+			TOG_BIT(PORTC,PIN.Num);
+			break;
+		case DIO_PORTD :
+			TOG_BIT(PORTD,PIN.Num);
+ 2aa:	98 2f       	mov	r25, r24
+ 2ac:	96 95       	lsr	r25
+ 2ae:	96 95       	lsr	r25
+ 2b0:	97 70       	andi	r25, 0x07	; 7
+ 2b2:	28 2f       	mov	r18, r24
+ 2b4:	23 70       	andi	r18, 0x03	; 3
+ 2b6:	22 30       	cpi	r18, 0x02	; 2
+ 2b8:	f1 f1       	breq	.+124    	; 0x336 <DIO_VoidSetPinDir+0x8c>
+ 2ba:	08 f0       	brcs	.+2      	; 0x2be <DIO_VoidSetPinDir+0x14>
+ 2bc:	59 c0       	rjmp	.+178    	; 0x370 <DIO_VoidSetPinDir+0xc6>
+ 2be:	21 30       	cpi	r18, 0x01	; 1
+ 2c0:	e9 f0       	breq	.+58     	; 0x2fc <DIO_VoidSetPinDir+0x52>
+ 2c2:	85 ff       	sbrs	r24, 5
+ 2c4:	0d c0       	rjmp	.+26     	; 0x2e0 <DIO_VoidSetPinDir+0x36>
+ 2c6:	4a b3       	in	r20, 0x1a	; 26
+ 2c8:	21 e0       	ldi	r18, 0x01	; 1
+ 2ca:	30 e0       	ldi	r19, 0x00	; 0
+ 2cc:	b9 01       	movw	r22, r18
+ 2ce:	02 c0       	rjmp	.+4      	; 0x2d4 <DIO_VoidSetPinDir+0x2a>
+ 2d0:	66 0f       	add	r22, r22
+ 2d2:	77 1f       	adc	r23, r23
+ 2d4:	9a 95       	dec	r25
+ 2d6:	e2 f7       	brpl	.-8      	; 0x2d0 <DIO_VoidSetPinDir+0x26>
+ 2d8:	cb 01       	movw	r24, r22
+ 2da:	84 2b       	or	r24, r20
+ 2dc:	8a bb       	out	0x1a, r24	; 26
+ 2de:	08 95       	ret
+ 2e0:	4a b3       	in	r20, 0x1a	; 26
+ 2e2:	21 e0       	ldi	r18, 0x01	; 1
+ 2e4:	30 e0       	ldi	r19, 0x00	; 0
+ 2e6:	b9 01       	movw	r22, r18
+ 2e8:	02 c0       	rjmp	.+4      	; 0x2ee <DIO_VoidSetPinDir+0x44>
+ 2ea:	66 0f       	add	r22, r22
+ 2ec:	77 1f       	adc	r23, r23
+ 2ee:	9a 95       	dec	r25
+ 2f0:	e2 f7       	brpl	.-8      	; 0x2ea <DIO_VoidSetPinDir+0x40>
+ 2f2:	cb 01       	movw	r24, r22
+ 2f4:	80 95       	com	r24
+ 2f6:	84 23       	and	r24, r20
+ 2f8:	8a bb       	out	0x1a, r24	; 26
+ 2fa:	08 95       	ret
+ 2fc:	85 ff       	sbrs	r24, 5
+ 2fe:	0d c0       	rjmp	.+26     	; 0x31a <DIO_VoidSetPinDir+0x70>
+ 300:	47 b3       	in	r20, 0x17	; 23
+ 302:	21 e0       	ldi	r18, 0x01	; 1
+ 304:	30 e0       	ldi	r19, 0x00	; 0
+ 306:	b9 01       	movw	r22, r18
+ 308:	02 c0       	rjmp	.+4      	; 0x30e <DIO_VoidSetPinDir+0x64>
+ 30a:	66 0f       	add	r22, r22
+ 30c:	77 1f       	adc	r23, r23
+ 30e:	9a 95       	dec	r25
+ 310:	e2 f7       	brpl	.-8      	; 0x30a <DIO_VoidSetPinDir+0x60>
+ 312:	cb 01       	movw	r24, r22
+ 314:	84 2b       	or	r24, r20
+ 316:	87 bb       	out	0x17, r24	; 23
+ 318:	08 95       	ret
+ 31a:	47 b3       	in	r20, 0x17	; 23
+ 31c:	21 e0       	ldi	r18, 0x01	; 1
+ 31e:	30 e0       	ldi	r19, 0x00	; 0
+ 320:	b9 01       	movw	r22, r18
+ 322:	02 c0       	rjmp	.+4      	; 0x328 <DIO_VoidSetPinDir+0x7e>
+ 324:	66 0f       	add	r22, r22
+ 326:	77 1f       	adc	r23, r23
+ 328:	9a 95       	dec	r25
+ 32a:	e2 f7       	brpl	.-8      	; 0x324 <DIO_VoidSetPinDir+0x7a>
+ 32c:	cb 01       	movw	r24, r22
+ 32e:	80 95       	com	r24
+ 330:	84 23       	and	r24, r20
+ 332:	87 bb       	out	0x17, r24	; 23
+ 334:	08 95       	ret
+ 336:	85 ff       	sbrs	r24, 5
+ 338:	0d c0       	rjmp	.+26     	; 0x354 <DIO_VoidSetPinDir+0xaa>
+ 33a:	44 b3       	in	r20, 0x14	; 20
+ 33c:	21 e0       	ldi	r18, 0x01	; 1
+ 33e:	30 e0       	ldi	r19, 0x00	; 0
+ 340:	b9 01       	movw	r22, r18
+ 342:	02 c0       	rjmp	.+4      	; 0x348 <DIO_VoidSetPinDir+0x9e>
+ 344:	66 0f       	add	r22, r22
+ 346:	77 1f       	adc	r23, r23
+ 348:	9a 95       	dec	r25
+ 34a:	e2 f7       	brpl	.-8      	; 0x344 <DIO_VoidSetPinDir+0x9a>
+ 34c:	cb 01       	movw	r24, r22
+ 34e:	84 2b       	or	r24, r20
+ 350:	84 bb       	out	0x14, r24	; 20
+ 352:	08 95       	ret
+ 354:	44 b3       	in	r20, 0x14	; 20
+ 356:	21 e0       	ldi	r18, 0x01	; 1
+ 358:	30 e0       	ldi	r19, 0x00	; 0
+ 35a:	b9 01       	movw	r22, r18
+ 35c:	02 c0       	rjmp	.+4      	; 0x362 <DIO_VoidSetPinDir+0xb8>
+ 35e:	66 0f       	add	r22, r22
+ 360:	77 1f       	adc	r23, r23
+ 362:	9a 95       	dec	r25
+ 364:	e2 f7       	brpl	.-8      	; 0x35e <DIO_VoidSetPinDir+0xb4>
+ 366:	cb 01       	movw	r24, r22
+ 368:	80 95       	com	r24
+ 36a:	84 23       	and	r24, r20
+ 36c:	84 bb       	out	0x14, r24	; 20
+ 36e:	08 95       	ret
+ 370:	85 ff       	sbrs	r24, 5
+ 372:	0d c0       	rjmp	.+26     	; 0x38e <DIO_VoidSetPinDir+0xe4>
+ 374:	41 b3       	in	r20, 0x11	; 17
+ 376:	21 e0       	ldi	r18, 0x01	; 1
+ 378:	30 e0       	ldi	r19, 0x00	; 0
+ 37a:	b9 01       	movw	r22, r18
+ 37c:	02 c0       	rjmp	.+4      	; 0x382 <DIO_VoidSetPinDir+0xd8>
+ 37e:	66 0f       	add	r22, r22
+ 380:	77 1f       	adc	r23, r23
+ 382:	9a 95       	dec	r25
+ 384:	e2 f7       	brpl	.-8      	; 0x37e <DIO_VoidSetPinDir+0xd4>
+ 386:	cb 01       	movw	r24, r22
+ 388:	84 2b       	or	r24, r20
+ 38a:	81 bb       	out	0x11, r24	; 17
+ 38c:	08 95       	ret
+ 38e:	41 b3       	in	r20, 0x11	; 17
+ 390:	21 e0       	ldi	r18, 0x01	; 1
+ 392:	30 e0       	ldi	r19, 0x00	; 0
+ 394:	b9 01       	movw	r22, r18
+ 396:	02 c0       	rjmp	.+4      	; 0x39c <DIO_VoidSetPinDir+0xf2>
+ 398:	66 0f       	add	r22, r22
+ 39a:	77 1f       	adc	r23, r23
+ 39c:	9a 95       	dec	r25
+ 39e:	e2 f7       	brpl	.-8      	; 0x398 <DIO_VoidSetPinDir+0xee>
+ 3a0:	cb 01       	movw	r24, r22
+ 3a2:	80 95       	com	r24
+ 3a4:	84 23       	and	r24, r20
+ 3a6:	81 bb       	out	0x11, r24	; 17
+ 3a8:	08 95       	ret
+
+000003aa <DIO_VoidWritePin>:
+ 3aa:	98 2f       	mov	r25, r24
+ 3ac:	96 95       	lsr	r25
+ 3ae:	96 95       	lsr	r25
+ 3b0:	97 70       	andi	r25, 0x07	; 7
+ 3b2:	28 2f       	mov	r18, r24
+ 3b4:	23 70       	andi	r18, 0x03	; 3
+ 3b6:	22 30       	cpi	r18, 0x02	; 2
+ 3b8:	f1 f1       	breq	.+124    	; 0x436 <__EEPROM_REGION_LENGTH__+0x36>
+ 3ba:	08 f0       	brcs	.+2      	; 0x3be <DIO_VoidWritePin+0x14>
+ 3bc:	59 c0       	rjmp	.+178    	; 0x470 <__EEPROM_REGION_LENGTH__+0x70>
+ 3be:	21 30       	cpi	r18, 0x01	; 1
+ 3c0:	e9 f0       	breq	.+58     	; 0x3fc <DIO_VoidWritePin+0x52>
+ 3c2:	86 ff       	sbrs	r24, 6
+ 3c4:	0d c0       	rjmp	.+26     	; 0x3e0 <DIO_VoidWritePin+0x36>
+ 3c6:	4b b3       	in	r20, 0x1b	; 27
+ 3c8:	21 e0       	ldi	r18, 0x01	; 1
+ 3ca:	30 e0       	ldi	r19, 0x00	; 0
+ 3cc:	b9 01       	movw	r22, r18
+ 3ce:	02 c0       	rjmp	.+4      	; 0x3d4 <DIO_VoidWritePin+0x2a>
+ 3d0:	66 0f       	add	r22, r22
+ 3d2:	77 1f       	adc	r23, r23
+ 3d4:	9a 95       	dec	r25
+ 3d6:	e2 f7       	brpl	.-8      	; 0x3d0 <DIO_VoidWritePin+0x26>
+ 3d8:	cb 01       	movw	r24, r22
+ 3da:	84 2b       	or	r24, r20
+ 3dc:	8b bb       	out	0x1b, r24	; 27
+ 3de:	08 95       	ret
+ 3e0:	4b b3       	in	r20, 0x1b	; 27
+ 3e2:	21 e0       	ldi	r18, 0x01	; 1
+ 3e4:	30 e0       	ldi	r19, 0x00	; 0
+ 3e6:	b9 01       	movw	r22, r18
+ 3e8:	02 c0       	rjmp	.+4      	; 0x3ee <DIO_VoidWritePin+0x44>
+ 3ea:	66 0f       	add	r22, r22
+ 3ec:	77 1f       	adc	r23, r23
+ 3ee:	9a 95       	dec	r25
+ 3f0:	e2 f7       	brpl	.-8      	; 0x3ea <DIO_VoidWritePin+0x40>
+ 3f2:	cb 01       	movw	r24, r22
+ 3f4:	80 95       	com	r24
+ 3f6:	84 23       	and	r24, r20
+ 3f8:	8b bb       	out	0x1b, r24	; 27
+ 3fa:	08 95       	ret
+ 3fc:	86 ff       	sbrs	r24, 6
+ 3fe:	0d c0       	rjmp	.+26     	; 0x41a <__EEPROM_REGION_LENGTH__+0x1a>
+ 400:	48 b3       	in	r20, 0x18	; 24
+ 402:	21 e0       	ldi	r18, 0x01	; 1
+ 404:	30 e0       	ldi	r19, 0x00	; 0
+ 406:	b9 01       	movw	r22, r18
+ 408:	02 c0       	rjmp	.+4      	; 0x40e <__EEPROM_REGION_LENGTH__+0xe>
+ 40a:	66 0f       	add	r22, r22
+ 40c:	77 1f       	adc	r23, r23
+ 40e:	9a 95       	dec	r25
+ 410:	e2 f7       	brpl	.-8      	; 0x40a <__EEPROM_REGION_LENGTH__+0xa>
+ 412:	cb 01       	movw	r24, r22
+ 414:	84 2b       	or	r24, r20
+ 416:	88 bb       	out	0x18, r24	; 24
+ 418:	08 95       	ret
+ 41a:	48 b3       	in	r20, 0x18	; 24
+ 41c:	21 e0       	ldi	r18, 0x01	; 1
+ 41e:	30 e0       	ldi	r19, 0x00	; 0
+ 420:	b9 01       	movw	r22, r18
+ 422:	02 c0       	rjmp	.+4      	; 0x428 <__EEPROM_REGION_LENGTH__+0x28>
+ 424:	66 0f       	add	r22, r22
+ 426:	77 1f       	adc	r23, r23
+ 428:	9a 95       	dec	r25
+ 42a:	e2 f7       	brpl	.-8      	; 0x424 <__EEPROM_REGION_LENGTH__+0x24>
+ 42c:	cb 01       	movw	r24, r22
+ 42e:	80 95       	com	r24
+ 430:	84 23       	and	r24, r20
+ 432:	88 bb       	out	0x18, r24	; 24
+ 434:	08 95       	ret
+ 436:	86 ff       	sbrs	r24, 6
+ 438:	0d c0       	rjmp	.+26     	; 0x454 <__EEPROM_REGION_LENGTH__+0x54>
+ 43a:	45 b3       	in	r20, 0x15	; 21
+ 43c:	21 e0       	ldi	r18, 0x01	; 1
+ 43e:	30 e0       	ldi	r19, 0x00	; 0
+ 440:	b9 01       	movw	r22, r18
+ 442:	02 c0       	rjmp	.+4      	; 0x448 <__EEPROM_REGION_LENGTH__+0x48>
+ 444:	66 0f       	add	r22, r22
+ 446:	77 1f       	adc	r23, r23
+ 448:	9a 95       	dec	r25
+ 44a:	e2 f7       	brpl	.-8      	; 0x444 <__EEPROM_REGION_LENGTH__+0x44>
+ 44c:	cb 01       	movw	r24, r22
+ 44e:	84 2b       	or	r24, r20
+ 450:	85 bb       	out	0x15, r24	; 21
+ 452:	08 95       	ret
+ 454:	45 b3       	in	r20, 0x15	; 21
+ 456:	21 e0       	ldi	r18, 0x01	; 1
+ 458:	30 e0       	ldi	r19, 0x00	; 0
+ 45a:	b9 01       	movw	r22, r18
+ 45c:	02 c0       	rjmp	.+4      	; 0x462 <__EEPROM_REGION_LENGTH__+0x62>
+ 45e:	66 0f       	add	r22, r22
+ 460:	77 1f       	adc	r23, r23
+ 462:	9a 95       	dec	r25
+ 464:	e2 f7       	brpl	.-8      	; 0x45e <__EEPROM_REGION_LENGTH__+0x5e>
+ 466:	cb 01       	movw	r24, r22
+ 468:	80 95       	com	r24
+ 46a:	84 23       	and	r24, r20
+ 46c:	85 bb       	out	0x15, r24	; 21
+ 46e:	08 95       	ret
+ 470:	86 ff       	sbrs	r24, 6
+ 472:	0d c0       	rjmp	.+26     	; 0x48e <__EEPROM_REGION_LENGTH__+0x8e>
+ 474:	42 b3       	in	r20, 0x12	; 18
+ 476:	21 e0       	ldi	r18, 0x01	; 1
+ 478:	30 e0       	ldi	r19, 0x00	; 0
+ 47a:	b9 01       	movw	r22, r18
+ 47c:	02 c0       	rjmp	.+4      	; 0x482 <__EEPROM_REGION_LENGTH__+0x82>
+ 47e:	66 0f       	add	r22, r22
+ 480:	77 1f       	adc	r23, r23
+ 482:	9a 95       	dec	r25
+ 484:	e2 f7       	brpl	.-8      	; 0x47e <__EEPROM_REGION_LENGTH__+0x7e>
+ 486:	cb 01       	movw	r24, r22
+ 488:	84 2b       	or	r24, r20
+ 48a:	82 bb       	out	0x12, r24	; 18
+ 48c:	08 95       	ret
+ 48e:	42 b3       	in	r20, 0x12	; 18
+ 490:	21 e0       	ldi	r18, 0x01	; 1
+ 492:	30 e0       	ldi	r19, 0x00	; 0
+ 494:	b9 01       	movw	r22, r18
+ 496:	02 c0       	rjmp	.+4      	; 0x49c <__EEPROM_REGION_LENGTH__+0x9c>
+ 498:	66 0f       	add	r22, r22
+ 49a:	77 1f       	adc	r23, r23
+ 49c:	9a 95       	dec	r25
+ 49e:	e2 f7       	brpl	.-8      	; 0x498 <__EEPROM_REGION_LENGTH__+0x98>
+ 4a0:	cb 01       	movw	r24, r22
+ 4a2:	80 95       	com	r24
+ 4a4:	84 23       	and	r24, r20
+ 4a6:	82 bb       	out	0x12, r24	; 18
+ 4a8:	08 95       	ret
+
+000004aa <DIO_Uint8ReadPin>:
+			break;	
+	}	
+}
+
+uint8_t DIO_Uint8ReadPin(DIO_Type PIN)
+{
+ 4aa:	28 2f       	mov	r18, r24
+ 4ac:	26 95       	lsr	r18
+ 4ae:	26 95       	lsr	r18
+ 4b0:	27 70       	andi	r18, 0x07	; 7
+	switch(PIN.Port)
+ 4b2:	83 70       	andi	r24, 0x03	; 3
+ 4b4:	82 30       	cpi	r24, 0x02	; 2
+ 4b6:	a9 f0       	breq	.+42     	; 0x4e2 <DIO_Uint8ReadPin+0x38>
+ 4b8:	e8 f4       	brcc	.+58     	; 0x4f4 <DIO_Uint8ReadPin+0x4a>
+ 4ba:	81 30       	cpi	r24, 0x01	; 1
+ 4bc:	49 f0       	breq	.+18     	; 0x4d0 <DIO_Uint8ReadPin+0x26>
+	{
+		case DIO_PORTA :
+			PIN.Val = READ_BIT(PINA,PIN.Num);
+ 4be:	89 b3       	in	r24, 0x19	; 25
+ 4c0:	90 e0       	ldi	r25, 0x00	; 0
+ 4c2:	02 c0       	rjmp	.+4      	; 0x4c8 <DIO_Uint8ReadPin+0x1e>
+ 4c4:	95 95       	asr	r25
+ 4c6:	87 95       	ror	r24
+ 4c8:	2a 95       	dec	r18
+ 4ca:	e2 f7       	brpl	.-8      	; 0x4c4 <DIO_Uint8ReadPin+0x1a>
+ 4cc:	81 70       	andi	r24, 0x01	; 1
+			break;
+ 4ce:	08 95       	ret
+		case DIO_PORTB :
+			PIN.Val = READ_BIT(PINB,PIN.Num);
+ 4d0:	86 b3       	in	r24, 0x16	; 22
+ 4d2:	90 e0       	ldi	r25, 0x00	; 0
+ 4d4:	02 c0       	rjmp	.+4      	; 0x4da <DIO_Uint8ReadPin+0x30>
+ 4d6:	95 95       	asr	r25
+ 4d8:	87 95       	ror	r24
+ 4da:	2a 95       	dec	r18
+ 4dc:	e2 f7       	brpl	.-8      	; 0x4d6 <DIO_Uint8ReadPin+0x2c>
+ 4de:	81 70       	andi	r24, 0x01	; 1
+			break;
+ 4e0:	08 95       	ret
+		case DIO_PORTC :
+			PIN.Val = READ_BIT(PINC,PIN.Num);
+ 4e2:	83 b3       	in	r24, 0x13	; 19
+ 4e4:	90 e0       	ldi	r25, 0x00	; 0
+ 4e6:	02 c0       	rjmp	.+4      	; 0x4ec <DIO_Uint8ReadPin+0x42>
+ 4e8:	95 95       	asr	r25
+ 4ea:	87 95       	ror	r24
+ 4ec:	2a 95       	dec	r18
+ 4ee:	e2 f7       	brpl	.-8      	; 0x4e8 <DIO_Uint8ReadPin+0x3e>
+ 4f0:	81 70       	andi	r24, 0x01	; 1
+			break;
+ 4f2:	08 95       	ret
+		case DIO_PORTD :
+			PIN.Val = READ_BIT(PIND,PIN.Num);
+ 4f4:	80 b3       	in	r24, 0x10	; 16
+ 4f6:	90 e0       	ldi	r25, 0x00	; 0
+ 4f8:	02 c0       	rjmp	.+4      	; 0x4fe <DIO_Uint8ReadPin+0x54>
+ 4fa:	95 95       	asr	r25
+ 4fc:	87 95       	ror	r24
+ 4fe:	2a 95       	dec	r18
+ 500:	e2 f7       	brpl	.-8      	; 0x4fa <DIO_Uint8ReadPin+0x50>
+ 502:	81 70       	andi	r24, 0x01	; 1
+			break;
+	}
+	return PIN.Val;
+}
+ 504:	08 95       	ret
+
+00000506 <DIO_VoidSetPortDir>:
+
+
+//Function to control Ports
+void DIO_VoidSetPortDir(uint8_t Port,uint8_t Port_Dir)
+{
+	switch(Port)
+ 506:	81 30       	cpi	r24, 0x01	; 1
+ 508:	41 f0       	breq	.+16     	; 0x51a <DIO_VoidSetPortDir+0x14>
+ 50a:	28 f0       	brcs	.+10     	; 0x516 <DIO_VoidSetPortDir+0x10>
+ 50c:	82 30       	cpi	r24, 0x02	; 2
+ 50e:	39 f0       	breq	.+14     	; 0x51e <DIO_VoidSetPortDir+0x18>
+ 510:	83 30       	cpi	r24, 0x03	; 3
+ 512:	39 f0       	breq	.+14     	; 0x522 <DIO_VoidSetPortDir+0x1c>
+ 514:	08 95       	ret
+	{
+		case DIO_PORTA :
+			DDRA = Port_Dir;
+ 516:	6a bb       	out	0x1a, r22	; 26
+			break;
+ 518:	08 95       	ret
+		case DIO_PORTB :
+			DDRB = Port_Dir;
+ 51a:	67 bb       	out	0x17, r22	; 23
+			break;
+ 51c:	08 95       	ret
+		case DIO_PORTC :
+			DDRC = Port_Dir;
+ 51e:	64 bb       	out	0x14, r22	; 20
+			break;
+ 520:	08 95       	ret
+		case DIO_PORTD :
+			DDRD = Port_Dir;
+ 522:	61 bb       	out	0x11, r22	; 17
+ 524:	08 95       	ret
+
+00000526 <DIO_VoidWritePort>:
+	}
+}
+
+void DIO_VoidWritePort(uint8_t Port,uint8_t Port_Val)
+{
+	switch(Port)
+ 526:	81 30       	cpi	r24, 0x01	; 1
+ 528:	41 f0       	breq	.+16     	; 0x53a <DIO_VoidWritePort+0x14>
+ 52a:	28 f0       	brcs	.+10     	; 0x536 <DIO_VoidWritePort+0x10>
+ 52c:	82 30       	cpi	r24, 0x02	; 2
+ 52e:	39 f0       	breq	.+14     	; 0x53e <DIO_VoidWritePort+0x18>
+ 530:	83 30       	cpi	r24, 0x03	; 3
+ 532:	39 f0       	breq	.+14     	; 0x542 <DIO_VoidWritePort+0x1c>
+ 534:	08 95       	ret
+	{
+		case DIO_PORTA :
+			PORTA = Port_Val;
+ 536:	6b bb       	out	0x1b, r22	; 27
+			break;
+ 538:	08 95       	ret
+		case DIO_PORTB :
+			PORTB = Port_Val;
+ 53a:	68 bb       	out	0x18, r22	; 24
+			break;
+ 53c:	08 95       	ret
+		case DIO_PORTC :
+			PORTC = Port_Val;
+ 53e:	65 bb       	out	0x15, r22	; 21
+			break;
+ 540:	08 95       	ret
+		case DIO_PORTD :
+			PORTD = Port_Val;
+ 542:	62 bb       	out	0x12, r22	; 18
+ 544:	08 95       	ret
+
+00000546 <_exit>:
+ 546:	f8 94       	cli
+
+00000548 <__stop_program>:
+ 548:	ff cf       	rjmp	.-2      	; 0x548 <__stop_program>
